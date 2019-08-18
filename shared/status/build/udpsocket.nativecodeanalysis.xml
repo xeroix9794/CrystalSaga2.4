@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+      <FILENAME>udpsocket.cpp</FILENAME>
+      <LINE>76</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CUdpServer::m_nPort' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CUdpServer::{ctor}</FUNCTION>
+    <DECORATED>??0CUdpServer@@QAE@XZ</DECORATED>
+    <FUNCLINE>76</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+      <FILENAME>udpsocket.cpp</FILENAME>
+      <LINE>134</LINE>
+      <COLUMN>31</COLUMN>
+    </SFA>
+    <DEFECTCODE>6386</DEFECTCODE>
+    <DESCRIPTION>Buffer overrun while writing to 'chIncomingDataBuffer':  the writable size is '4096' bytes, but '4097' bytes might be written.</DESCRIPTION>
+    <FUNCTION>CUdpServer::Read</FUNCTION>
+    <DECORATED>?Read@CUdpServer@@QAE_NP6AXPAV1@PBDI1HPAX@Z2@Z</DECORATED>
+    <FUNCLINE>110</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>112</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>113</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>114</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>115</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>116</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'chIncomingDataBuffer' is an array of 4096 elements (4096 bytes)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>117</LINE>
+        <COLUMN>16</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>118</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>119</LINE>
+        <COLUMN>4</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>120</LINE>
+        <COLUMN>9</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'nEnd' is NULL</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>121</LINE>
+        <COLUMN>18</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>122</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>123</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>125</LINE>
+        <COLUMN>15</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'chIncomingDataBuffer' is an In/Out argument to 'recvfrom' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\winsock.h:800)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>126</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>127</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'nBytesRead==((-1))' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\status\src</FILEPATH>
+        <FILENAME>udpsocket.cpp</FILENAME>
+        <LINE>134</LINE>
+        <COLUMN>31</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>Invalid write to 'chIncomingDataBuffer[4096]', (writable range is 0 to 4095)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>

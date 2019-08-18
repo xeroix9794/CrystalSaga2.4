@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>thread.cpp</FILENAME>
+      <LINE>27</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Thread::m_ui_idx' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Thread::{ctor}</FUNCTION>
+    <DECORATED>??0Thread@@QAE@XZ</DECORATED>
+    <FUNCLINE>27</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>thread.cpp</FILENAME>
+      <LINE>27</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Thread::m_param' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Thread::{ctor}</FUNCTION>
+    <DECORATED>??0Thread@@QAE@XZ</DECORATED>
+    <FUNCLINE>27</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>thread.cpp</FILENAME>
+      <LINE>27</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Thread::m_threadid' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Thread::{ctor}</FUNCTION>
+    <DECORATED>??0Thread@@QAE@XZ</DECORATED>
+    <FUNCLINE>27</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>thread.cpp</FILENAME>
+      <LINE>27</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Thread::m_thread' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Thread::{ctor}</FUNCTION>
+    <DECORATED>??0Thread@@QAE@XZ</DECORATED>
+    <FUNCLINE>27</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>thread.cpp</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>34</COLUMN>
+    </SFA>
+    <DEFECTCODE>6258</DEFECTCODE>
+    <DESCRIPTION>Using TerminateThread does not allow proper thread clean up.</DESCRIPTION>
+    <FUNCTION>Thread::Terminate</FUNCTION>
+    <DECORATED>?Terminate@Thread@@UAE_NXZ</DECORATED>
+    <FUNCLINE>56</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

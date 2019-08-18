@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5E3348F3-151A-4077-A415-876BB1D5814F}</ProjectGuid>
+    <RootNamespace>GroupServer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\..\..\..\server\</OutDir>
+    <IntDir>.\build\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/EHa %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>.\src;.\inc;.\..\..\shared\serversdk\inc;.\..\..\shared\logutil\inc;.\..\..\shared\common\inc;.\..\..\shared\lua\inc;.\..\..\shared\icuhelper\inc;.\..\..\shared\icu\inc;.\..\..\shared\openssl\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;MANAGE_VER;SHUI_JING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling />
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PrecompiledHeaderOutputFile />
+      <ProgramDataBaseFileName />
+      <BrowseInformationFile />
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Ws2_32.lib;LIBDBC.lib;Logutil.lib;WinMM.lib;Common.lib;ICUHelper.lib;icudt.lib;icuuc.lib;icuin.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>.\..\..\shared\serversdk\lib;.\..\..\shared\logutil\lib;.\..\..\shared\common\lib;.\..\..\shared\lua\lib;.\..\..\shared\icuhelper\lib;.\..\..\shared\icu\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ProgramDatabaseFile />
+      <ProfileGuidedDatabase />
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <Manifest>
+      <VerboseOutput>false</VerboseOutput>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile />
+    </Xdcmake>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile />
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include=".\src\DBConnect.cpp" />
+    <ClCompile Include=".\src\Friend.cpp" />
+    <ClCompile Include=".\src\GroupServerApp.cpp" />
+    <ClCompile Include=".\src\GroupServerAppChat.cpp" />
+    <ClCompile Include=".\src\GroupServerAppFrnd.cpp" />
+    <ClCompile Include=".\src\GroupServerAppGuld.cpp" />
+    <ClCompile Include=".\src\GroupServerAppInit.cpp" />
+    <ClCompile Include=".\src\GroupServerAppMaster.cpp" />
+    <ClCompile Include=".\src\GroupServerAppPrsn.cpp" />
+    <ClCompile Include=".\src\GroupServerAppServ.cpp" />
+    <ClCompile Include=".\src\GroupServerAppTeam.cpp" />
+    <ClCompile Include=".\src\GroupSMain.cpp" />
+    <ClCompile Include=".\src\Guild.cpp" />
+    <ClCompile Include=".\src\GuildMember.cpp" />
+    <ClCompile Include=".\src\Invitation.cpp" />
+    <ClCompile Include=".\src\Parser.cpp" />
+    <ClCompile Include=".\src\LuaFunc.cpp" />
+    <ClCompile Include=".\src\Master.cpp" />
+    <ClCompile Include=".\src\Player.cpp" />
+    <ClCompile Include=".\src\Script.cpp" />
+    <ClCompile Include=".\src\SessionChat.cpp" />
+    <ClCompile Include=".\src\stdafx.cpp" />
+    <ClCompile Include=".\src\Team.cpp" />
+    <ClCompile Include=".\src\TeamMember.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include=".\inc\DBConnect.h" />
+    <ClInclude Include=".\inc\Friend.h" />
+    <ClInclude Include=".\inc\GateServer.h" />
+    <ClInclude Include=".\inc\GroupServerApp.h" />
+    <ClInclude Include=".\inc\Guild.h" />
+    <ClInclude Include=".\inc\GuildMember.h" />
+    <ClInclude Include=".\inc\Invitation.h" />
+    <ClInclude Include=".\inc\Parser.h" />
+    <ClInclude Include=".\inc\LuaFunc.h" />
+    <ClInclude Include=".\inc\Master.h" />
+    <ClInclude Include=".\inc\Player.h" />
+    <ClInclude Include=".\inc\Script.h" />
+    <ClInclude Include=".\inc\SessionChat.h" />
+    <ClInclude Include=".\inc\stdafx.h" />
+    <ClInclude Include=".\inc\Team.h" />
+    <ClInclude Include=".\inc\TeamMember.h" />
+    <ClInclude Include=".\inc\resource.h" />
+    <ClInclude Include="inc\GuildBankMsg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GroupServer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include=".\group.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

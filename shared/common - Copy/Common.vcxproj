@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{58B6753C-75DA-449A-97F9-3B26DA4B6FB5}</ProjectGuid>
+    <RootNamespace>shared</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27130.2020</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\lib\</OutDir>
+    <IntDir>.\build\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/EHa %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <AdditionalIncludeDirectories>.\inc;.\..\serversdk\inc;.\..\logutil\inc;.\..\icuhelper\inc;.\..\icu\inc;.\..\openssl\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StructMemberAlignment>4Bytes</StructMemberAlignment>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PrecompiledHeaderOutputFile />
+      <XMLDocumentationFileName />
+      <BrowseInformationFile />
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>.\..\icuhelper\lib;.\..\icu\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <Xdcmake>
+      <OutputFile />
+    </Xdcmake>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile />
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include=".\src\ShipSet.cpp" />
+    <ClCompile Include=".\src\ChaAttr.cpp" />
+    <ClCompile Include=".\src\ChaMask.cpp" />
+    <ClCompile Include=".\src\CharacterRecord.cpp" />
+    <ClCompile Include=".\src\CommFunc.cpp" />
+    <ClCompile Include=".\src\EventRecord.cpp" />
+    <ClCompile Include=".\src\ForgeRecord.cpp" />
+    <ClCompile Include=".\src\HairRecord.cpp" />
+    <ClCompile Include=".\src\i18n.cpp" />
+    <ClCompile Include=".\src\ItemAttr.cpp" />
+    <ClCompile Include=".\src\ItemContent.cpp" />
+    <ClCompile Include=".\src\ItemRecord.cpp" />
+    <ClCompile Include=".\src\Kitbag.cpp" />
+    <ClCompile Include=".\src\LevelRecord.cpp" />
+    <ClCompile Include=".\src\LogFile.cpp" />
+    <ClCompile Include=".\src\MapCopyRecord.cpp" />
+    <ClCompile Include=".\src\memcheck.cpp" />
+    <ClCompile Include=".\src\MonRefRecord.cpp" />
+    <ClCompile Include=".\src\NetCommand.cpp" />
+    <ClCompile Include=".\src\NpcRecord.cpp" />
+    <ClCompile Include=".\src\SkillRecord.cpp" />
+    <ClCompile Include=".\src\SkillStateRecord.cpp" />
+    <ClCompile Include=".\src\StringLib.cpp" />
+    <ClCompile Include=".\src\stringpooll.cpp" />
+    <ClCompile Include=".\src\SwitchMapRecord.cpp" />
+    <ClCompile Include=".\src\TerrainAttrib.cpp" />
+    <ClCompile Include="src\JobInitEquip.cpp" />
+    <ClCompile Include="src\LifeLvRecord.cpp" />
+    <ClCompile Include="src\SailLvRecord.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include=".\inc\ShipSet.h" />
+    <ClInclude Include=".\inc\AreaRecord.h" />
+    <ClInclude Include=".\inc\ChaAction.h" />
+    <ClInclude Include=".\inc\ChaAttr.h" />
+    <ClInclude Include=".\inc\ChaAttrType.h" />
+    <ClInclude Include=".\inc\ChaMask.h" />
+    <ClInclude Include=".\inc\CharacterRecord.h" />
+    <ClInclude Include=".\inc\CommFunc.h" />
+    <ClInclude Include=".\inc\CompCommand.h" />
+    <ClInclude Include=".\inc\EventRecord.h" />
+    <ClInclude Include=".\inc\ForgeRecord.h" />
+    <ClInclude Include=".\inc\GameCommon.h" />
+    <ClInclude Include=".\inc\HairRecord.h" />
+    <ClInclude Include=".\inc\i18n.h" />
+    <ClInclude Include=".\inc\ItemAttr.h" />
+    <ClInclude Include=".\inc\ItemAttrType.h" />
+    <ClInclude Include=".\inc\ItemContent.h" />
+    <ClInclude Include=".\inc\ItemRecord.h" />
+    <ClInclude Include=".\inc\JobType.h" />
+    <ClInclude Include=".\inc\Kitbag.h" />
+    <ClInclude Include=".\inc\LevelRecord.h" />
+    <ClInclude Include=".\inc\LogFile.h" />
+    <ClInclude Include=".\inc\MapCopyRecord.h" />
+    <ClInclude Include=".\inc\memcheck.h" />
+    <ClInclude Include=".\inc\MonRefRecord.h" />
+    <ClInclude Include=".\inc\NetCommand.h" />
+    <ClInclude Include=".\inc\NetRetCode.h" />
+    <ClInclude Include=".\inc\NpcRecord.h" />
+    <ClInclude Include=".\inc\RoleCommon.h" />
+    <ClInclude Include=".\inc\SkillBag.h" />
+    <ClInclude Include=".\inc\SkillRecord.h" />
+    <ClInclude Include=".\inc\SkillStateRecord.h" />
+    <ClInclude Include=".\inc\SkillStateType.h" />
+    <ClInclude Include=".\inc\StringLib.h" />
+    <ClInclude Include=".\inc\StringPoolL.h" />
+    <ClInclude Include=".\inc\SwitchMapRecord.h" />
+    <ClInclude Include=".\inc\TableData.h" />
+    <ClInclude Include=".\inc\TerrainAttrib.h" />
+    <ClInclude Include=".\inc\ToolClass.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

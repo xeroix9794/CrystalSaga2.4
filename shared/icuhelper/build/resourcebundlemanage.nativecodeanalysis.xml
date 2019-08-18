@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::limitPartIndex' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::value' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::length' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::index' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::type' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>brkiter.h</FILENAME>
+      <LINE>632</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::BreakIterator::actualLocale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::BreakIterator::{ctor}</FUNCTION>
+    <DECORATED>??0BreakIterator@icu_59@@IAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>632</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>brkiter.h</FILENAME>
+      <LINE>632</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::BreakIterator::validLocale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::BreakIterator::{ctor}</FUNCTION>
+    <DECORATED>??0BreakIterator@icu_59@@IAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>632</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>38</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CFormatParameter::m_MsgArgs' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CFormatParameter::{ctor}</FUNCTION>
+    <DECORATED>??0CFormatParameter@@AAE@XZ</DECORATED>
+    <FUNCLINE>38</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>38</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CFormatParameter::paraNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CFormatParameter::{ctor}</FUNCTION>
+    <DECORATED>??0CFormatParameter@@AAE@XZ</DECORATED>
+    <FUNCLINE>38</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_pResourceBundle' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_pConverter' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_MaxSize' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_pLocale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_ResLocale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_ResDir' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

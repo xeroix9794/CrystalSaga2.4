@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8C999608-91A8-4A85-BCD8-975B65EEC5F4}</ProjectGuid>
+    <RootNamespace>Logutil</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27130.2020</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\lib\</OutDir>
+    <IntDir>.\build\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/EHa %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>.\inc;.\..\ipss\inc;.\..\sdl-1.2.7\inc;.\..\enclib\inc;.\..\openssl\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <Xdcmake>
+      <OutputFile />
+    </Xdcmake>
+    <Xdcmake>
+      <DocumentLibraryDependencies>false</DocumentLibraryDependencies>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile />
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include=".\src\algo.cpp" />
+    <ClCompile Include=".\src\Big5.cpp" />
+    <ClCompile Include=".\src\bill.cpp" />
+    <ClCompile Include=".\src\CallStack.cpp" />
+    <ClCompile Include=".\src\CPerformance.cpp" />
+    <ClCompile Include=".\src\db.cpp" />
+    <ClCompile Include=".\src\db3.cpp" />
+    <ClCompile Include=".\src\ErrorHandler.cpp" />
+    <ClCompile Include=".\src\ErrorReport.cpp" />
+    <ClCompile Include=".\src\KopLicense.cpp" />
+    <ClCompile Include=".\src\log.cpp" />
+    <ClCompile Include=".\src\log2.cpp" />
+    <ClCompile Include=".\src\Logutil.cpp" />
+    <ClCompile Include=".\src\MapDataVer.cpp" />
+    <ClCompile Include=".\src\MapUtil.cpp" />
+    <ClCompile Include=".\src\md5c.c" />
+    <ClCompile Include=".\src\MyMemory.cpp" />
+    <ClCompile Include=".\src\packet.cpp" />
+    <ClCompile Include=".\src\PrivilegeCheck.cpp" />
+    <ClCompile Include=".\src\SectionData.cpp" />
+    <ClCompile Include=".\src\se_translator.cpp" />
+    <ClCompile Include=".\src\Stacktrace.cpp" />
+    <ClCompile Include=".\src\sym_engine.cpp" />
+    <ClCompile Include=".\src\util2.cpp" />
+    <ClCompile Include=".\src\Win32Guid.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include=".\inc\algo.h" />
+    <ClInclude Include=".\inc\AtlAux2.h" />
+    <ClInclude Include=".\inc\AttribData.h" />
+    <ClInclude Include=".\inc\Big5.h" />
+    <ClInclude Include=".\inc\bill.h" />
+    <ClInclude Include=".\inc\CallStack.h" />
+    <ClInclude Include=".\inc\CPerformance.h" />
+    <ClInclude Include=".\inc\db.h" />
+    <ClInclude Include=".\inc\db3.h" />
+    <ClInclude Include=".\inc\debug_stream.h" />
+    <ClInclude Include=".\inc\ErrorHandler.h" />
+    <ClInclude Include=".\inc\ErrorReport.h" />
+    <ClInclude Include=".\inc\exception2.h" />
+    <ClInclude Include=".\inc\exception_trap.h" />
+    <ClInclude Include=".\inc\fifo.h" />
+    <ClInclude Include=".\inc\kbase.h" />
+    <ClInclude Include=".\inc\KopLicense.h" />
+    <ClInclude Include=".\inc\log.h" />
+    <ClInclude Include=".\inc\log2.h" />
+    <ClInclude Include=".\inc\MapUtil.h" />
+    <ClInclude Include=".\inc\matrix_stuff.h" />
+    <ClInclude Include=".\inc\MPMapDef.h" />
+    <ClInclude Include=".\inc\MyMemory.h" />
+    <ClInclude Include=".\inc\ObjectData.h" />
+    <ClInclude Include=".\inc\pch.h" />
+    <ClInclude Include=".\inc\PrivilegeCheck.h" />
+    <ClInclude Include=".\inc\ReturnValues.h" />
+    <ClInclude Include=".\inc\SectionData.h" />
+    <ClInclude Include=".\inc\se_translator.h" />
+    <ClInclude Include=".\inc\singleton.h" />
+    <ClInclude Include=".\inc\Stacktrace.h" />
+    <ClInclude Include=".\inc\sym_engine.h" />
+    <ClInclude Include=".\inc\TerrainData.h" />
+    <ClInclude Include=".\inc\TryUtil.h" />
+    <ClInclude Include=".\inc\unhandled_report.h" />
+    <ClInclude Include=".\inc\util.h" />
+    <ClInclude Include=".\inc\util2.h" />
+    <ClInclude Include=".\inc\Win32Guid.h" />
+    <ClInclude Include=".\inc\Logutil.h" />
+    <ClInclude Include=".\inc\md5.h" />
+    <ClInclude Include=".\inc\packet.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
