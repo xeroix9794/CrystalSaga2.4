@@ -185,6 +185,10 @@ bool CEquipMgr::Init()
 	cnmEquip[enumEQUIP_Jewelry4] = dynamic_cast<COneCommand*>(frmItem->Find("cmdJewelry4"));
 	cnmEquip[enumEQUIP_FAIRY] = dynamic_cast<COneCommand*>(frmItem->Find("cmdFairy"));
 	cnmEquip[enumEQUIP_CLOAK] = dynamic_cast<COneCommand*>(frmItem->Find("cmdCloak"));
+	cnmEquip[enumEQUIP_WINGS] = dynamic_cast<COneCommand*>(frmItem->Find("cmdWing"));
+	cnmEquip[enumEQUIP_MOUNTS] = dynamic_cast<COneCommand*>(frmItem->Find("cmdMount"));
+	cnmEquip[enumEQUIP_SWINGS] = dynamic_cast<COneCommand*>(frmItem->Find("cmdSwing"));
+
 //cnmEquip[enumEQUIP_SWING] = dynamic_cast<COneCommand*>(frmItem->Find("cmdSwing"));
 
 	for (int i = 0; i < enumEQUIP_NUM; i++)

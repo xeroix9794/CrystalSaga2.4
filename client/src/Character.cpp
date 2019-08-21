@@ -1643,7 +1643,7 @@ bool CCharacter::PlayPose(DWORD pose, DWORD type, int time, int fps, bool isBlen
 
 bool CCharacter::PlayPose( DWORD pose, DWORD type, int time, int fps, bool isBlend )
 {
-	fps = CGameApp::GetFrameFPS();
+	CGameApp::GetFrameFPS();
 //	LG( getLogName(), "Pose:%d, type:%d, time:%d\n", pose, type, time, fps );
 
     bool rv = GetCurPoseType()==pose;
@@ -1656,13 +1656,12 @@ bool CCharacter::PlayPose( DWORD pose, DWORD type, int time, int fps, bool isBle
 		if(pose == POSE_SHOW)  pose = POSE_FLY_SHOW;	// 摆酷 -> 空中摆酷
 		if(pose == POSE_SEAT)  pose = POSE_FLY_SEAT;	// 坐下 -> 空中悬空坐 
 	}
-	else if (GetIsSit())
-	{
-			// 站立 -> 飞行
-		//if (pose == POSE_RUN) pose = POSE_SEAT2;
-	}
 #endif
-
+	//if (!GetIsFly() && GetIsSit())
+	//{
+		//if (GetCurPoseType() == POSE_WAITING)
+			//pose = POSE_SEAT2;
+	//}
     if( (GetCurPoseType()==POSE_RUN2) || (GetCurPoseType()==POSE_RUN) || GetCurPoseType() == POSE_FLY_RUN)
     {
         if( (pose!=POSE_RUN2) && (pose!=POSE_RUN) && (pose!=POSE_FLY_RUN))
@@ -2018,7 +2017,7 @@ bool CCharacter::UpdataItem(int nItem, DWORD nLink)
 	case enumEQUIP_Jewelry2:
 	case enumEQUIP_Jewelry3:
 	case enumEQUIP_Jewelry4:
-	case enumEQUIP_CLOAK:
+	//case enumEQUIP_CLOAK:
 		return true;
 	}
 	return false;
@@ -2447,7 +2446,7 @@ void CCharacter::SetItemFace( unsigned int nIndex, int nItem )
 
 	if( _pItemFaceEff[nIndex] )
 	{
-		_pItemFaceEff[nIndex]->SetValid( FALSE );
+		_pItemFaceEff[nIndex]->SetValid(FALSE);
 		_pItemFaceEff[nIndex] = NULL;
 	}
 
@@ -2558,6 +2557,151 @@ void CCharacter::SetHandFace(unsigned int nIndex, int nItem)
 	CItemRecord* pInfo = GetItemRecordInfo(nItem);
 	if (!pInfo || pInfo->sItemEffect[0] == 0) return;
 
+	
+	switch (nIndex) {
+	case 0:
+		if (pInfo->sType != enumItemTypePet)
+		{
+			return;		// 第二栏放宠物精灵
+		}
+		else
+		{
+			CCharacter* pCha = this;
+			if (g_stUIMap.IsPKSilver() && pCha->IsPlayer() && pCha->GetMainType() != enumMainPlayer)
+				return;
+
+			if (pInfo->sNeedLv > this->_Attr.get(ATTR_LV))
+				return;
+
+			if (pInfo->chBody[0] != -1)
+			{
+				bool bFlag = false;
+				for (int i = 0; i < defITEM_BODY; i++)
+				{
+					if (pInfo->chBody[i] != -1 && pInfo->chBody[i] == GetDefaultChaInfo()->lID)
+					{
+						bFlag = true;
+						break;
+					}
+				}
+				if (!bFlag) return;
+			}
+		}
+		break;
+	case 1:
+		if (pInfo->sType != enumItemTypeCloak)
+		{
+			return;
+		}
+		else
+		{
+			CCharacter* pCha = this;
+			if (g_stUIMap.IsPKSilver() && pCha->IsPlayer() && pCha->GetMainType() != enumMainPlayer)
+				return;
+
+			if (pInfo->sNeedLv > this->_Attr.get(ATTR_LV))
+				return;
+
+			if (pInfo->chBody[0] != -1)
+			{
+				bool bFlag = false;
+				for (int i = 0; i < defITEM_BODY; i++)
+				{
+					if (pInfo->chBody[i] != -1 && pInfo->chBody[i] == GetDefaultChaInfo()->lID)
+					{
+						bFlag = true;
+						break;
+					}
+				}
+				if (!bFlag) return;
+			}
+		}
+		break;
+	case 2:
+		if (pInfo->sType != enumItemTypeWing)
+		{
+			return;
+		}
+		else
+		{
+			DWORD pose = GetCurPoseType();
+			if (GetIsFly() && (pose == POSE_WAITING || pose == POSE_WAITING2))
+				PlayPose(POSE_FLY_WAITING);	// 站立 -> 飞行
+
+
+			CCharacter* pCha = this;
+			if (g_stUIMap.IsPKSilver() && pCha->IsPlayer() && pCha->GetMainType() != enumMainPlayer)
+				return;
+
+			if (pInfo->sNeedLv > this->_Attr.get(ATTR_LV))
+				return;
+
+			if (pInfo->chBody[0] != -1)
+			{
+				bool bFlag = false;
+				for (int i = 0; i < defITEM_BODY; i++)
+				{
+					if (pInfo->chBody[i] != -1 && pInfo->chBody[i] == GetDefaultChaInfo()->lID)
+					{
+						bFlag = true;
+						break;
+					}
+				}
+				if (!bFlag) return;
+			}
+		}
+		break;
+	case 4:
+		if (pInfo->sType != 84)
+		{
+			break;
+		}
+		else
+		{
+			DWORD pose = GetCurPoseType();
+			if (GetIsSit() && (pose == POSE_WAITING || pose == POSE_WAITING2))
+				PlayPose(POSE_SEAT2, PLAY_LOOP_SMOOTH);	// 站立 -> 飞行
+
+			CCharacter* pCha = this;
+			if (g_stUIMap.IsPKSilver() && pCha->IsPlayer() && pCha->GetMainType() != enumMainPlayer)
+				return;
+
+			if (pInfo->sNeedLv > this->_Attr.get(ATTR_LV))
+				return;
+
+			if (pInfo->chBody[0] != -1)
+			{
+				bool bFlag = false;
+				for (int i = 0; i < defITEM_BODY; i++)
+				{
+					if (pInfo->chBody[i] != -1 && pInfo->chBody[i] == GetDefaultChaInfo()->lID)
+					{
+						bFlag = true;
+						break;
+					}
+				}
+				if (!bFlag) return;
+			}
+		}
+		break;
+	default:return;
+	}
+	CEffectObj* pEffect = _pScene->GetFirstInvalidEffObj();
+	if (!pEffect) return;
+
+	if (!pEffect->Create(pInfo->sItemEffect[0]))
+		return;
+
+	pEffect->setLoop(true);
+	pEffect->setFollowObj((CSceneNode*)this, NODE_CHA, pInfo->sItemEffect[1]);
+	pEffect->Emission(-1, NULL, NULL);
+	pEffect->SetValid(TRUE);
+
+	_pHandEff[nIndex] = pEffect;
+
+}
+
+	/*
 	switch (nIndex)
 	{
 			// 第一栏放置翅膀
@@ -2646,7 +2790,7 @@ void CCharacter::SetHandFace(unsigned int nIndex, int nItem)
 
 	_pHandEff[nIndex] = pEffect;
 }
-
+*/
 bool CCharacter::GetIsPet()
 {
 	long nID = GetDefaultChaInfo()->lID;
@@ -2715,7 +2859,7 @@ bool CCharacter::GetIsSit()
 bool CCharacter::GetIsFly()
 {
 	int nID = GetItemFace(0);
-	return ( 128 <= nID && nID <= 140 && nID != 135 ) ? true : false;
+	return (128 <= nID && nID <= 140 && nID != 135 && GetHandFace(0) < 9000) ? true : false;
 
 	//CItemRecord* pItem = GetItemRecordInfo(GetItemFace(0));
 	//return (pItem && pItem->sType == 44 && _Attr.get(ATTR_SAILLV) > 0) ? true : false;

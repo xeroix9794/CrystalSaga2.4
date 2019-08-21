@@ -79,7 +79,7 @@
       <IgnoreSpecificDefaultLibraries>libcpmtd.lib;libci.lib;libcmtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <DelayLoadDLLs>
       </DelayLoadDLLs>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <AssemblyDebug />
       <ProgramDatabaseFile />
       <GenerateMapFile>true</GenerateMapFile>

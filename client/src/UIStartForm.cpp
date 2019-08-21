@@ -905,7 +905,7 @@ void CStartMgr::_evtStartFormMouseEvent(CCompent *pSender, int nMsgType, int x, 
 				{
 					g_pGameApp->SysInfo(RES_STRING(CL_LANGUAGE_MATCH_866));
 					g_pGameApp->MsgBox(RES_STRING(CL_LANGUAGE_MATCH_866));	//	Add by alfred.shi 20080905
-				}
+				} 
 			}
 		}
 	}

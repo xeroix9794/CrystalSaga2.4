@@ -2852,7 +2852,6 @@ void stNetAppendLook::Exec(CCharacter* pCha)
 	if (bValid[3]) pCha->SetItemFace(3, sLookID[3]);
 	else pCha->SetItemFace(3, 0);
 
-	
 	if (eValid[0])
 		pCha->SetHandFace(0, sEquipID[0]);
 	else
@@ -2862,7 +2861,39 @@ void stNetAppendLook::Exec(CCharacter* pCha)
 		pCha->SetHandFace(1, sEquipID[1]);
 	else
 		pCha->SetHandFace(1, 0);
+
+
+	if (eValid[2])
+		pCha->SetHandFace(2, sEquipID[2]);
+	else
+		pCha->SetHandFace(2, 0);
+
+
+	if (eValid[3])
+		pCha->SetHandFace(3, sEquipID[3]);
+	else
+		pCha->SetHandFace(3, 0);
+
+
+	if (eValid[4])
+		pCha->SetHandFace(4, sEquipID[4]);
+	else
+		pCha->SetHandFace(4, 0);
+
 }
+
+	/*
+	if (eValid[0])
+		pCha->SetHandFace(0, sEquipID[0]);
+	else
+		pCha->SetHandFace(0, 0);
+
+	if (eValid[1])
+		pCha->SetHandFace(1, sEquipID[1]);
+	else
+		pCha->SetHandFace(1, 0);
+		*/
+
 
 void NetBeginRepairItem(void)
 {

@@ -4150,7 +4150,18 @@ void ReadChaAppendLookPacket(LPRPACKET pk, stNetAppendLook &SNetAppendLook)
 			SNetAppendLook.bValid[i] = pk.ReadChar() != 0 ? true : false;
 	}
 
-	short s = pk.ReadShort();
+short equipID = 0;
+char  equipValid = 0;
+for (char idx = 0; idx < 5; idx++)
+{
+	equipID = pk.ReadShort();
+	SNetAppendLook.sEquipID[idx] = equipID;
+	equipValid = pk.ReadChar();
+	SNetAppendLook.eValid[idx] = (equipValid > 0 ? true : false);
+}
+
+
+/*	short s = pk.ReadShort();
 	SNetAppendLook.sEquipID[0] = s;
 
 	char p;
@@ -4162,7 +4173,7 @@ void ReadChaAppendLookPacket(LPRPACKET pk, stNetAppendLook &SNetAppendLook)
 	p = pk.ReadChar();
 	SNetAppendLook.eValid[1] = (p == 0 ? false : true);
 
-
+	*/
 	// log
 // 	if( szLogName )
 // 	LG(szLogName, "===Recieve(Append Look)\tTick:[%u]\n", GetTickCount());

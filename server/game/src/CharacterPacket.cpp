@@ -309,6 +309,8 @@ void CCharacter::WriteLookData(WPACKET &WtPk, Char chLookType, Char chSynType)
 	}
 }
 
+#define defEQUIP_LINK_NUM 5
+
 // 注意该函数使用道具栏的改变标志。
 bool CCharacter::WriteAppendLook(CKitbag *pCKb, WPACKET &pk, bool bInit)
 {
@@ -332,7 +334,7 @@ bool CCharacter::WriteAppendLook(CKitbag *pCKb, WPACKET &pk, bool bInit)
 	}
 
 
-	pItem = m_SChaPart.SLink + 14;
+	/*pItem = m_SChaPart.SLink + 14;
 
 	if (pItem)
 	{
@@ -344,8 +346,24 @@ bool CCharacter::WriteAppendLook(CKitbag *pCKb, WPACKET &pk, bool bInit)
 	{
 		WRITE_SHORT(pk, 0);
 		WRITE_CHAR(pk, 0);
+	}*/
+	for (int i = 14; i < enumEQUIP_NUM; i++)
+	{
+		pItem = m_SChaPart.SLink + i;
+		if (pItem)
+		{
+			WRITE_SHORT(pk, pItem->sID);
+			WRITE_CHAR(pk, pItem->IsValid() ? 1 : 0);
+			bHasData = true;
+		}
+		else
+		{
+			WRITE_SHORT(pk, 0);
+			WRITE_CHAR(pk, 0);
+			bHasData = true;
+		}
 	}
-	
+	/*
 		pItem = m_SChaPart.SLink + 15;
 		if (pItem)
 		{
@@ -358,7 +376,7 @@ bool CCharacter::WriteAppendLook(CKitbag *pCKb, WPACKET &pk, bool bInit)
 			WRITE_SHORT(pk, 0);
 			WRITE_CHAR(pk, 0);
 		}
-	
+	*/
 	
 	if (bInit) return true;
 	else return bHasData;

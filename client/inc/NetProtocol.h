@@ -168,8 +168,8 @@ struct stNetAppendLook
 {
 	short	sLookID[defESPE_KBGRID_NUM];
 	bool	bValid[defESPE_KBGRID_NUM];
-	short	sEquipID[2];
-	bool	eValid[2];
+	short	sEquipID[5];
+	bool	eValid[5];
 	void	Exec(unsigned long	ulWorldID);
 	void	Exec(CCharacter* pCha);
 

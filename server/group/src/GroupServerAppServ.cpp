@@ -1664,9 +1664,11 @@ WPacket	GroupServerApp::TP_NEWCHA(Player *ply, DataSocket *datasock, RPacket &pk
 		l_retpk.WriteShort(ERR_PT_INVALIDBIRTH);
 		return l_retpk;
 	}
-
+	char tmp[100];
 	const LOOK	*look = reinterpret_cast<const LOOK*>(pk.ReadSequence(l_len));
 	if (!look || l_len != sizeof(LOOK)) {
+		sprintf_s(tmp, "%d sizeof(%d)", l_len, sizeof(LOOK));
+		MessageBoxA(0, tmp, "", 0);
 		l_retpk.WriteShort(ERR_PT_INVALIDDAT);
 		return l_retpk;
 	}

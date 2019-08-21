@@ -135,9 +135,12 @@ enum EEquipLinkPos // 道具的装备部位
 	enumEQUIP_Jewelry4 = 13,
 	enumEQUIP_FAIRY = 14,
 	enumEQUIP_CLOAK = 15,
+	enumEQUIP_WINGS = 16,
+	enumEQUIP_MOUNTS = 17,
+	enumEQUIP_SWINGS = 18,
 
 	enumEQUIP_PART_NUM = 5,	// 总共五个部位
-	enumEQUIP_NUM = 16,	// 装备部位的个数
+	enumEQUIP_NUM = 19,	// 装备部位的个数
 	enumEQUIP_BOTH_HAND = 9999,  // 如果是双手武器,另一边就为这个值
 	enumEQUIP_TOTEM = 9998,  // 如果是图腾装备,其他部位就为这个值
 };
