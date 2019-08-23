@@ -259,3 +259,9 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/server/group/common.7z
+/server/group/groupserver_src.7z
+/client_src.7z
+/common.7z
+/common/common.zip
+/common

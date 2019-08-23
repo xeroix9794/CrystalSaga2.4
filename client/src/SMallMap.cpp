@@ -1714,6 +1714,7 @@ void	CCharacter2D::Render()
 	_pModel->SetUIYaw(180);
 	//_pModel->SetUIScaleDis(1);
 	_pModel->RenderUI(400,300);
+	_pModel->RenderForUI(_vp.X, _vp.Y, true);
 
 	g_Render.GetDevice()->SetViewport(&vp);
 }

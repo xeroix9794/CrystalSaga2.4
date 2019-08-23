@@ -676,11 +676,12 @@ BOOL CWorldScene::_InitUI()
 	{
 		return false;
 	}
-	HintHead = dynamic_cast<CImage*>(frmHint->Find("HintHead"));
+
+	/*HintHead = dynamic_cast<CImage*>(frmHint->Find("HintHead"));
 	if (!HintHead)
 	{
 		return false;
-	}
+	}*/
 
 	return TRUE;
 }
@@ -1344,9 +1345,12 @@ void CWorldScene::_SceneCursor()
 	}
 }
 
+
 void CWorldScene::ShowAttackHint(CCharacter* pAttackCha)
 {
 	string TMName = pAttackCha->getName();
+	
+
 	HintName->SetCaption(TMName.c_str());
 	char temp[32];
 
@@ -1361,10 +1365,10 @@ void CWorldScene::ShowAttackHint(CCharacter* pAttackCha)
 	_snprintf_s(temp, _countof(temp), _TRUNCATE, "HP: %lld/%lld", pkAttr->get(ATTR_HP), pkAttr->get(ATTR_MXHP));
 	HintHP->SetCaption(temp);
 	/* ICON */
-	static CGuiPic* Pic = HintHead->GetImage();
-	_snprintf_s(temp, _countof(temp), _TRUNCATE, "TEXTURE/UI2019/MONSTER/71.png", pAttackCha->GetDefaultChaInfo()->nID); // Edited just to load pic.
+	//static CGuiPic* Pic = HintHead->GetImage();
+	//_snprintf_s(temp, _countof(temp), _TRUNCATE, "TEXTURE/UI2019/MONSTER/71.png"); // Edited just to load pic.
 
-	Pic->LoadImage(temp, 48, 48, 0, 0, 0, 1.F, 1.F);
+	//Pic->LoadImage(temp, 48, 48, 0, 0, 0, 1.F, 1.F);
 
 	frmHint->SetIsShow(true);
 }

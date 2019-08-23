@@ -2652,9 +2652,9 @@ void CCharacter::SetHandFace(unsigned int nIndex, int nItem)
 		}
 		break;
 	case 4:
-		if (pInfo->sType != 84)
+		if (pInfo->sType != enumItemTypeSwing)
 		{
-			break;
+			return;
 		}
 		else
 		{

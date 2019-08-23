@@ -1094,7 +1094,7 @@ void CEquipMgr::FrameMove(DWORD dwTime)
 		if (frmSkill->GetIsShow())
 		{
 			// 显示剩余技能点数
-			_snprintf_s(szBuf, _countof(szBuf), _TRUNCATE, "%d", pGameAttr->get(ATTR_TP));
+			_snprintf_s(szBuf, _countof(szBuf), _TRUNCATE, "%lld", pGameAttr->get(ATTR_TP));
 			labPoint->SetCaption(szBuf);
 
 			//_snprintf_s( szBuf, _countof( szBuf ), _TRUNCATE , "%d", pGameAttr->get(ATTR_LIFETP) );

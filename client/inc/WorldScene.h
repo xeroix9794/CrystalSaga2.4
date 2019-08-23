@@ -114,6 +114,7 @@ private:
 	CLabelEx* HintName;
 	CProgressBar* HintHP;
 	void ShowAttackHint(CCharacter* pAttackCha);
+
 private:
 	static BYTE		_bAttackRed, _bAttackGreen, _bAttackBlue;
 

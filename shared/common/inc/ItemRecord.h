@@ -71,6 +71,7 @@ enum EItemType
 	enumItemTypePetFodder	= 57,	// 宠物饲料
 	enumItemTypePetSock		= 58,	// 能量零食
 	enumItemTypePet			= 59,	// 守护精灵
+	enumItemTypeSwing		= 84,
 	enumItemTypeCloak		= 88,
 
 	// Add by lark.li 20080514 begin
