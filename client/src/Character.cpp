@@ -1657,11 +1657,11 @@ bool CCharacter::PlayPose( DWORD pose, DWORD type, int time, int fps, bool isBle
 		if(pose == POSE_SEAT)  pose = POSE_FLY_SEAT;	// ×øÏÂ -> ¿ÕÖÐÐü¿Õ×ø 
 	}
 #endif
-	//if (!GetIsFly() && GetIsSit())
-	//{
-		//if (GetCurPoseType() == POSE_WAITING)
-			//pose = POSE_SEAT2;
-	//}
+	if (GetIsSit())
+	{
+		if (pose == POSE_WAITING || pose == POSE_WAITING2)
+			pose = POSE_SEAT2;
+	}
     if( (GetCurPoseType()==POSE_RUN2) || (GetCurPoseType()==POSE_RUN) || GetCurPoseType() == POSE_FLY_RUN)
     {
         if( (pose!=POSE_RUN2) && (pose!=POSE_RUN) && (pose!=POSE_FLY_RUN))
@@ -2131,11 +2131,11 @@ void CCharacter::SynchroSkillState( stSkillState* pState, int nCount )
 				switch( CChaStateMgr::GetLastShopLevel() )
 				{
 				case 1:
-					// PlayPose( POSE_WAITING, PLAY_LOOP_SMOOTH );
+					PlayPose( POSE_WAITING, PLAY_LOOP_SMOOTH );
 					_pShopItem = _pScene->AddSceneItem( "baitan1.lgo" );
 					break;
 				default:
-					// PlayPose( POSE_SEAT, PLAY_LOOP_SMOOTH );
+					 PlayPose( POSE_SEAT, PLAY_LOOP_SMOOTH );
 					_pShopItem = _pScene->AddSceneItem( "baitan2.lgo" );
 					break;
 				}
@@ -2181,11 +2181,11 @@ void CCharacter::SynchroSkillState( stSkillState* pState, int nCount )
 		}
 	}
 
-	//if( set.IsTrue(enumChaStateMove) != _ChaState.IsTrue(enumChaStateMove) )
-	//{
-	//	if( set.IsTrue( enumChaStateMove ) ) PlayPoseContinue();
-	//	else PlayPosePause();
-	//}
+	if( set.IsTrue(enumChaStateMove) != _ChaState.IsTrue(enumChaStateMove) )
+	{
+		if( set.IsTrue( enumChaStateMove ) ) PlayPoseContinue();
+		else PlayPosePause();
+	}
 
 	if( set.IsTrue( enumChaStateNoDizzy ) != _ChaState.IsTrue( enumChaStateNoDizzy ) )
 	{
@@ -2228,11 +2228,11 @@ void CCharacter::RefreshShopShop()
 		switch( CChaStateMgr::GetLastShopLevel() )
 		{
 		case 1:
-			// PlayPose( POSE_WAITING, PLAY_LOOP_SMOOTH );
+			 PlayPose( POSE_WAITING, PLAY_LOOP_SMOOTH );
 			_pShopItem = _pScene->AddSceneItem( "baitan1.lgo" );
 			break;
 		default:
-			// PlayPose( POSE_SEAT, PLAY_LOOP_SMOOTH );
+			 PlayPose( POSE_SEAT, PLAY_LOOP_SMOOTH );
 			_pShopItem = _pScene->AddSceneItem( "baitan2.lgo" );
 			break;
 		}
@@ -2852,14 +2852,14 @@ void CCharacter::KosDemoControl()
 
 bool CCharacter::GetIsSit()
 {
-	int nID = GetHandFace(0);
+	int nID = GetHandFace(4);
 	return(nID > 9000) ? true : false;
 }
 
 bool CCharacter::GetIsFly()
 {
-	int nID = GetItemFace(0);
-	return (128 <= nID && nID <= 140 && nID != 135 && GetHandFace(0) < 9000) ? true : false;
+	int nID = GetHandFace(2);
+	return (128 <= nID && nID <= 140 && nID != 135 && GetHandFace(4) < 9000) ? true : false;
 
 	//CItemRecord* pItem = GetItemRecordInfo(GetItemFace(0));
 	//return (pItem && pItem->sType == 44 && _Attr.get(ATTR_SAILLV) > 0) ? true : false;

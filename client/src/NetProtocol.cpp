@@ -2118,6 +2118,27 @@ void NetFace(DWORD dwCharID, stNetFace& netface, char chType)
 	}
 }
 
+bool IsPetFairy(int itemID)
+{
+	bool isPet = false;
+	if (itemID >= 183 && itemID <= 191)
+		isPet = true;
+	else if (itemID >= 232 && itemID <= 237)
+		isPet = true;
+	else if (itemID == 680)
+		isPet = true;
+	else if (itemID == 681)
+		isPet = true;
+	else if (itemID == 7125)
+		isPet = true;
+	else if (itemID == 7126)
+		isPet = true;
+	else
+		isPet = false;
+
+	return isPet;
+}
+
 void NetChangeKitbag(DWORD dwChaID, stNetKitbag& SKitbag)
 {
 #ifdef _TEST_CLIENT
@@ -2187,6 +2208,7 @@ void NetChangeKitbag(DWORD dwChaID, stNetKitbag& SKitbag)
 
 	CItemRecord* item = NULL;
 	int nMarginNum = 0;
+
     for( int i=0; i<count; i++ )
     {
 //      LG( "kitbag", "ID:%u, GridID:%d, Num:%d\n", pGrid[i].SGridContent.sID, pGrid[i].sGridID, pGrid[i].SGridContent.sNum );
@@ -2226,6 +2248,7 @@ void NetChangeKitbag(DWORD dwChaID, stNetKitbag& SKitbag)
 			{
 				g_stUIStart.RefreshPet( pObj );
 			}
+
 
 			if( SKitbag.chBagType!=1 && nMarginNum > 0 )	// modify by Philip.Wu  2006-06-21  拾起0个的BUG修正
 			{
@@ -2290,6 +2313,17 @@ void NetChangeKitbag(DWORD dwChaID, stNetKitbag& SKitbag)
     default:
         g_pGameApp->PlaySound( 22 );
     }
+
+	CItemCommand* pItem = NULL;
+
+		pItem = g_stUIEquip.GetEquipItem(enumEQUIP_FAIRY);
+		if (pItem && IsPetFairy(pItem->GetData().sID) == true)
+		{
+			//char tmp[100];
+			//sprintf_s(tmp, _TRUNCATE, "NID = %d", pItem->GetData().sID);
+			//MessageBoxA(0, tmp, "", 0);
+			g_stUIStart.RefreshPet(pItem);
+		}
 }
 
 // 同步背包容量
@@ -2845,9 +2879,9 @@ void stNetAppendLook::Exec(CCharacter* pCha)
 {
 	if (!pCha) return;
 
-	pCha->SetItemFace(0, sLookID[0]);
-	if (bValid[1]) pCha->SetItemFace(1, sLookID[1]);
-	else pCha->SetItemFace(1, 0);
+	//pCha->SetItemFace(0, sLookID[0]);
+	//if (bValid[1]) pCha->SetItemFace(1, sLookID[1]);
+	//else pCha->SetItemFace(1, 0);
 
 	if (bValid[3]) pCha->SetItemFace(3, sLookID[3]);
 	else pCha->SetItemFace(3, 0);

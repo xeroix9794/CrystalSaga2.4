@@ -163,6 +163,7 @@ public:
 	// ÇÐ»»³¡¾°end
 
 	void		CreateCharImg();
+	void		CreateCharImg(CCharacter* character);
 
 	void		RefreshLoadingProgress();
 

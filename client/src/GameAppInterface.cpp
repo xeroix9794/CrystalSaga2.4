@@ -1300,7 +1300,7 @@ void CGameApp::ResetCaption()
 	char szCaption[350]; 
 	//_snprintf_s(szCaption, _countof( szCaption ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_77), (float)(g_sClientVer % 1000) / 100, szSpace ); // , curr_ver.c_str());
 	_snprintf_s(szCaption, _countof( szCaption ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_77), szSpace ); // , curr_ver.c_str());
-	SetCaption("Void Saga Online - BETA");
+	SetCaption("Crystal Saga Online - BETA");
 }
 
 void CGameApp::Loading( int nFrame )

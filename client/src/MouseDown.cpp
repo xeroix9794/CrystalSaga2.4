@@ -145,8 +145,8 @@ void CMouseDown::MouseButtonDown()
 	if( !pMain ) return;
 		
 	if( !_IsEnabled ) return;
-
-	_pScene->GetSign()->Hide();
+	// BUGS EFFECTS
+	//_pScene->GetSign()->Hide();
 
 	_pScene->GetPickPos( g_pGameApp->GetMouseX(), g_pGameApp->GetMouseY(), vPos );
 	nScrX = (int)(vPos.x * 100.0f);

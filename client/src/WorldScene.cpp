@@ -321,7 +321,7 @@ void CWorldScene::_FrameMove( DWORD dwTimeParam )
         if( _cSceenSign.IsShowMove() && GetMainCha()->GetIsArrive() && GetMainCha()->GetActor()->IsEmpty() )
         {
 			_cSceenSign.Hide();
-			CGameApp::GetCurScene()->GetEffect( 536)->SetValid(FALSE);
+			//CGameApp::GetCurScene()->GetEffect( 536)->SetValid(FALSE);
         }
 
         g_stUIMap.RefreshChaPos( GetMainCha()->GetCurX(), GetMainCha()->GetCurY() );

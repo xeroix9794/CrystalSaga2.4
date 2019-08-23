@@ -1607,7 +1607,7 @@ void CStartMgr::FrameMove(DWORD dwTime)
 	static CTimeWork pet_time(300);
 	if (pet_time.IsTimeOut(dwTime))
 	{
-		CItemCommand* pItem = dynamic_cast<CItemCommand*>(g_stUIEquip.GetGoodsGrid()->GetItem(1));
+		CItemCommand* pItem = dynamic_cast<CItemCommand*>(g_stUIEquip.GetEquipItem(enumEQUIP_FAIRY));
 		if (pItem && pItem->GetItemInfo()->sType == enumItemTypePet && pItem->GetData().IsValid() && CGameScene::GetMainCha())
 		{
 			SItemGrid& Data = pItem->GetData();
@@ -1791,6 +1791,8 @@ bool CStartMgr::IsCanTeamAndInfo()
 
 void CStartMgr::RefreshPet(CItemCommand* pItem)
 {
+	//char tmp[100];
+	//MessageBoxA(0, "Your pet ID is " + pItem->GetData().sID, "", 0);
 	static CItemRecord* pInfo = NULL;
 	pInfo = pItem->GetItemInfo();
 
@@ -1804,6 +1806,9 @@ void CStartMgr::RefreshPet(CItemCommand* pItem)
 		+ s_item.sInstAttr[ITEMATTR_VAL_DEX]
 		+ s_item.sInstAttr[ITEMATTR_VAL_CON]
 		+ s_item.sInstAttr[ITEMATTR_VAL_STA];
+
+//	sprintf_s(tmp, _TRUNCATE, "PET REFRESH TRUE : ID = %d LEVEL = %d ", pItem->GetData().sID, nLevel);
+//	MessageBoxA(0, tmp, "", 0);
 
 	_snprintf_s(szBuf, _countof(szBuf), _TRUNCATE, "%d", nLevel);
 	labPetLv->SetCaption(szBuf);

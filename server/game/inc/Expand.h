@@ -36,6 +36,13 @@ inline int lua_MSG_TEST(lua_State *pLS)
 	return 1;
 T_E}
 
+inline int lua_SynLook(lua_State *pLS) {
+	CCharacter *pCha = (CCharacter*)lua_touserdata(pLS, 1);
+	pCha->SynSkillStateToEyeshot();
+	pCha->SynLook();
+	return 0;
+}
+
 // 取角色对应的属性值
 inline int lua_GetChaAttr(lua_State *pLS)
 {T_B
@@ -7896,7 +7903,7 @@ REGFN(SkillUnable);
 REGFN(AddChaSkill);
 REGFN(UseItemFailed);
 
-
+REGFN(SynLook);
 // Add by lark.li 20080721 begin
 REGFN(UseItemNoHint);
 // End

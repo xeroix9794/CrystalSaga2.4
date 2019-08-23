@@ -29,6 +29,7 @@
 #include "UIStoreForm.h"
 #include "WorldScene.h"
 #include "GuildData.h"
+#include "UIStartForm.h"
 
 using namespace GUI;
 
@@ -484,21 +485,22 @@ bool CEquipMgr::_UpdataEquip( SItemGrid& Item, int nLink )
     if( !cnmEquip[nLink] ) return false;
 
     int nItemID = Item.sID;
-    if( nItemID>0 && nItemID!=enumEQUIP_BOTH_HAND )
-    {        
-        CItemCommand* pItem = dynamic_cast<CItemCommand*>(cnmEquip[nLink]->GetCommand());
-        if( pItem && pItem->GetItemInfo()->lID==nItemID )
-        {
-	        pItem->SetData( Item );
-            return true;
-        }
+	if (nItemID > 0 && nItemID != enumEQUIP_BOTH_HAND)
+	{
+		CItemCommand* pItem = dynamic_cast<CItemCommand*>(cnmEquip[nLink]->GetCommand());
+		if (pItem && pItem->GetItemInfo()->lID == nItemID)
+		{
+			pItem->SetData(Item);
+			return true;
+		}
 
-        CItemRecord* pInfo = GetItemRecordInfo( nItemID );
-        if( !pInfo )
-        {
-            LG( "UpdataEquip", RES_STRING(CL_LANGUAGE_MATCH_555), nItemID );
-            return false;
-        }
+
+		CItemRecord* pInfo = GetItemRecordInfo(nItemID);
+		if (!pInfo)
+		{
+			LG("UpdataEquip", RES_STRING(CL_LANGUAGE_MATCH_555), nItemID);
+			return false;
+		}
 
        // pItem = new CItemCommand( pInfo );
 		 pItem = new CItemCommand( pInfo, false);//modified guojiangang 20090108

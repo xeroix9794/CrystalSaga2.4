@@ -388,6 +388,7 @@ void CMemo::Render()
 	{
 		if(i >=_nRowInfo[0][0] &&i<= _nRowInfo[0][1])
 		{
+			// Main Dialog Text Color
 			CGuiFont::s_Font.Render( (char*)_str[i].c_str(), GetX() +_nLeftMargin , GetY()+ _nTopMargin + _nRowHeight * (i- _nFirst ) ,0xFF000000 );// 0xFFFFFFFF ); 
 		}
 		else if(i >=_nRowInfo[1][0] &&i<= _nRowInfo[1][1])
@@ -401,7 +402,7 @@ void CMemo::Render()
 			if( ( ( i - _nRowInfo[1][0] ) < _files.size()  ) && _files[i-_nRowInfo[1][0]].pGraph && _str[i].length() > 0)
 				_files[i-_nRowInfo[1][0]].pGraph->Render( nPosX ,nPosY - 3 );
 				
-				CGuiFont::s_Font.Render( (char*)_str[i].c_str(), nPosX + 12, nPosY, 0xFFFF00FF );
+				CGuiFont::s_Font.Render( (char*)_str[i].c_str(), nPosX + 12, nPosY, 0xFFFF00FF );//0xFF000FF
 			}
 			else
 			{
@@ -411,7 +412,7 @@ void CMemo::Render()
 				if (_files.size() > (i-_nRowInfo[1][0]) && _files[i-_nRowInfo[1][0]].pGraph && _str[i].length() > 0)
 					_files[i-_nRowInfo[1][0]].pGraph->Render( nPosX, nPosY - 2 );
 
-				CGuiFont::s_Font.Render( (char*)_str[i].c_str(), nPosX + 12, nPosY + 1, 0xFFcF00cF );
+				CGuiFont::s_Font.Render( (char*)_str[i].c_str(), nPosX + 12, nPosY + 1, 0xFFe523dc); //0xFFcF00cF
 			}
 		}
 		if(i >=_nRowInfo[2][0] &&i<= _nRowInfo[2][1])
@@ -420,13 +421,15 @@ void CMemo::Render()
 			{
 				int nPosX =  GetX() +_nLeftMargin;
 				int nPosY =  GetY()+ _nTopMargin + _nRowHeight * (i- _nFirst );
-				CGuiFont::s_Font.Render( (char*)_str[i].c_str(), nPosX + 24, nPosY, 0xFF0000FF );
+				// Default Page Text Color (HOVER)
+				CGuiFont::s_Font.Render((char*)_str[i].c_str(), nPosX + 24, nPosY, 0xFF3ceee3); //0xFF000FF ); 
 			}
 			else
 			{
 				int nPosX =  GetX() +_nLeftMargin;
 				int nPosY =  GetY()+ _nTopMargin + _nRowHeight * (i- _nFirst );
-				CGuiFont::s_Font.Render( (char*)_str[i].c_str(), nPosX + 24, nPosY + 1, 0xFF0000aF );
+				// Default Page Text Color (NON-HOVER)
+				CGuiFont::s_Font.Render((char*)_str[i].c_str(), nPosX + 24, nPosY + 1, 0xFFae00ff);// 0xFF0000aF );
 			}
 		}
 	}

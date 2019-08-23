@@ -839,6 +839,7 @@ bool CCharacter::SetKitbagItemValid(dbc::Short sPosID, bool bValid, bool bRechec
 
 	if (bSyn)
 		GetKitbag()->SetChangeFlag(false);
+	/*
 	Short sEspeGridID = 1;
 	if (sPosID == sEspeGridID)
 	{
@@ -867,7 +868,7 @@ bool CCharacter::SetKitbagItemValid(dbc::Short sPosID, bool bValid, bool bRechec
 				SynAttrToSelf(enumATTRSYN_ITEM_EQUIP);
 			}
 		}
-	}
+	}*/
 	pSEspeGrid->SetValid(bValid);
 	if (bSyn)
 		SynKitbagNew(enumSYN_KITBAG_ATTR);
@@ -998,7 +999,8 @@ Short CCharacter::KbPushItem(bool bRecheckAttr, bool bSynAttr, SItemGrid *pGrid,
 			CItemRecord* pItem = GetItemRecordInfo(pGrid->sID);
 			if(pItem == NULL)
 				return enumKBACT_ERROR_PUSHITEMID;
-			if (pItem->sType == enumItemTypePet)
+		
+			/*if (pItem->sType == enumItemTypePet)
 			{
 				if (bSynAttr)
 				{
@@ -1018,7 +1020,7 @@ Short CCharacter::KbPushItem(bool bRecheckAttr, bool bSynAttr, SItemGrid *pGrid,
 						SyncBoatAttr(enumATTRSYN_ITEM_EQUIP);
 					SynAttrToSelf(enumATTRSYN_ITEM_EQUIP);
 				}
-			}
+			}*/
 		}
 	}
 
@@ -1039,7 +1041,8 @@ Short CCharacter::KbPopItem(bool bRecheckAttr, bool bSynAttr, SItemGrid *pGrid, 
 			CItemRecord* pItem = GetItemRecordInfo(pGrid->sID);
 			if(pItem == NULL)
 				return enumKBACT_ERROR_PUSHITEMID;
-			if (pItem->sType == enumItemTypePet)
+			
+			/*if (pItem->sType == enumItemTypePet)
 			{
 				if (bSynAttr)
 				{
@@ -1059,7 +1062,7 @@ Short CCharacter::KbPopItem(bool bRecheckAttr, bool bSynAttr, SItemGrid *pGrid, 
 						SyncBoatAttr(enumATTRSYN_ITEM_EQUIP);
 					SynAttrToSelf(enumATTRSYN_ITEM_EQUIP);
 				}
-			}
+			}*/
 		}
 	}
 
@@ -1079,7 +1082,7 @@ Short CCharacter::KbClearItem(bool bRecheckAttr, bool bSynAttr, Short sPosID, Sh
 		if (pItem->sType == enumItemTypePet)
 			SGrid = *pGrid;
 		Short sRet = GetKitbag()->Clear(sPosID, sType);
-		if (sRet == enumKBACT_SUCCESS)
+		/*if (sRet == enumKBACT_SUCCESS)
 		{
 			if (pItem->sType == enumItemTypePet) // ³èÎï
 			{
@@ -1102,7 +1105,7 @@ Short CCharacter::KbClearItem(bool bRecheckAttr, bool bSynAttr, Short sPosID, Sh
 					SynAttrToSelf(enumATTRSYN_ITEM_EQUIP);
 				}
 			}
-		}
+		}*/
 		return sRet;
 	}
 	else
@@ -1122,7 +1125,7 @@ Short CCharacter::KbClearItem(bool bRecheckAttr, bool bSynAttr, SItemGrid *pGrid
 		SItemGrid SGrid = *pGrid;
 		Short sPosID;
 		Short sRet = GetKitbag()->Clear(pGrid, sNum, &sPosID);
-		if (sRet == enumKBACT_SUCCESS)
+	/*	if (sRet == enumKBACT_SUCCESS)
 		{
 			if (sPosID == sEspeGridID) // ÌØÊâ¸ñ
 			{
@@ -1148,7 +1151,7 @@ Short CCharacter::KbClearItem(bool bRecheckAttr, bool bSynAttr, SItemGrid *pGrid
 					}
 				}
 			}
-		}
+		}*/
 		return sRet;
 	}
 	else
@@ -1157,7 +1160,7 @@ Short CCharacter::KbClearItem(bool bRecheckAttr, bool bSynAttr, SItemGrid *pGrid
 
 Short CCharacter::KbRegroupItem(bool bRecheckAttr, bool bSynAttr, Short sSrcPosID, Short sSrcNum, Short sTarPosID, Short sType)
 {
-	Short sEspeGridID = 1;
+	/*Short sEspeGridID = 1;
 	if (sSrcPosID == sEspeGridID || sTarPosID == sEspeGridID)
 	{
 		if (bSynAttr)
@@ -1203,7 +1206,7 @@ Short CCharacter::KbRegroupItem(bool bRecheckAttr, bool bSynAttr, Short sSrcPosI
 		return sRet;
 	}
 	else
-		return GetKitbag()->Regroup(sSrcPosID, sSrcNum, sTarPosID, sType);
+	*/	return GetKitbag()->Regroup(sSrcPosID, sSrcNum, sTarPosID, sType);
 }
 
 void CCharacter::CheckBagItemValid(CKitbag* pCBag)
