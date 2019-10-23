@@ -30,6 +30,7 @@ public:
 
     // 设置显示的血条:num血量，max总血量,attacknum被攻击的数字
     void			SetLifeNum(int num, int max);
+	void			SetSPNum(int num, int max);
     void			SetIsShowLife( bool v )		{ _IsShowLife = v;		}
     bool			GetIsShowLife()				{ return _IsShowLife;	}
 
@@ -43,7 +44,8 @@ public:
     static CGuiPic* GetFacePic( unsigned int n ) { if( n>=FACE_MAX) return NULL; return &_pImgFace[n]; }
     static CGuiPic* GetShopPic( unsigned int n ) { if( n>=3) return NULL; return &_ImgShop[n]; }
 
-    static CGuiPic* GetLifePic()			{ return _pImgLife;					}
+	static CGuiPic* GetLifePic() { return _pImgLife; }
+	static CGuiPic* GetSPPic() { return _pImgMana; }
     static CGuiPic* GetLeaderPic()			{ return _pImgTeamLeaderFlag;		}
 
 	static void		SetBkgColor( DWORD v )	{ _dwBkgColor=v;					}
@@ -72,10 +74,13 @@ private:	// 显示攻击效果时，血量变化
     static int			_nMaxShowLifeTime;	// 最大显示多长时间
 
     static CGuiPic*		_pImgLife;
+	static CGuiPic*		_pImgMana;
     static CGuiPic*		_pImgTeamLeaderFlag;// 显示在队长头上的标志
 
     float				_fLifeW;
-
+	float			    _fManaW;
+	bool				_ShowHPMPText;
+	bool				_ShowMPBar;
     static unsigned int	_nFaceFrequency;
 
     static CGuiPic*	_pImgFace;

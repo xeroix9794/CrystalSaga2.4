@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>190</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LETimer::_liStartTime' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LETimer::{ctor}</FUNCTION>
+    <DECORATED>??0LETimer@@QAE@XZ</DECORATED>
+    <FUNCLINE>190</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>224</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBlockData::_nWidth' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBlockData::{ctor}</FUNCTION>
+    <DECORATED>??0CBlockData@@QAE@XZ</DECORATED>
+    <FUNCLINE>224</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>224</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBlockData::_nHeight' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBlockData::{ctor}</FUNCTION>
+    <DECORATED>??0CBlockData@@QAE@XZ</DECORATED>
+    <FUNCLINE>224</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>224</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBlockData::_nByteWidth' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBlockData::{ctor}</FUNCTION>
+    <DECORATED>??0CBlockData@@QAE@XZ</DECORATED>
+    <FUNCLINE>224</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>245</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>6029</DEFECTCODE>
+    <DESCRIPTION>Possible buffer overrun in call to 'fread':  use of unchecked value 'this'.</DESCRIPTION>
+    <FUNCTION>CBlockData::Load</FUNCTION>
+    <DECORATED>?Load@CBlockData@@QAEHPBD@Z</DECORATED>
+    <FUNCLINE>231</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>245</LINE>
+      <COLUMN>27</COLUMN>
+    </SFA>
+    <DEFECTCODE>6029</DEFECTCODE>
+    <DESCRIPTION>Possible buffer overrun in call to 'fread':  use of unchecked value 'this'.</DESCRIPTION>
+    <FUNCTION>CBlockData::Load</FUNCTION>
+    <DECORATED>?Load@CBlockData@@QAEHPBD@Z</DECORATED>
+    <FUNCLINE>231</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>stacktrace.h</FILENAME>
+      <LINE>94</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>TraceableException::{dtor}</FUNCTION>
+    <DECORATED>??1TraceableException@@UAE@XZ</DECORATED>
+    <FUNCLINE>94</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>db3.h</FILENAME>
+      <LINE>174</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSQLBase::m_bConvertQuotes' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSQLBase::{ctor}</FUNCTION>
+    <DECORATED>??0CSQLBase@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>174</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>db3.h</FILENAME>
+      <LINE>227</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSQLException::m_nRetCode' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSQLException::{ctor}</FUNCTION>
+    <DECORATED>??0CSQLException@@AAE@ABV0@@Z</DECORATED>
+    <FUNCLINE>227</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\src</FILEPATH>
+      <FILENAME>sectiondata.cpp</FILENAME>
+      <LINE>5</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSectionDataMgr::_nSectionCntY' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSectionDataMgr::{ctor}</FUNCTION>
+    <DECORATED>??0CSectionDataMgr@@IAE@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\src</FILEPATH>
+      <FILENAME>sectiondata.cpp</FILENAME>
+      <LINE>5</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSectionDataMgr::_nSectionCntX' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSectionDataMgr::{ctor}</FUNCTION>
+    <DECORATED>??0CSectionDataMgr@@IAE@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\src</FILEPATH>
+      <FILENAME>sectiondata.cpp</FILENAME>
+      <LINE>5</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSectionDataMgr::_szFileName' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSectionDataMgr::{ctor}</FUNCTION>
+    <DECORATED>??0CSectionDataMgr@@IAE@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\src</FILEPATH>
+      <FILENAME>sectiondata.cpp</FILENAME>
+      <LINE>5</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSectionDataMgr::_nSectionStartY' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSectionDataMgr::{ctor}</FUNCTION>
+    <DECORATED>??0CSectionDataMgr@@IAE@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\src</FILEPATH>
+      <FILENAME>sectiondata.cpp</FILENAME>
+      <LINE>5</LINE>
+      <COLUMN>17</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSectionDataMgr::_nSectionStartX' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSectionDataMgr::{ctor}</FUNCTION>
+    <DECORATED>??0CSectionDataMgr@@IAE@XZ</DECORATED>
+    <FUNCLINE>5</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\src</FILEPATH>
+      <FILENAME>sectiondata.cpp</FILENAME>
+      <LINE>74</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: '_chmod'.</DESCRIPTION>
+    <FUNCTION>CSectionDataMgr::CreateFromFile</FUNCTION>
+    <DECORATED>?CreateFromFile@CSectionDataMgr@@QAEHPBDH@Z</DECORATED>
+    <FUNCLINE>61</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

@@ -14,12 +14,15 @@ namespace GUI
 class CCommandObj : public CItemObj
 {
 public:
-	CCommandObj() : _nFast(0), nTag(0), _pParent(NULL) ,_bTrade(false), _nIndex(defCommandDefaultIndex) {}
+	CCommandObj() : _nFast(0), nTag(0), _pParent(NULL), _bTrade(false), _nIndex(defCommandDefaultIndex), lastIndex(-1), hoverValue(false) {}
 	virtual ~CCommandObj();
     ITEM_CLONE(CCommandObj)
 
     bool	        Exec();         // 用户选择时执行
-
+	bool			hoverValue;
+	bool			IsHover() { return hoverValue; }
+	void			SetHover(bool isHover) { hoverValue = isHover; }
+	int				lastIndex;
 	virtual bool	MouseDown(){ return false;	} //鼠标按下
 
 	virtual	void	SaleRender( int x, int y, int nWidth, int nHeight )	{}

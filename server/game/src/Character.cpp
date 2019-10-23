@@ -618,6 +618,8 @@ void CCharacter::OnBeginSeen(CCharacter *pCCha)
 	
 	pCCha->ReflectINFof(this,pk);//通告
 
+	pCCha->m_Mount = pCCha->getAttr(ATTR_EXTEND9);
+
 	//printf("packet size = %d [%s]\n", pk.HasData(), GetName());
 T_E}
 
@@ -888,9 +890,15 @@ bool CCharacter::SetKitbagItemValid(SItemGrid* pSItem, bool bValid, bool bRechec
 // 影响外观的道具，如翅膀，宠物等.
 bool CCharacter::ItemIsAppendLook(SItemGrid* pSItem)
 {
+
 	if (!pSItem)
 		return false;
 	CItemRecord* pItemRec = GetItemRecordInfo( pSItem->sID );
+
+//	if (pItemRec->sType == 89) {
+//		this->setAttr(ATTR_EXTEND9, pItemRec->sItemEffect[0]);
+//	}
+
 	if (!pItemRec)
 		return false;
 	return pItemRec->IsFaceItem();
@@ -7377,6 +7385,7 @@ void CCharacter::SynBeginTiger()
 
 void CCharacter::SynAppendLook()
 {
+
 	WPACKET packet = GETWPACKET();
 	WRITE_CMD(packet, CMD_MC_APPEND_LOOK);
 	WRITE_LONG(packet, GetID());

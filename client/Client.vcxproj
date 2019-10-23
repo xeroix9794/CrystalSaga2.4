@@ -301,6 +301,7 @@
     <ClCompile Include="src\FlashPlayer.cpp" />
     <ClCompile Include="src\Language.cpp" />
     <ClCompile Include="src\LEEditor.cpp" />
+    <ClCompile Include="src\Mount.cpp" />
     <ClCompile Include="src\MPEditor.cpp" />
     <ClCompile Include="src\ShipFactory.cpp" />
     <ClCompile Include="src\state_reading.cpp" />
@@ -322,6 +323,7 @@
     <ClCompile Include="src\UIMailForm.cpp" />
     <ClCompile Include="src\UINumAnswer.cpp" />
     <ClCompile Include="src\UIPKSilverForm.cpp" />
+    <ClCompile Include="src\UIPortalTime.cpp" />
     <ClCompile Include="src\UIRumBuyForm.cpp" />
     <ClCompile Include="src\UIRumDealForm.cpp" />
     <ClCompile Include="src\UIRumGetForm.cpp" />
@@ -548,6 +550,7 @@
     <ClInclude Include="inc\Language.h" />
     <ClInclude Include="inc\MonsterSet.h" />
     <ClInclude Include="inc\LEEditor.h" />
+    <ClInclude Include="inc\Mount.h" />
     <ClInclude Include="inc\MusicInterface.h" />
     <ClInclude Include="inc\Readme.h" />
     <ClInclude Include="inc\ShipFactory.h" />
@@ -570,6 +573,7 @@
     <ClInclude Include="inc\UIMailForm.h" />
     <ClInclude Include="inc\UINumAnswer.h" />
     <ClInclude Include="inc\UIPKSilverForm.h" />
+    <ClInclude Include="inc\UIPortalTime.h" />
     <ClInclude Include="inc\UIRumBuyForm.h" />
     <ClInclude Include="inc\UIRumDealForm.h" />
     <ClInclude Include="inc\UIRumGetForm.h" />

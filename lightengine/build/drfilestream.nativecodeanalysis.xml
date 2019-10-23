@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>46</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXVECTOR2::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXVECTOR2::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXVECTOR2@@QAE@XZ</DECORATED>
+    <FUNCLINE>46</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>46</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXVECTOR2::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXVECTOR2::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXVECTOR2@@QAE@XZ</DECORATED>
+    <FUNCLINE>46</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>133</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXVECTOR4::w' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXVECTOR4::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXVECTOR4@@QAE@XZ</DECORATED>
+    <FUNCLINE>133</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>133</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXVECTOR4::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXVECTOR4::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXVECTOR4@@QAE@XZ</DECORATED>
+    <FUNCLINE>133</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>133</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXVECTOR4::z' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXVECTOR4::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXVECTOR4@@QAE@XZ</DECORATED>
+    <FUNCLINE>133</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>133</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXVECTOR4::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXVECTOR4::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXVECTOR4@@QAE@XZ</DECORATED>
+    <FUNCLINE>133</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>332</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXQUATERNION::z' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXQUATERNION@@QAE@XZ</DECORATED>
+    <FUNCLINE>332</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>332</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXQUATERNION::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXQUATERNION@@QAE@XZ</DECORATED>
+    <FUNCLINE>332</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>332</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXQUATERNION::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXQUATERNION@@QAE@XZ</DECORATED>
+    <FUNCLINE>332</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>332</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXQUATERNION::w' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXQUATERNION::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXQUATERNION@@QAE@XZ</DECORATED>
+    <FUNCLINE>332</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>377</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXPLANE::b' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXPLANE::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXPLANE@@QAE@XZ</DECORATED>
+    <FUNCLINE>377</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>377</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXPLANE::a' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXPLANE::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXPLANE@@QAE@XZ</DECORATED>
+    <FUNCLINE>377</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>377</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXPLANE::d' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXPLANE::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXPLANE@@QAE@XZ</DECORATED>
+    <FUNCLINE>377</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>377</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXPLANE::c' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXPLANE::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXPLANE@@QAE@XZ</DECORATED>
+    <FUNCLINE>377</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>408</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXCOLOR::a' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXCOLOR::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXCOLOR@@QAE@XZ</DECORATED>
+    <FUNCLINE>408</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>408</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXCOLOR::g' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXCOLOR::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXCOLOR@@QAE@XZ</DECORATED>
+    <FUNCLINE>408</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>408</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXCOLOR::b' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXCOLOR::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXCOLOR@@QAE@XZ</DECORATED>
+    <FUNCLINE>408</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\directx\inc</FILEPATH>
+      <FILENAME>d3dx8math.h</FILENAME>
+      <LINE>408</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'D3DXCOLOR::r' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>D3DXCOLOR::{ctor}</FUNCTION>
+    <DECORATED>??0D3DXCOLOR@@QAE@XZ</DECORATED>
+    <FUNCLINE>408</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_31' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_22' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_12' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_21' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::m' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_23' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_13' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_11' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_42' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_41' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_33' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_32' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>531</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_43' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>531</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_31' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_22' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_12' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_21' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::m' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_23' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_13' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_11' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_42' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_41' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_33' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_32' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>544</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix43::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_43' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix43::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix43@LightEngine@@QAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>544</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>663</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drRound::r' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drRound::{ctor}</FUNCTION>
+    <DECORATED>??0drRound@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>663</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.h</FILENAME>
+      <LINE>673</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drSphere::r' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drSphere::{ctor}</FUNCTION>
+    <DECORATED>??0drSphere@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>673</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>12</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector2::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector2::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector2@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>12</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>12</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector2::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector2::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector2@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>12</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>127</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector2i::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector2i::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector2i@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>127</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>127</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector2i::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector2i::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector2i@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>127</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>240</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector3i::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector3i::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector3i@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>240</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>240</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector3i::z' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector3i::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector3i@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>240</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>240</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector3i::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector3i::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector3i@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>240</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>376</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector3::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector3::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector3@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>376</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>376</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector3::z' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector3::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector3@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>376</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>376</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector3::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector3::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector3@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>376</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>512</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector4::w' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector4::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector4@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>512</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>512</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector4::z' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector4::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector4@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>512</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>512</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector4::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector4::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector4@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>512</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>512</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drVector4::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drVector4::{ctor}</FUNCTION>
+    <DECORATED>??0_drVector4@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>512</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_44' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_21' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_42' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_43' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_11' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_34' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_14' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_13' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_24' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_22' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_31' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_23' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_33' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_12' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_32' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::m' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>647</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drMatrix44::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_41' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drMatrix44::{ctor}</FUNCTION>
+    <DECORATED>??0_drMatrix44@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>647</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>829</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drQuaternion::w' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drQuaternion::{ctor}</FUNCTION>
+    <DECORATED>??0_drQuaternion@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>829</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>829</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drQuaternion::x' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drQuaternion::{ctor}</FUNCTION>
+    <DECORATED>??0_drQuaternion@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>829</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>829</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drQuaternion::z' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drQuaternion::{ctor}</FUNCTION>
+    <DECORATED>??0_drQuaternion@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>829</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>829</LINE>
+      <COLUMN>25</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drQuaternion::y' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drQuaternion::{ctor}</FUNCTION>
+    <DECORATED>??0_drQuaternion@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>829</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_33' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::m' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_11' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_13' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_32' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_21' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_12' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_22' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_31' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>962</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drMatrix33::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::_23' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drMatrix33::{ctor}</FUNCTION>
+    <DECORATED>??0drMatrix33@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>962</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>1132</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drPlane::b' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drPlane::{ctor}</FUNCTION>
+    <DECORATED>??0_drPlane@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>1132</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>1132</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drPlane::c' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drPlane::{ctor}</FUNCTION>
+    <DECORATED>??0_drPlane@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>1132</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>1132</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drPlane::a' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drPlane::{ctor}</FUNCTION>
+    <DECORATED>??0_drPlane@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>1132</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>drmath.inl</FILENAME>
+      <LINE>1132</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::_drPlane::d' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::_drPlane::{ctor}</FUNCTION>
+    <DECORATED>??0_drPlane@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>1132</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\inc</FILEPATH>
+      <FILENAME>dritypes2.h</FILENAME>
+      <LINE>515</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drStateCtrl::_state_seq' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drStateCtrl::{ctor}</FUNCTION>
+    <DECORATED>??0drStateCtrl@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>515</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\lightengine\src</FILEPATH>
+      <FILENAME>drfilestream.cpp</FILENAME>
+      <LINE>10</LINE>
+      <COLUMN>14</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LightEngine::drFileStream::_fsoi' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LightEngine::drFileStream::{ctor}</FUNCTION>
+    <DECORATED>??0drFileStream@LightEngine@@QAE@XZ</DECORATED>
+    <FUNCLINE>10</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

@@ -3,7 +3,9 @@
 #include "UIItem.h"
 #include "UICommand.h"
 #include "UIFormMgr.h"
-
+#include "UIEquipForm.h"
+#include "UIItemCommand.h"
+#include "UIBoxForm.h"
 using namespace GUI;
 
 //---------------------------------------------------------------------------
@@ -16,14 +18,14 @@ int CGoodsGrid::_nTmpRow	= 0;
 int CGoodsGrid::_nTmpCol	= 0;
 
 CGoodsGrid::CGoodsGrid(CForm& frmOwn)
-: CCommandCompent(frmOwn)
-, _nLeftMargin(0), _nTopMargin(0), _nRightMargin(0), _nBottomMargin(0)
-, _nUnitHeight(32), _nUnitWidth(32)
-, _nSpaceX(2), _nSpaceY(2)
-, _nRow(0), _nCol(0), _nMaxNum(0), _pItems(NULL)
-, _nFirst(0), _nLast(0), _nTmpIndex(0), _eShowStyle(enumSmall)
-, evtThrowItem(NULL), evtSwapItem(NULL), evtUseCommand(NULL), evtBeforeAccept(NULL), evtRMouseEvent(NULL)
-, _nCurNum(0), _IsShowHint(true)
+	: CCommandCompent(frmOwn)
+	, _nLeftMargin(0), _nTopMargin(0), _nRightMargin(0), _nBottomMargin(0)
+	, _nUnitHeight(32), _nUnitWidth(32)
+	, _nSpaceX(2), _nSpaceY(2)
+	, _nRow(0), _nCol(0), _nMaxNum(0), _pItems(NULL)
+	, _nFirst(0), _nLast(0), _nTmpIndex(0), _eShowStyle(enumSmall)
+	, evtThrowItem(NULL), evtSwapItem(NULL), evtUseCommand(NULL), evtBeforeAccept(NULL), evtRMouseEvent(NULL)
+	, _nCurNum(0), _IsShowHint(true), lastIndex(-1), lastHover(0), lastItemHover(NULL)
 {
 	_pImage = new CGuiPic( this );
 	_pUnit = new CGuiPic( this );
@@ -246,17 +248,63 @@ extern	bool	_wait_select_lock_item_state_;	//	用户已经使用锁道具，正在等待选择被
 
 bool CGoodsGrid::MouseRun( int x, int y, DWORD key )
 {
+	int hoverCheck = 0;
 	if( !IsNormal() ) return false;
-
+	x += 10;
 	if( InRect( x, y ) )
 	{
 		if( (key & Mouse_LDown) && !_isChild && GetActive()!=this ) _SetActive();
 
 		if( _pScroll->MouseRun( x, y, key ) ) return true;
 		
-		_GetHitItem( x, y );
-		if( _nTmpIndex==-1 ) return true;
+		int tmpItem = _GetHitItem( x, y );
+		if (_nTmpIndex == -1)
+		{
+			if (lastIndex != -1)
+			{
+				if (_pItems[lastIndex] != lastItemHover) lastItemHover->SetIsSolid(true); lastItemHover = _pItems[lastIndex];
+				_pItems[lastIndex]->SetIsSolid(true);
+				lastHover = 0;
+			}
+			return true;
+		}
 
+		/// Item Hover
+		if (_pItems[_nTmpIndex]) {
+
+			if (lastIndex == -1) lastIndex = _nTmpIndex; _pItems[_nTmpIndex]->lastIndex = _nTmpIndex;
+
+			if (_pItems[_nTmpIndex]->GetIsSolid() && InRect(x, y) && lastIndex == _nTmpIndex && lastHover == 0)
+			{
+
+					_pItems[_nTmpIndex]->SetIsSolid(false);
+					lastItemHover = _pItems[_nTmpIndex];
+					lastHover += 1;
+			}
+			else if (lastIndex == _nTmpIndex && lastHover == 1) {
+
+					_pItems[_nTmpIndex]->SetIsSolid(false);
+					lastItemHover = _pItems[_nTmpIndex];
+			}
+			else if (tmpItem != lastIndex)
+			{
+				if (_pItems[_nTmpIndex] != lastItemHover) lastItemHover->SetIsSolid(true);
+				_pItems[lastIndex]->SetIsSolid(true);
+				lastIndex = _nTmpIndex;
+				lastHover = 0;
+			}
+			else {
+				_pItems[lastIndex]->SetIsSolid(false);
+			}
+		}
+		else
+		{
+			if (lastItemHover) {
+				lastItemHover->SetIsSolid(true);
+				lastHover = 0;
+				lastIndex = -1;
+			}
+		}
 		if( key & Mouse_LDown )
 		{
 			if( _pItems[_nTmpIndex] && _pItems[_nTmpIndex]->MouseDown() ) 
@@ -265,12 +313,32 @@ bool CGoodsGrid::MouseRun( int x, int y, DWORD key )
 
         if( key & Mouse_LDB )
         {
-			if( _pItems[_nTmpIndex] )
-			{				
+			if (_pItems[_nTmpIndex])
+			{
+				/*	CItemCommand* pCmd = g_stUIEquip.GetEquipItem(enumEQUIP_MOUNTS);
+					CItemCommand* pkItemCmd = dynamic_cast<CItemCommand*>(_pItems[_nTmpIndex]);
+
+					if (pCmd) {
+						if (pCmd->GetItemInfo()->nID > 0 && pkItemCmd->GetItemInfo()->sType == 89)
+						{
+							CBoxMgr::ShowMsgBox(NULL, "Must un-equip mount before equipping a new one!", true);
+						}
+						else
+						{
+							_pItems[_nTmpIndex]->SetIsSolid(true);
+							_pItems[_nTmpIndex]->Exec();
+						}
+					}
+					else {*/
+				_pItems[_nTmpIndex]->SetIsSolid(true);
+				lastHover = 0;
+				lastIndex - 1;
 				_pItems[_nTmpIndex]->Exec();
 			}
+			
 			return true;
 		}
+
 
 		if( key & Mouse_RDown )
 		{
@@ -289,17 +357,20 @@ bool CGoodsGrid::MouseRun( int x, int y, DWORD key )
 			return true;
 		}
 
-		if( _pDrag && _pDrag->BeginMouseRun(this, _IsMouseIn, x, y, key )==CDrag::stDrag )
-		{				
-			_GetHitItem( _pDrag->GetStartX(), _pDrag->GetStartY() );
-			if( _nTmpIndex==-1 ) 
+		if (_pDrag && _pDrag->BeginMouseRun(this, _IsMouseIn, x, y, key) == CDrag::stDrag)
+		{
+			_GetHitItem(_pDrag->GetStartX(), _pDrag->GetStartY());
+			if (_nTmpIndex == -1)
 			{
 				_pDrag->Reset();
 				return true;
 			}
 
-			if( _pItems[_nTmpIndex] && _pItems[_nTmpIndex]->GetIsValid() )
+			if (_pItems[_nTmpIndex] && _pItems[_nTmpIndex]->GetIsValid())
 			{
+				_pItems[_nTmpIndex]->SetIsSolid(true);
+				lastHover = 0;
+				lastIndex = -1;
 				_pDragItem = _pItems[_nTmpIndex];
 
 				_nDragIndex = _nTmpIndex;
@@ -312,6 +383,13 @@ bool CGoodsGrid::MouseRun( int x, int y, DWORD key )
 			{
 				_pDrag->Reset();
 			}
+		}
+	}
+	else
+	{
+		if (lastIndex != -1)
+		{
+			if (lastItemHover) lastItemHover->SetIsSolid(true);
 		}
 	}
 
@@ -516,7 +594,9 @@ void CGoodsGrid::_ClearItem()
 		}
 
 		delete [] _pItems;
+		delete lastItemHover;
 		_pItems = NULL;
+		lastItemHover = NULL;
 
 		_nMaxNum = 0;
 		_nRow = 0;
@@ -562,9 +642,8 @@ void CGoodsGrid::_DragEnd( int x, int y, DWORD key )
 			if( _nTmpIndex!=_nDragIndex )
 			{
 				bool isSwap = false;
-				if( evtSwapItem ) evtSwapItem( this, _nTmpIndex, _nDragIndex, isSwap );
-
-				if( isSwap ) swap( _pItems[_nTmpIndex], _pItems[_nDragIndex] );
+				if (evtSwapItem)  evtSwapItem(this, _nTmpIndex, _nDragIndex, isSwap);
+				if (isSwap)swap(_pItems[_nTmpIndex], _pItems[_nDragIndex]);
 			}
 		}
 		return;
@@ -580,8 +659,11 @@ void CGoodsGrid::_DragEnd( int x, int y, DWORD key )
 		{
 		case enumFast:
 			break;
-		case enumAccept:
+		case enumAccept: {
 			_pItems[_nDragIndex] = NULL;
+			lastIndex = _nTmpIndex;
+			lastItemHover = _pItems[_nTmpIndex];
+		}
 			break;
 		case enumRefuse:
 			break;

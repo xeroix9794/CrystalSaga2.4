@@ -38,6 +38,7 @@ enum EChaCtrlType
 	enumCHACTRL_MONS_DBOAT	    = 9, // 沉船怪物
 
 	enumCHACTRL_PLAYER_PET      = 10, // 玩家宠物
+	enumCHACTRL_PLAYER_MOUNT	= 11,
 
 	enumCHACTRL_MONS_REPAIRABLE = 17, // 可修补怪物
 };

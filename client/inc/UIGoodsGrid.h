@@ -40,7 +40,8 @@ public:
 	virtual bool	MouseScroll( int nScroll );
 	virtual eAccept	SetCommand( CCommandObj* p, int x, int y );
 	virtual void	Reset();
-
+	int lastIndex;
+	int lastHover;
 	virtual bool	IsHandleMouse()					{ return true;			}
 	virtual CGuiPic*	GetImage()					{ return _pImage;		}
 	virtual void		SetMargin( int left, int top, int right, int bottom );
@@ -116,7 +117,7 @@ protected:
 	CGuiPic*		_pUnit;						// µ¥Ôª¸ñÍ¼Æ¬
 
 	CCommandObj**	_pItems;
-
+	CCommandObj*	lastItemHover;
 protected:
 	eShowStyle		_eShowStyle;
 

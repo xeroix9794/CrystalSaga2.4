@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+ï»¿#include "StdAfx.h"
 #include "UIGlobalVar.h"
 #include "uitextparse.h"
 #include "uiEditor.h"
@@ -50,7 +50,7 @@
 #include "UIMailForm.h"
 #include "UINumAnswer.h"
 #include "UIChurchChallenge.h"
-
+#include "UIPortalTime.h"
 #include "UILotteryForm.h"	//Add by lark.li 20080514
 #include "UIAmphitheaterForm.h" //Add by sunny.sun20080716
 
@@ -96,7 +96,7 @@ bool UIClear()
         return false;
     }
 
-    //°²È«ÊÍ·ÅÄÚ´æ by Waiting 2009-06-18
+    //Â°Â²ÃˆÂ«ÃŠÃÂ·Ã…Ã„ÃšÂ´Ã¦ by Waiting 2009-06-18
 	CGuiTime::RemoveAllTimer();
 	CItemBar::Clear();
 	UI_ReleaseItemScript();
@@ -120,7 +120,7 @@ CSystemMgr		g_stUISystem;
 CMissionMgr		g_stUIMission;
 CMisLogForm		g_stUIMisLog;
 CForgeMgr		g_stUIForge;
-
+CPortalTime g_stUIPortalTime;
 CLotteryMgr		g_stUILottery;	//Add by lark.li 20080514
 CAmphitheaterForm g_stUIAmphitheater;//Add by sunny.sun20080715
 
@@ -266,13 +266,13 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
         int iIndex = -1;
         if( g_stUIEquip.IsEquipCom( pCom ) && pSelf==g_stUIEquip.GetGoodsGrid() )
 		{
-			// ´Ó×°±¸À¸Ğ¶ÔØµÀ¾ßµ½µÀ¾ßÀ¸
+			// Â´Ã“Ã—Â°Â±Â¸Ã€Â¸ÃÂ¶Ã”Ã˜ÂµÃ€Â¾ÃŸÂµÂ½ÂµÃ€Â¾ÃŸÃ€Â¸
 			g_stUIEquip.UnfixToGrid( pCom->GetCommand(), nGridID, pCom->nTag );
 			return;
 		}
 
-		/* µÀ¾ß×°±¸¾«Á¶ */
-		// ´Ó¾«Á¶½çÃæÍÏ¶¯µ½ÎïÆ·À¸
+		/* ÂµÃ€Â¾ÃŸÃ—Â°Â±Â¸Â¾Â«ÃÂ¶ */
+		// Â´Ã“Â¾Â«ÃÂ¶Â½Ã§ÃƒÃ¦ÃÃÂ¶Â¯ÂµÂ½ÃÃ¯Ã†Â·Ã€Â¸
 		iIndex = g_stUIForge.GetForgeComIndex(pCom);
 		if (pSelf == g_stUIEquip.GetGoodsGrid()	&& -1 != iIndex)
 		{
@@ -280,8 +280,8 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
 			return;
 		}
 
-		/* µÀ¾ß×°±¸ºÏ³É */
-		// ´ÓºÏ³É½çÃæÍÏ¶¯µ½ÎïÆ·À¸
+		/* ÂµÃ€Â¾ÃŸÃ—Â°Â±Â¸ÂºÃÂ³Ã‰ */
+		// Â´Ã“ÂºÃÂ³Ã‰Â½Ã§ÃƒÃ¦ÃÃÂ¶Â¯ÂµÂ½ÃÃ¯Ã†Â·Ã€Â¸
 		if (pSelf == g_stUIEquip.GetGoodsGrid()	&& g_stUIMakeEquip.IsAllCommand(pCom))
 		{
 			if (g_stUIMakeEquip.IsRouleauCommand(pCom))
@@ -295,15 +295,15 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
 			return;
 		}
 
-		// Ìá´¿
-		// ´ÓÌá´¿½çÃæÍÏµ½ÎïÆ·À¸
+		// ÃŒÃ¡Â´Â¿
+		// Â´Ã“ÃŒÃ¡Â´Â¿Â½Ã§ÃƒÃ¦ÃÃÂµÂ½ÃÃ¯Ã†Â·Ã€Â¸
 		int nPurifyIndex = g_stUIPurify.GetItemComIndex(pCom);
 		if (pSelf == g_stUIEquip.GetGoodsGrid()	&& -1 != nPurifyIndex)
 		{
 			g_stUIPurify.DragItemToEquipGrid(nPurifyIndex);
 		}
 
-        //  ÖÆÔì
+        //  Ã–Ã†Ã”Ã¬
         iIndex = g_stUICompose.GetComIndex(pCom);
         if(pSelf == g_stUIEquip.GetGoodsGrid() && -1 != iIndex)
         {
@@ -318,7 +318,7 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
             return;
         }
 
-        //  ¶ÍÔì
+        //  Â¶ÃÃ”Ã¬
         iIndex = g_stUIFound.GetComIndex(pCom);
         if(pSelf == g_stUIEquip.GetGoodsGrid() && -1 != iIndex)
         {
@@ -333,7 +333,7 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
             return;
         }
 
-        //  Åëâ¿
+        //  Ã…Ã«Ã¢Â¿
         iIndex = g_stUICooking.GetComIndex(pCom);
         if(pSelf == g_stUIEquip.GetGoodsGrid() && -1 != iIndex)
         {
@@ -348,7 +348,7 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
             return;
         }
 
-        //  ·Ö½â
+        //  Â·Ã–Â½Ã¢
         iIndex = g_stUIBreak.GetComIndex(pCom);
         if(pSelf == g_stUIEquip.GetGoodsGrid() && -1 != iIndex)
         {
@@ -362,7 +362,7 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
     CGoodsGrid* pDrag = dynamic_cast<CGoodsGrid*>(CDrag::GetParent());
 	if( !pDrag ) return;
 
-	// ´ÓNPC´¦ÂòµÀ¾ß
+	// Â´Ã“NPCÂ´Â¦Ã‚Ã²ÂµÃ€Â¾ÃŸ
 	if( pSelf==g_stUIEquip.GetGoodsGrid() 
 		&& g_stUINpcTrade.IsNpcGoods( pDrag ) )
 	{		
@@ -370,7 +370,7 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
 		return;
 	}
 
-	// ÂôµÀ¾ß¸øNPC
+	// Ã‚Ã´ÂµÃ€Â¾ÃŸÂ¸Ã¸NPC
 	if( pDrag==g_stUIEquip.GetGoodsGrid() 
 		&& g_stUINpcTrade.IsNpcGoods( pSelf ) )
 	{
@@ -378,7 +378,7 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
 		return;
 	}
 
-	// ´Ó½»Ò×ËùÂò¶«Î÷µ½´¬²Õ Michael Chen (2005-05-27)
+	// Â´Ã“Â½Â»Ã’Ã—Ã‹Ã¹Ã‚Ã²Â¶Â«ÃÃ·ÂµÂ½Â´Â¬Â²Ã• Michael Chen (2005-05-27)
 	if ( pDrag==g_stUIBourse.GetBuyGoodsGrid() && 
 		 pSelf == g_stUIBourse.GetShipRoomGoodsGrid())
 	{			
@@ -386,7 +386,7 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
 		return;
 	}
 
-	// Íæ¼Ò¼ä½»Ò×:¼ÓÈëÒ»¸öÎïÆ·ÍÏ¶¯
+	// ÃÃ¦Â¼Ã’Â¼Ã¤Â½Â»Ã’Ã—:Â¼Ã“ÃˆÃ«Ã’Â»Â¸Ã¶ÃÃ¯Ã†Â·ÃÃÂ¶Â¯
 	if (pDrag == g_stUITrade.GetRequestGrid() &&
 		pSelf==g_stUITrade.GetPlayertradeSaleGrid())
 	{
@@ -394,7 +394,7 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
 		return;
 	}
 
-	// Íæ¼Ò¼ä½»Ò×:È¡ÏûÒ»¸öÎïÆ·½»Ò×
+	// ÃÃ¦Â¼Ã’Â¼Ã¤Â½Â»Ã’Ã—:ÃˆÂ¡ÃÃ»Ã’Â»Â¸Ã¶ÃÃ¯Ã†Â·Â½Â»Ã’Ã—
 	if( pSelf==g_stUITrade.GetRequestGrid() 
 		&&  pDrag==g_stUITrade.GetPlayertradeSaleGrid() )
 	{
@@ -402,14 +402,14 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
 		return;
 	}
 
-	// ´ÓÒøĞĞÈ¡³öÎïÆ·
+	// Â´Ã“Ã’Ã¸ÃÃÃˆÂ¡Â³Ã¶ÃÃ¯Ã†Â·
 	if ( pSelf == g_stUIEquip.GetGoodsGrid()
 		&& pDrag == g_stUIBank.GetBankGoodsGrid())
 	{
 		g_stUIBank.PopFromBank(*pDrag, *pSelf, nGridID, *pItem);
 	}
 
-	// ½«ÎïÆ·´æµ½ÒøĞĞ
+	// Â½Â«ÃÃ¯Ã†Â·Â´Ã¦ÂµÂ½Ã’Ã¸ÃÃ
 	if ( pSelf == g_stUIBank.GetBankGoodsGrid()
 		&& pDrag == g_stUIEquip.GetGoodsGrid())
 	{
@@ -430,29 +430,29 @@ void CUIInterface::_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, i
 	}
 
 
-	/* °ÚÌ¯Ïà¹Ø */
-	// ´ÓÌ¯Î»ÍÏ¶¯µ½ÎïÆ·À¸
+	/* Â°ÃšÃŒÂ¯ÃÃ Â¹Ã˜ */
+	// Â´Ã“ÃŒÂ¯ÃÂ»ÃÃÂ¶Â¯ÂµÂ½ÃÃ¯Ã†Â·Ã€Â¸
 	if (pSelf == g_stUIEquip.GetGoodsGrid()
 		&& pDrag == g_stUIBooth.GetBoothItemsGrid())
 	{
 		g_stUIBooth.PopFromBooth(*pDrag, *pSelf, nGridID, *pItem);
 	}
 
-	// ´ÓÎïÆ·À¸ÍÏ¶¯µ½Ì¯Î»
+	// Â´Ã“ÃÃ¯Ã†Â·Ã€Â¸ÃÃÂ¶Â¯ÂµÂ½ÃŒÂ¯ÃÂ»
 	if (pSelf == g_stUIBooth.GetBoothItemsGrid()
 		&& pDrag == g_stUIEquip.GetGoodsGrid())
 	{
 		g_stUIBooth.PushToBooth(*pDrag, *pSelf, nGridID, *pItem);
 	}
 
-	// ´ÓÁÙÊ±±³°üµ½±³°ü
+	// Â´Ã“ÃÃ™ÃŠÂ±Â±Â³Â°Ã¼ÂµÂ½Â±Â³Â°Ã¼
 	if (pSelf == g_stUIEquip.GetGoodsGrid() &&
 		pDrag == g_stUIStore.GetTempKitbagGrid())
 	{
 		g_stUIStore.PopFromTempKitbag(*pDrag, *pSelf, nGridID, *pItem);
 	}
 
-	// ºÚÊĞ½»Ò×
+	// ÂºÃšÃŠÃÂ½Â»Ã’Ã—
 	if (pSelf == g_stUIBlackTrade.GetBuyGoodsGrid() &&
 		pDrag == g_stUIBlackTrade.GetSaleGoodsGrid())
 	{
@@ -465,7 +465,7 @@ bool CUIInterface::_evtESCKey(char& key)
 {
 	if( key==VK_ESCAPE )
 	{
-		if( g_pGameApp->IsCtrlPress() ) return false;		// ÆÁ±Î°´¼üCtrl+[
+		if( g_pGameApp->IsCtrlPress() ) return false;		// Ã†ÃÂ±ÃÂ°Â´Â¼Ã¼Ctrl+[
 
 		if( !dynamic_cast<CWorldScene*>(CGameApp::GetCurScene()) ) return false;
 

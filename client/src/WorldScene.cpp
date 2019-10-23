@@ -85,8 +85,10 @@ BYTE		CWorldScene::_bAttackBlue		= 100;
 bool		CWorldScene::_IsShowPing		= false;
 bool		CWorldScene::_IsAutoPick		= false;
 bool		CWorldScene::_IsShowCameraInfo	= false;
-
 bool		CWorldScene::_IsThrowItemHint	= false;
+CCharacter2D* CWorldScene::pRefCha = NULL;
+CCharacter* CWorldScene::refCha = NULL;
+CImage* CWorldScene::HintHead = NULL;
 
 CWorldScene::CWorldScene(stSceneInitParam& param)
 : CGameScene(param), _pAnimLightSeq(0), _dwAnimLightNum(0), _nOldMainChaInArea(-1),_IsShowSideLife(false)
@@ -227,7 +229,15 @@ bool CWorldScene::_Init()
             }
 		}
 	}
-
+/*	CCharacter *pCha = NULL;
+	pCha = AddCharacter(41);
+	CChaRecord* chaInfo = pCha->GetDefaultChaInfo();
+	pCha->setPos(2202 * 100, 2782 * 100);
+	pCha->SetDefaultChaInfo(chaInfo);
+	pCha->EnableAI(TRUE);
+	pCha->setTypeID(4);
+	pCha->setYaw(45 - rand() % 90);
+	pCha->linkTo(GetMainCha(), 24);*/
 #ifdef USE_RENDER
 	_cFont.CreateFont(&g_Render,const_cast<char*>(RES_STRING(CL_LANGUAGE_MATCH_66)));
 #else
@@ -256,15 +266,31 @@ bool CWorldScene::_Init()
 bool CWorldScene::_Clear()
 {
     if( !CGameScene::_Clear() ) return false;
-
 	_cMouseDown.Reset();
 	return true;
+}
+
+void CWorldScene::ShowCharacterBG()
+{
+	if (CGameApp::GetCurScene()->GetSceneTypeID() == enumWorldScene)
+	{
+
+		CCharacter* pMain = CGameScene::GetMainCha();
+		
+		int nArea = pMain->GetScene()->GetTerrain()->GetTile(pMain->GetCurX() / 100, pMain->GetCurY() / 100)->getIsland();
+		CAreaInfo* pArea = GetAreaInfo(nArea);
+		char tmp[100];
+		//_snprintf_s(tmp, _countof(tmp), _TRUNCATE, "Narea : %d, area id : %d, area index %d, type %d", nArea, pArea->nID, pArea->nIndex,pArea->chType);
+		//MessageBoxA(0, tmp, "", 0);
+		g_stUIStart.showMainChaBG(nArea);
+		
+	}
 }
 
 void CWorldScene::_FrameMove( DWORD dwTimeParam )
 {
 	CGameScene::_FrameMove( dwTimeParam );
-
+	ShowCharacterBG();
 	g_Render.SetWorldViewAspect(0.0f);
 
     static DWORD dwLastTime = 0;
@@ -303,12 +329,15 @@ void CWorldScene::_FrameMove( DWORD dwTimeParam )
 					if( pArea )
 					{
 						g_pGameApp->ShowBigText( "%s", pArea->szDataName );
+						
 						g_pGameApp->PlayMusic( pArea->nMusic );
 						//g_stUIMap.RefreshMapName( pArea->szDataName );
 					}
 					else if( _pMapInfo )
 					{
 						string name = string(_pMapInfo->szName) + RES_STRING(CL_LANGUAGE_MATCH_790);
+						//ShowCharacterBG();
+
 						//g_stUIMap.RefreshMapName( name.c_str() );
 						g_pGameApp->ShowBigText( "%s", name.c_str() );
 					}
@@ -676,12 +705,17 @@ BOOL CWorldScene::_InitUI()
 	{
 		return false;
 	}
-
-	/*HintHead = dynamic_cast<CImage*>(frmHint->Find("HintHead"));
+	p3D = dynamic_cast<C3DCompent*>(frmHint->Find("d3dRef"));
+	if (!p3D)
+	{
+		return false;
+	}
+	p3D->SetRenderEvent(_RefChaRenderEvent);
+	HintHead = dynamic_cast<CImage*>(frmHint->Find("HintHead"));
 	if (!HintHead)
 	{
 		return false;
-	}*/
+	}
 
 	return TRUE;
 }
@@ -1240,11 +1274,13 @@ void CWorldScene::_SceneCursor()
 				pAttackCha->GetHeadSay()->SetIsShowName( true );
 				if( g_pGameApp->IsCtrlPress() && pMain!=pAttackCha )
 				{
-					CCursor::I()->SetFrame( CCursor::stAttack ); 
-					pAttackCha->GetHeadSay()->SetIsShowLife( !pAttackCha->IsNPC() );
-					pAttackCha->SetColor( _bAttackRed, _bAttackGreen, _bAttackBlue );
+					if (pAttackCha != pMain->pChaMount && !pAttackCha->GetIsMobMount() ) {
+						CCursor::I()->SetFrame(CCursor::stAttack);
+						pAttackCha->GetHeadSay()->SetIsShowLife(!pAttackCha->IsNPC());
+						pAttackCha->SetColor(_bAttackRed, _bAttackGreen, _bAttackBlue);
 
-					_cMouseDown.SetAttackCha( pMain->GetDefaultSkillInfo(), pAttackCha, CGameApp::GetCurTick() );
+						_cMouseDown.SetAttackCha(pMain->GetDefaultSkillInfo(), pAttackCha, CGameApp::GetCurTick());
+					}
 				}
 				else if( pAttackCha->getEvent() )
 				{
@@ -1265,12 +1301,14 @@ void CWorldScene::_SceneCursor()
 				}
 				else if( (pSkill=pMain->GetDefaultSkillInfo()) && g_SkillUse.IsAttack( pSkill, pMain, pAttackCha ) ) 
 				{
-					CCursor::I()->SetFrame( CCursor::stAttack ); 
-					this->ShowAttackHint(pAttackCha);
-					pAttackCha->GetHeadSay()->SetIsShowLife( !pAttackCha->IsNPC() );
-					pAttackCha->SetColor( _bAttackRed, _bAttackGreen, _bAttackBlue );
+					if ((pAttackCha != pMain->pChaMount) && !pAttackCha->GetIsMobMount()) {
+						CCursor::I()->SetFrame(CCursor::stAttack);
+						this->ShowAttackHint(pAttackCha);
+						pAttackCha->GetHeadSay()->SetIsShowLife(!pAttackCha->IsNPC());
+						pAttackCha->SetColor(_bAttackRed, _bAttackGreen, _bAttackBlue);
 
-					_cMouseDown.SetAttackCha( pSkill, pAttackCha, CGameApp::GetCurTick() );
+						_cMouseDown.SetAttackCha(pSkill, pAttackCha, CGameApp::GetCurTick());
+					}
 				}
 				else if( pAttackCha!=pMain && pAttackCha->IsPlayer() )
 				{
@@ -1345,32 +1383,103 @@ void CWorldScene::_SceneCursor()
 	}
 }
 
+RECT CWorldScene::GetHintRect()
+{
+	C3DCompent* p3D = dynamic_cast<C3DCompent*>(frmHint->Find("d3dRef"));
+	if (!p3D)  Error(RES_STRING(CL_LANGUAGE_MATCH_473), "", "d3dRef");
+	RECT rt;
+	rt.left = p3D->GetX();
+	rt.right = p3D->GetX2();
+	rt.top = p3D->GetY();
+	rt.bottom = p3D->GetY2();
 
+	return rt;
+}
+
+void CWorldScene::_RefChaRenderEvent(C3DCompent *pSender, int x, int y)
+{
+	g_Render.LookAt(D3DXVECTOR3(11.0f, 36.0f, 10.0f), D3DXVECTOR3(8.70f, 12.0f, 8.0f), LERender::VIEW_3DUI);
+//	y += 50;
+	char tmp[200];
+
+	drMatrix44 mat = *refCha->GetMatrix();
+	D3DXVECTOR3 scale;
+	scale.x = sqrt(mat._11 * mat._11 + mat._21 * mat._21 + mat._31 * mat._31);
+	scale.y = sqrt(mat._12 * mat._12 + mat._22 * mat._22 + mat._32 * mat._32);
+	scale.z = sqrt(mat._13 * mat._13 + mat._23 * mat._23 + mat._33 * mat._33);
+	float rotZ = D3DX_PI - atan2(mat._21, mat._11);
+	float rotY = -asin(-mat._31 / scale.x);//
+	float rotX = -atan2(mat._32 / scale.y, mat._33 / scale.z);
+
+	float yaw = Radian2Angle(rotZ);
+	float pitch = Radian2Angle(rotY);
+	float roll = Radian2Angle(rotX);
+	//refCha->SetScale(scale);
+	refCha->SetScale(D3DXVECTOR3(0.35f, 0.35f, 0.35f));
+
+	char tmpBkDrop[100];
+	_snprintf_s(tmpBkDrop, _countof(tmpBkDrop), _TRUNCATE, "Height : %f, offset %d", refCha->GetDefaultChaInfo()->fHeight, refCha->getHeightOff());
+
+	if (refCha->GetDefaultChaInfo()->fHeight > 2 && refCha->GetDefaultChaInfo()->fHeight < 2.5)
+		y += 50;
+	else if (refCha->GetDefaultChaInfo()->fHeight > 2.5 && refCha->GetDefaultChaInfo()->fHeight < 3)
+	{
+		y += 70;
+	}
+	else if (refCha->GetDefaultChaInfo()->fHeight > 3)
+	{
+		y += 10;
+		refCha->SetScale(D3DXVECTOR3(0.05, 0.05, 0.05));
+	}
+	
+	HintHead->SetHint(tmpBkDrop);
+		
+	refCha->SetUIYaw(180);
+	refCha->SetRoll(roll);
+	refCha->SetPitch(pitch);
+	refCha->SetUIScaleDis(9.0f * g_Render.GetScrWidth() / 800);
+	refCha->RenderForUI(x, y, false);
+	refCha->SetMatrix(&mat);
+	refCha->SetPoseVelocity(0.2f);
+
+	g_Render.SetTransformView(&g_Render.GetWorldViewMatrix());
+}
 void CWorldScene::ShowAttackHint(CCharacter* pAttackCha)
 {
 	string TMName = pAttackCha->getName();
 	
+	if (pAttackCha != GetMainCha()->pChaMount) {
 
-	HintName->SetCaption(TMName.c_str());
-	char temp[32];
+		HintName->SetCaption(TMName.c_str());
+		char temp[32];
+		refCha = new CCharacter(*pAttackCha);
+		/* LV */
+		long TMLv = pAttackCha->GetDefaultChaInfo()->lLv;
+		_snprintf_s(temp, _countof(temp), _TRUNCATE, "%ld", TMLv); // Better to use this in VS2017 rather than sprintf, its safer and sprinf is kind of depreciated.
+		HintLV->SetCaption(temp);
+		/* HP */
+		SGameAttr* pkAttr = pAttackCha->getGameAttr();
+		HintHP->SetRange((float)0, (float)(pkAttr->get(ATTR_MXHP)));
+		HintHP->SetPosition((float)(pkAttr->get(ATTR_HP)));
+		_snprintf_s(temp, _countof(temp), _TRUNCATE, "HP: %lld/%lld", pkAttr->get(ATTR_HP), pkAttr->get(ATTR_MXHP));
+		HintHP->SetCaption(temp);
+		/* ICON */
+		//static CGuiPic* Pic = HintHead->GetImage();
+		//_snprintf_s(temp, _countof(temp), _TRUNCATE, "TEXTURE/UI2019/MONSTER/71.png"); // Edited just to load pic.
+		//g_stUIStart.InitRefCha(pAttackCha->GetDefaultChaInfo()->nID);
+		//Pic->LoadImage(temp, 48, 48, 0, 0, 0, 1.F, 1.F);
+		p3D->SetRenderEvent(_RefChaRenderEvent);
+		char tmpBkDrop[30];
+		int nArea = pAttackCha->GetScene()->GetTerrain()->GetTile(pAttackCha->GetCurX() / 100, pAttackCha->GetCurY() / 100)->getIsland();
+		_snprintf_s(tmpBkDrop, _countof(tmpBkDrop), _TRUNCATE, "texture\\npc\\%d.tga", nArea);
+		HintHead->GetImage()->LoadImage(tmpBkDrop, 55, 44, 0, 0);
+		HintHead->SetIsShow(true);
 
-	/* LV */
-	long TMLv = pAttackCha->GetDefaultChaInfo()->lLv;
-	_snprintf_s(temp, _countof(temp), _TRUNCATE, "%ld", TMLv); // Better to use this in VS2017 rather than sprintf, its safer and sprinf is kind of depreciated.
-	HintLV->SetCaption(temp);
-	/* HP */
-	SGameAttr* pkAttr = pAttackCha->getGameAttr();
-	HintHP->SetRange((float)0, (float)(pkAttr->get(ATTR_MXHP)));
-	HintHP->SetPosition((float)(pkAttr->get(ATTR_HP)));
-	_snprintf_s(temp, _countof(temp), _TRUNCATE, "HP: %lld/%lld", pkAttr->get(ATTR_HP), pkAttr->get(ATTR_MXHP));
-	HintHP->SetCaption(temp);
-	/* ICON */
-	//static CGuiPic* Pic = HintHead->GetImage();
-	//_snprintf_s(temp, _countof(temp), _TRUNCATE, "TEXTURE/UI2019/MONSTER/71.png"); // Edited just to load pic.
+		if (refCha)
+			refCha->Render();
 
-	//Pic->LoadImage(temp, 48, 48, 0, 0, 0, 1.F, 1.F);
-
-	frmHint->SetIsShow(true);
+			frmHint->SetIsShow(true);
+	}
 }
 
 #ifdef _KOSDEMO_
@@ -1564,7 +1673,8 @@ void CWorldScene::_KeyDownEvent( int key )
 		if( (key=='h' || key=='H') )
 		{
 			_IsThrowItemHint = !_IsThrowItemHint;
-			g_pGameApp->SysInfo( _IsThrowItemHint ? RES_STRING(CL_WORLDSCENE_CPP_00001) : RES_STRING(CL_WORLDSCENE_CPP_00002) );
+			g_pGameApp->SysInfo( _IsThrowItemHint ? RES_STRING(CL_
+				_CPP_00001) : RES_STRING(CL_WORLDSCENE_CPP_00002) );
 		}
 
 		if( (key=='s' || key=='S') )

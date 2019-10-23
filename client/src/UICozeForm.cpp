@@ -42,13 +42,14 @@ CCharMsg::sChannelInfo		CCharMsg::m_sChannelInfo[m_wTotalChannelsCount]=
 #ifdef MANAGE_VER
 	{CHANNEL_MANAGE,		/*"CMD",	*/0xFFFFFFFF,	"$",	0,},				//CHANNEL_MANAGE
 #endif
+	{CHANNEL_SYSTEM_GUILD,	/*"RES_STRING(CL_LANGUAGE_MATCH_498)",	*/0xFFFFFFFF,	"",		0,},
 };
 
 CCharMsg::lstInstanceType	CCharMsg::m_lstThisInstanceLink;
 
 CCharMsg::CCharMsg()
 {
-	m_ecboShowChannels=CHANNEL_ALL|CHANNEL_SIGHT|CHANNEL_PRIVATE|CHANNEL_WORLD|CHANNEL_TRADE|CHANNEL_TEAM|CHANNEL_GUILD|CHANNEL_SYSTEM|CHANNEL_PUBLISH|CHANNEL_SIDE;
+	m_ecboShowChannels=CHANNEL_ALL|CHANNEL_SIGHT|CHANNEL_PRIVATE|CHANNEL_WORLD|CHANNEL_TRADE|CHANNEL_TEAM|CHANNEL_GUILD|CHANNEL_SYSTEM|CHANNEL_PUBLISH|CHANNEL_SIDE|CHANNEL_SYSTEM_GUILD;
 #ifdef MANAGE_VER
 	m_ecboShowChannels=m_ecboShowChannels|CHANNEL_MANAGE;
 #endif
@@ -132,6 +133,9 @@ string CCharMsg::GetChannelName(eChannel channel)
 		str =  "LARK";
 		break;
 #endif
+	case CHANNEL_SYSTEM_GUILD:
+		str = "GUILD";
+		break;
 	default:
 		break;
 	}
@@ -745,6 +749,12 @@ void CCozeForm::OnSystemMsg(string strMsg)
 	UpdatePages();
 }
 
+void CCozeForm::OnSysGuld(string strMsg)
+{
+	CCharMsg::AddMsg(CCharMsg::CHANNEL_SYSTEM_GUILD, "", strMsg);
+	UpdatePages();
+}
+
 void CCozeForm::OnSideMsg(string strName, string strMsg)
 {
 	CCharMsg::AddMsg(CCharMsg::CHANNEL_SIDE, strName, strMsg);
@@ -1141,6 +1151,10 @@ void CCozeForm::SendMsg()
 		{
 			break;
 		}
+	case CCharMsg::CHANNEL_SYSTEM_GUILD:
+	{
+		break;
+	}
 	case CCharMsg::CHANNEL_PUBLISH:
 		{
 			break;

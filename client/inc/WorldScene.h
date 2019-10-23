@@ -109,12 +109,13 @@ private:
     DWORD			_dwAnimLightNum;
 	CLEFont			_cFont;
 	CForm* frmHint;
-	CImage* HintHead;
+	static CImage* HintHead;
 	CLabelEx* HintLV;
 	CLabelEx* HintName;
 	CProgressBar* HintHP;
 	void ShowAttackHint(CCharacter* pAttackCha);
-
+	void ShowCharacterBG();
+	RECT GetHintRect();
 private:
 	static BYTE		_bAttackRed, _bAttackGreen, _bAttackBlue;
 
@@ -167,4 +168,9 @@ public:
 	static bool		_IsThrowItemHint;	
 	CCharacter*		m_strChar[4];
 	stNetChangeChaPart m_part;
+	static CCharacter2D*	pRefCha;
+	static CCharacter* refCha;
+	C3DCompent*	p3D;
+	void	SetHintHead(char* hint) { HintHead->SetHint(hint); }
+	static void				_RefChaRenderEvent(C3DCompent *pSender, int x, int y);
 };

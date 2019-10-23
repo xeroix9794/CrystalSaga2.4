@@ -45,6 +45,8 @@ public:
 
 	const char*			GetCaption()            {return _strCaption.c_str();}
 	void				SetCaption( const char * str ) { _strCaption = str; }
+	void				SetHover(bool hover) { _dontHover = hover; }
+	bool				GetHover() { return _dontHover; }
 
 	virtual	void		SetIsEnabled( bool v );
 
@@ -80,6 +82,7 @@ protected:
 
 	CGuiPic*			_pImage;		// 背景图,共四帧，分别对应：bsNormal,bsHover,bsDown,bsDisable
 	bool				_isDown;		// 以前已经在按钮上按下，等行松开执行evtMouseClick事件
+	bool				_dontHover;
 
     CForm::eModalResult _eFormModal;    // 对于所属表单为模态显示时，赋于表单的返回值
 

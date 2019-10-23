@@ -64,10 +64,52 @@ CCharacter2D* CStartMgr::pMainCha = NULL;
 CCombo*		  CStartMgr::cboexp = 0;
 CForm*		  CStartMgr::frmDaoJu = NULL;
 CGoodsGrid*		  CStartMgr::grdDaoJu = NULL;
-
+CImage* mainBackDrop = NULL;
+CImage* state0 = NULL;
+CImage* state1 = NULL;
+CImage* state2 = NULL;
+CImage* state3 = NULL;
+CImage* state4 = NULL;
+CImage* state5 = NULL;
+CImage* state6 = NULL;
+CImage* state7 = NULL;
+CImage* state8 = NULL;
+CImage* state9 = NULL;
+CImage* state10 = NULL;
+CImage* state11 = NULL;
+CImage* state12 = NULL;
+CImage* state13 = NULL;
+CCharacter2D* CStartMgr::pRefCha = NULL;
 static char szBuf[32] = { 0 };
 
 int numExpItem(0), sTime(0), nPosition(-1), itemNumInBag(0);
+
+void CStartMgr::InitRefCha(int dwId) {
+	CForm* frmHint = _FindForm("frmhint");
+	if (frmHint)
+	{
+		frmHint->Refresh();
+		C3DCompent* p3D = dynamic_cast<C3DCompent*>(frmHint->Find("d3dRef"));
+		if (!p3D)  Error(RES_STRING(CL_LANGUAGE_MATCH_473), frmDetail->GetName(), "d3dRef");
+		
+		CImage* newImg = dynamic_cast<CImage*>(frmHint->Find("HintHead"));
+
+		p3D->SetRenderEvent(_RefChaRenderEvent);
+		pRefCha = new CCharacter2D;
+		RECT rt;
+		rt.left = p3D->GetX();
+		rt.right = p3D->GetX2();
+		rt.top = p3D->GetY();
+		rt.bottom = p3D->GetY2();
+		
+		pRefCha->LoadCha(dwId);
+		pRefCha->Create(rt);
+	}
+}
+void CStartMgr::_RefChaRenderEvent(C3DCompent *pSender, int x, int y)
+{
+	pRefCha->Render();
+}
 
 bool CStartMgr::Init()
 {
@@ -107,6 +149,14 @@ bool CStartMgr::Init()
 			imgLeader = dynamic_cast<CImage*>(frmDetail->Find("imgLeader"));
 			if (!imgLeader) Error(RES_STRING(CL_LANGUAGE_MATCH_473), frmDetail->GetName(), "imgLeader");
 
+			mainBackDrop = dynamic_cast<CImage*>(frmDetail->Find("imgBackDropPlayer"));
+			
+			if (!mainBackDrop) Error("BACKDROP ERROR", frmDetail->GetName(), "imgBackDropPlayer");
+			//char tmpBkDrop[30];
+			//_snprintf_s(tmpBkDrop, _countof(tmpBkDrop), _TRUNCATE, "texture\\npc\\1.tga");
+			//mainBackDrop->GetImage()->LoadImage(tmpBkDrop, 55, 44, 5, 5);
+			//mainBackDrop->SetIsShow(true);
+
 			C3DCompent* d3dSelfDown = dynamic_cast<C3DCompent*>(frmDetail->Find("d3dSelfDown"));
 			if (!d3dSelfDown) return Error(RES_STRING(CL_LANGUAGE_MATCH_473), frmDetail->GetName(), "d3dSelfDown");
 			//d3dSelfDown->SetRenderEvent( _MainChaRenderEvent );
@@ -128,6 +178,7 @@ bool CStartMgr::Init()
 			rt.bottom = p3D->GetY2();
 
 			pMainCha = new CCharacter2D;
+
 			pMainCha->Create(rt);
 		}
 
@@ -135,6 +186,35 @@ bool CStartMgr::Init()
 		mnuSelf = CMenu::FindMenu("selfMouseRight");
 		if (!mnuSelf)  return Error(RES_STRING(CL_LANGUAGE_MATCH_45), frmMain800->GetName(), "selfMouseRight");
 		mnuSelf->evtListMouseDown = _OnSelfMenu;
+
+		state0 = dynamic_cast<CImage*>(frmDetail->Find("stateImg0"));
+		state0->SetIsShow(false);
+		state1 = dynamic_cast<CImage*>(frmDetail->Find("stateImg1"));
+		state1->SetIsShow(false);
+		state2 = dynamic_cast<CImage*>(frmDetail->Find("stateImg2"));
+		state2->SetIsShow(false);
+	    state3 = dynamic_cast<CImage*>(frmDetail->Find("stateImg3"));
+		state3->SetIsShow(false);
+		state4 = dynamic_cast<CImage*>(frmDetail->Find("stateImg4"));
+		state4->SetIsShow(false);
+		state5 = dynamic_cast<CImage*>(frmDetail->Find("stateImg5"));
+		state5->SetIsShow(false);
+		state6 = dynamic_cast<CImage*>(frmDetail->Find("stateImg6"));
+		state6->SetIsShow(false);
+	    state7 = dynamic_cast<CImage*>(frmDetail->Find("stateImg7"));
+		state7->SetIsShow(false);
+		state8 = dynamic_cast<CImage*>(frmDetail->Find("stateImg8"));
+		state8->SetIsShow(false);
+		CImage* state9 = dynamic_cast<CImage*>(frmDetail->Find("stateImg9"));
+		state9->SetIsShow(false);
+		CImage* state10 = dynamic_cast<CImage*>(frmDetail->Find("stateImg10"));
+		state10->SetIsShow(false);
+		CImage* state11 = dynamic_cast<CImage*>(frmDetail->Find("stateImg11"));
+		state11->SetIsShow(false);
+		CImage* state12 = dynamic_cast<CImage*>(frmDetail->Find("stateImg12"));
+		state12->SetIsShow(false);
+		CImage* state13 = dynamic_cast<CImage*>(frmDetail->Find("stateImg13"));
+		state13->SetIsShow(false);
 	}
 
 	// frmMain800表单
@@ -423,6 +503,72 @@ bool CStartMgr::Init()
 	listPage->evtSelectPage = _evtPageIndexChange;
 	return true;
 }
+
+void CStartMgr::ResetAllStates() {
+	char tmpImg[20];
+	CCharacter* pCha = CGameScene::GetMainCha();
+	CChaStateMgr* pState = pCha->GetStateMgr();
+	pState->GetSkillStateNum();
+	for (int i = 0; i <= 4; i++)
+	{
+		_snprintf_s(tmpImg, _countof(tmpImg), _TRUNCATE, "stateImg%d", i);
+		CImage* img = dynamic_cast<CImage*>(frmDetail->Find(tmpImg));
+		if (img) {
+			if (img->GetIsShow()) {
+//				pCha->GetHeadSay()->icons.SetValid(img->nTag, false,0);
+				img->nTag = 0;
+				img->SetIsShow(false);
+			}
+		}
+	}
+}
+
+void CStartMgr::showMainChaBG(int sceneID) {
+	CImage* newImg = dynamic_cast<CImage*>(frmDetail->Find("imgBackDropPlayer"));
+
+	char tmpBkDrop[30];
+	_snprintf_s(tmpBkDrop, _countof(tmpBkDrop), _TRUNCATE, "texture\\npc\\%d.tga", sceneID);
+	newImg->GetImage()->LoadImage(tmpBkDrop, 55, 44, 0, 0);
+	if (newImg->GetIsShow())
+	{
+		newImg->SetIsShow(false);
+	}
+	newImg->SetIsShow(true);
+}
+
+void CStartMgr::HideStateImgByID(short iconID) {
+	char tmpImg[20];
+	CCharacter* pCha = CGameScene::GetMainCha();
+	CChaStateMgr* pState = pCha->GetStateMgr();
+	_snprintf_s(tmpImg, _countof(tmpImg), _TRUNCATE, "stateImg%d", iconID);
+	CImage* img = dynamic_cast<CImage*>(frmDetail->Find(tmpImg));
+	if (img->GetIsShow() && !pState->HasSkillState(img->nTag) && pCha->IsMainCha()) {
+		pCha->icons.SetValid(img->nTag, false, iconID);
+		img->nTag = 0;
+		img->SetIsShow(false);
+	}
+
+}
+
+void CStartMgr::AddStateImageByID(short iconId, string icon, int ID)
+{
+	CCharacter* pCha = CGameScene::GetMainCha();
+
+	if (pCha->IsMainCha()) {
+		char tmpIcon[50];
+
+		_snprintf_s(tmpIcon, _countof(tmpIcon), _TRUNCATE, "%s", icon.c_str());
+		char tmpImg[20];
+
+		_snprintf_s(tmpImg, _countof(tmpImg), _TRUNCATE, "stateImg%d", iconId);
+		CImage* img = dynamic_cast<CImage*>(frmDetail->Find(tmpImg));
+
+		img->nTag = ID;
+		img->GetImage()->LoadImage(string(tmpIcon).c_str(), 16, 16, 0, 0);
+		img->SetIsShow(true);
+	}
+}
+
 void CStartMgr::ShowNPCHelper(const char * mapName, bool isShow)
 {
 
@@ -826,13 +972,15 @@ void CStartMgr::_evtStartFormMouseEvent(CCompent *pSender, int nMsgType, int x, 
 		bool bShow = g_stUIStart.frmHelpSystem->GetIsShow();
 		g_stUIStart.ShowHelpSystem(!bShow);
 	}
-	else if (name == "btnOpenBag")	// 打开背包按钮界面
+	else if (name == "btnOpenBag")
 	{
-		g_stUIStart.ShowBagButtonForm(!g_stUIStart.frmBag->GetIsShow());
-		g_stUIStart.ShowSociliatyButtonForm(false);
-
-		//g_stUIStart.frmBag->SetIsShow(! g_stUIStart.frmBag->GetIsShow());
-		//g_stUIStart.frmSociliaty->SetIsShow(false);
+		CForm* f = CFormMgr::s_Mgr.Find("frmItem");
+		if (f)
+		{
+			f->SetIsShow(!f->GetIsShow());
+			//g_stUIStore.ShowTempKitbag();
+		}
+		return;
 	}
 	else if (name == "btnOpenSociliaty") // 打开社交按钮界面
 	{
@@ -1608,7 +1756,7 @@ void CStartMgr::FrameMove(DWORD dwTime)
 	if (pet_time.IsTimeOut(dwTime))
 	{
 		CItemCommand* pItem = dynamic_cast<CItemCommand*>(g_stUIEquip.GetEquipItem(enumEQUIP_FAIRY));
-		if (pItem && pItem->GetItemInfo()->sType == enumItemTypePet && pItem->GetData().IsValid() && CGameScene::GetMainCha())
+		if (pItem && pItem->GetItemInfo()->sType == enumItemTypePet && ((float)pItem->GetData().sEndure[0] / 50) >= 1 && CGameScene::GetMainCha())
 		{
 			SItemGrid& Data = pItem->GetData();
 			proPetHP->SetRange(0, float(Data.sEndure[1] / 50));
@@ -1788,6 +1936,7 @@ bool CStartMgr::IsCanTeamAndInfo()
 	if (!_IsCanTeam) 	g_pGameApp->SysInfo(RES_STRING(CL_LANGUAGE_MATCH_772));
 	return _IsCanTeam;
 }
+
 
 void CStartMgr::RefreshPet(CItemCommand* pItem)
 {

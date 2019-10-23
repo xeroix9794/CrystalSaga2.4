@@ -185,6 +185,7 @@ class CList : public CCompent
 public:
 	CList(CForm& frmOwn);
 	CList(CForm& frmOwn, int nCol);
+	CList(CForm& frmOwn, int nCol, DWORD colorID);
 	CList( const CList& rhs );
 	CList& operator=(const CList& rhs);
 	virtual ~CList(void);
@@ -217,7 +218,8 @@ public:
 	void				SetRowHeight( int v )				{ if( v>0) _nRowHeight = v;					}
 	int					GetRowHeight()						{ return _nRowHeight;						}
 	void				SetSpaceBottom( int n )				{ if(n>=0) _nSpaceBottom=n;					}
-
+	void				SetForeColor(CList& list, DWORD RGB);
+	void				SetSelectColor(CList& list, DWORD RGB);
 	void				SetMargin( int left, int top, int right, int bottom );
 
 	void                SetFrameSelectAtrribute(int width ,int height ,int x, int y);

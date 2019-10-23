@@ -28,6 +28,7 @@ public:
 	void		ClearRadar();
 
 	void        CloseRadar();
+	void		Refresh();
 
 	const char* GetMapName()				{ return labMapName->GetCaption(); }
 

@@ -2629,7 +2629,7 @@ inline int lua_AddItemAttr(lua_State *pLS)
 	else if( lAttrID == ITEMATTR_VAL_LEVEL )
 	{
 		pSItem->AddItemLevel( char(sAttr) );
-	}
+	} 
 	else if( lAttrID == ITEMATTR_VAL_FUSIONID )
 	{
 	}
@@ -6424,6 +6424,177 @@ End:
 	return 1;
 }
 
+inline int lua_DeMount(lua_State *pLS) {T_B
+	bool success = false;
+
+	int nParaNum = lua_gettop(pLS);
+
+	CCharacter* pCha = (CCharacter*)lua_touserdata(pLS, 1);
+
+	long ret = pCha->setAttr(ATTR_EXTEND9, 0);
+
+	if (!pCha->IsPlayerCha()) {
+		return 0;
+	}
+
+	if (ret > 0) {
+		//g_CParser.DoString("RefreshCha", enumSCRIPT_RETURN_NONE, 0, enumSCRIPT_PARAM_LIGHTUSERDATA, 1, pCha, DOSTRING_PARAM_END);
+		pCha->setAttr(ATTR_EXTEND10, 0);
+		pCha->SynSkillStateToEyeshot();
+
+		// 通知主角道具栏更新
+		pCha->SynKitbagNew(enumSYN_KITBAG_EQUIP);
+
+		// 重新计算属性
+		g_CParser.DoString("AttrRecheck", enumSCRIPT_RETURN_NONE, 0, enumSCRIPT_PARAM_LIGHTUSERDATA, 1, pCha, DOSTRING_PARAM_END);
+		if (pCha->GetPlayer())
+		{
+			pCha->GetPlayer()->RefreshBoatAttr();
+			pCha->SyncBoatAttr(enumATTRSYN_ITEM_MEDICINE);
+		}
+		pCha->SynAttrToEyeshot(enumATTRSYN_ITEM_MEDICINE);
+		pCha->SynAttrToSelf(enumATTRSYN_ITEM_MEDICINE);
+		
+		g_CParser.DoString("ALLExAttrSet", enumSCRIPT_RETURN_NONE, 0, enumSCRIPT_PARAM_LIGHTUSERDATA, 1, pCha, DOSTRING_PARAM_END);
+		//g_CParser.DoString("UpdateMounts", enumSCRIPT_RETURN_NONE, 0, DOSTRING_PARAM_END);
+		success = true;
+	}
+	if (success)
+		lua_pushnumber(pLS, 1);
+	else
+		lua_pushnumber(pLS, 0);
+
+	return 1;
+T_E}
+
+inline int lua_GetHeightOffset(lua_State *pLS) {
+	bool	bSuccess = true;
+	short	sItemID = 0;
+
+	int nParaNum = lua_gettop(pLS);
+
+	CCharacter* pCha = (CCharacter*)lua_touserdata(pLS, 1);
+
+	SItemGrid *pItem = &(pCha->m_SChaPart.SLink[enumEQUIP_MOUNTS]);
+
+	CItemRecord* pRec;
+
+	if (!pItem)
+		lua_pushnumber(pLS, 0);
+
+	if (pItem->sID > 0) {
+		pRec = GetItemRecordInfo(pItem->sID);
+
+		if (!pRec)
+			lua_pushnumber(pLS, 0);
+
+		int mountID = pRec->sItemEffect[1];
+
+		if (mountID > 0) {
+			lua_pushnumber(pLS, mountID);
+			//pCha->SynAttrToEyeshot(enumATTRSYN_INIT);
+		}
+		else {
+			lua_pushnumber(pLS, 0);
+		}
+	}
+	return 1;
+}
+inline int lua_SetMount(lua_State *pLS)
+{T_B
+	bool	bSuccess = true;
+	short	sItemID = 0;
+
+	int nParaNum = lua_gettop(pLS);
+
+	CCharacter* pCha = (CCharacter*)lua_touserdata(pLS, 1);
+
+	int mountID_2 = (int)lua_tonumber(pLS, 2);
+
+	const char* szMap = pCha->GetSubMap()->GetName();
+
+	SItemGrid *pItem = &(pCha->m_SChaPart.SLink[enumEQUIP_MOUNTS]);
+
+	CItemRecord* pRec;
+
+	//if (!pItem)
+	//	return 0;
+
+	if (pItem->sID > 0) {
+		pRec = GetItemRecordInfo(pItem->sID);
+		if (!pRec)
+			return 0;
+
+		int mountID = pRec->sItemEffect[0];
+		int heightOffset = pRec->sItemEffect[1];
+
+		if ((mountID > 0 && pCha->IsPlayerCha()) || (mountID_2 > 0 && pCha->IsPlayerCha())) {
+
+			//int newMount = (mountID_2 > 0) ? mountID_2 : mountID;
+			int newMount = mountID;
+			//pCha->setAttr(ATTR_EXTEND9, 0);
+			long ret = pCha->setAttr(ATTR_EXTEND9, newMount);
+			if (heightOffset > 0)
+				pCha->setAttr(ATTR_EXTEND10, heightOffset);
+
+			if (ret > 0)
+			{
+				//pCha->SwitchMap(pCha->GetSubMap(), szMap, pCha->GetPos().x, pCha->GetPos().y, true, enumSWITCHMAP_CARRY);
+				g_CParser.DoString("AttrRecheck", enumSCRIPT_RETURN_NONE, 0, enumSCRIPT_PARAM_LIGHTUSERDATA, 1, pCha, DOSTRING_PARAM_END);
+				if (pCha->GetPlayer())
+				{
+					pCha->GetPlayer()->RefreshBoatAttr();
+					pCha->SyncBoatAttr(enumATTRSYN_ITEM_MEDICINE);
+				}
+				pCha->SynAttrToEyeshot(enumATTRSYN_ITEM_MEDICINE);
+				pCha->SynAttrToSelf(enumATTRSYN_ITEM_MEDICINE);
+
+				g_CParser.DoString("ALLExAttrSet", enumSCRIPT_RETURN_NONE, 0, enumSCRIPT_PARAM_LIGHTUSERDATA, 1, pCha, DOSTRING_PARAM_END);
+				lua_pushnumber(pLS, 1);
+			}
+		}
+		else {
+			lua_pushnumber(pLS, 0);
+		}
+	}
+	return 1;
+T_E}
+
+
+inline int lua_GetMountID(lua_State *pLS) {T_B
+	bool	bSuccess = true;
+	short	sItemID = 0;
+	
+	int nParaNum = lua_gettop(pLS);
+
+	CCharacter* pCha = (CCharacter*)lua_touserdata(pLS, 1);
+
+	SItemGrid *pItem = &(pCha->m_SChaPart.SLink[enumEQUIP_MOUNTS]);
+	
+	CItemRecord* pRec;
+
+	if (!pItem)
+		lua_pushnumber(pLS, 0);
+
+	if (pItem->sID > 0) {
+	    pRec = GetItemRecordInfo(pItem->sID);
+
+		if (!pRec)
+			lua_pushnumber(pLS, 0);
+
+		int mountID = pRec->sItemEffect[0];
+
+		if (mountID > 0) {
+			lua_pushnumber(pLS, mountID);
+			//pCha->SynAttrToEyeshot(enumATTRSYN_INIT);
+		}
+		else{
+			lua_pushnumber(pLS, 0);
+		}
+	}
+	return 1;
+T_E}
+
 // 取道具编号
 // 道具编号
 // 返回值：道具洞数
@@ -7902,7 +8073,9 @@ REGFN(SkillCrt);
 REGFN(SkillUnable);
 REGFN(AddChaSkill);
 REGFN(UseItemFailed);
-
+REGFN(GetMountID);
+REGFN(SetMount);
+REGFN(DeMount);
 REGFN(SynLook);
 // Add by lark.li 20080721 begin
 REGFN(UseItemNoHint);

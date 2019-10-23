@@ -1,15 +1,15 @@
-#pragma once
+ï»¿#pragma once
 
 
 #define FORM_LOADING_CHECK(a,b,c) a=CFormMgr::s_Mgr.Find(c); if (!a) {::Error(RES_STRING(CL_LANGUAGE_MATCH_577),b,c); return false;}
 #define FORM_CONTROL_LOADING_CHECK(a,b,c,d,e) a=dynamic_cast<c*>(b->Find(e)); if (!a) {::Error(RES_STRING(CL_LANGUAGE_MATCH_578),d,b->GetName(),e); return false;}
 
 
-// ÈÈ¼ü¿ª¹ØFLAG£¬SetEnableHotKeyµ÷ÓÃ
-#define HOTKEY_STORE		(1 << 0)	// ÉÌ³Ç
-#define HOTKEY_BANK			(1 << 1)	// ÒøÐÐ
-#define HOTKEY_BOOTH		(1 << 2)	// °ÚÌ¯
-#define HOTKEY_TRADE		(1 << 3)	// ½»Ò×
+// ÃˆÃˆÂ¼Ã¼Â¿ÂªÂ¹Ã˜FLAGÂ£Â¬SetEnableHotKeyÂµÃ·Ã“Ãƒ
+#define HOTKEY_STORE		(1 << 0)	// Ã‰ÃŒÂ³Ã‡
+#define HOTKEY_BANK			(1 << 1)	// Ã’Ã¸ÃÃ
+#define HOTKEY_BOOTH		(1 << 2)	// Â°ÃšÃŒÂ¯
+#define HOTKEY_TRADE		(1 << 3)	// Â½Â»Ã’Ã—
 
 
 class CCharacter;
@@ -63,6 +63,7 @@ namespace GUI
 
 	class CTextParse;
 
+	class CPortalTime;
     class CChat;
 	class CEditor;
 	class CBoxMgr;
@@ -123,7 +124,7 @@ namespace GUI
 
 	extern CTextParse		g_TextParse;
 
-class CUIInterface // ÓÃ»§½çÃæÐÅÏ¢
+class CUIInterface // Ã“ÃƒÂ»Â§Â½Ã§ÃƒÃ¦ÃÃ…ÃÂ¢
 {
 public:
 	CUIInterface();
@@ -145,7 +146,7 @@ protected:
 	virtual void CloseForm() {}
 	virtual void SwitchMap() {}
 
-    static void		_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, int nGridID, bool& isAccept);  // ÍÏ¶¯µ½µÀ¾ßÀ¸
+    static void		_evtDragToGoodsEvent(CGuiData *pSender, CCommandObj* pItem, int nGridID, bool& isAccept);  // ÃÃÂ¶Â¯ÂµÂ½ÂµÃ€Â¾ÃŸÃ€Â¸
 
 protected:
 	bool Error(const char* strInfo, const char* strFormName, const char* strCompentName);
@@ -219,6 +220,7 @@ extern CRumPurMgr		g_stRumPurForm;
 extern CRumSaleMgr		g_stRumSaleForm;
 extern CRumGetMgr		g_stRumGetForm;
 extern CHelpInfoMgr		g_FormHelpInfo;
+extern CPortalTime g_stUIPortalTime;
 
 
 

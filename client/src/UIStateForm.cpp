@@ -101,7 +101,7 @@ bool CStateMgr::Init()
 	labSailEXP  = 	( CLabelEx *)frmState->Find( "labSailEXP" );
 
 	//8个附加属性
-	labMinAtackShow  = 	( CLabelEx *)frmState->Find( "labMinAtackShow" );
+	labMinAtackShow  = 	( CLabelEx *)frmState->Find( "labAttackShow" );
 	labMaxAtackShow  = 	( CLabelEx *)frmState->Find( "labMaxAtackShow" );
 	labFleeShow      = 	( CLabelEx *)frmState->Find( "labFleeShow" );
 	labAspeedShow    = 	( CLabelEx *)frmState->Find( "labAspeedShow" );
@@ -297,13 +297,13 @@ void CStateMgr::RefreshStateFrm()
 	//8个附加属性
 	if(labMinAtackShow)		
 	{
-		_snprintf_s( pszCha, _countof( pszCha ), _TRUNCATE , "%lld" , pCChaAttr->get(ATTR_MNATK));// 最小攻击力		
+		_snprintf_s(pszCha, _countof(pszCha), _TRUNCATE, "%lld/%lld", pCChaAttr->get(ATTR_MNATK), pCChaAttr->get(ATTR_MXATK));
 		labMinAtackShow->SetCaption( (const char* ) pszCha);
 	}
 
 	if(labMaxAtackShow)		
 	{
-		_snprintf_s( pszCha, _countof( pszCha ), _TRUNCATE , "%lld" , pCChaAttr->get(ATTR_MXATK));// 最大攻击力
+		_snprintf_s( pszCha, _countof( pszCha ), _TRUNCATE , "%lld/%lld" , pCChaAttr->get(ATTR_MNATK), pCChaAttr->get(ATTR_MXATK));// 最大攻击力
 		labMaxAtackShow->SetCaption( (const char* ) pszCha);
 	}
 

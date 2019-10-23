@@ -366,12 +366,36 @@ void CGameApp::HandleKeyDown(DWORD dwKey)
 	}
     else if(IsKeyDown((BYTE)DIKEYBOARD_SYSRQ ))
     {
-        g_Render.CaptureScreen();
+       // g_Render.CaptureScreen();
     }
     else if(IsKeyDown(DIK_D) && IsCtrlPress())
     {
         if(g_Config.m_bEditor) ToggleScriptDebugWindow();
     }
+	else if (IsKeyDown(DIK_S) && IsShiftPress())
+	{
+		CCharacter* pMain = CGameScene::GetMainCha();
+		if (pMain->GetShowSP())
+		{
+			pMain->SetShowSP(false);
+		}
+		else
+		{
+			pMain->SetShowSP(true);
+		}
+	}
+	else if (IsKeyDown(DIK_T) && IsShiftPress())
+	{
+		CCharacter* pMain = CGameScene::GetMainCha();
+		if (pMain->GetShowHPMPText())
+		{
+			pMain->SetShowHPMPText(false);
+		}
+		else
+		{
+			pMain->SetShowHPMPText(true);
+		}
+	}
 	else if(IsKeyDown(DIK_L) && IsCtrlPress() )
 	{
 		CCharacter* pMain = CGameScene::GetMainCha();

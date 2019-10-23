@@ -123,7 +123,7 @@ static void	_GoBack(CCompent *pSender, int nMsgType, int x, int y, DWORD dwKey)
 		{
 			g_pGameApp->m_bPlayFlash = TRUE;
 			pLogin->UpdateBounds();
-			pLogin->GotoFrame( 1 );
+			pLogin->GotoFrame(3 );
 
 		}
 	}
@@ -552,6 +552,7 @@ void CLoginScene::CallbackUIEvent_LoginScene( CCompent *pSender, int state, int 
 			frmRegion->SetIsShow(true);
 			//frmServer->Show();
 		}
+
 	}
 	else if ( _stricmp ("frmServer" , pSender->GetForm()->GetName() ) == 0 )
 	{
@@ -643,9 +644,9 @@ void CLoginScene::_evtLoginFrm(CCompent *pSender, int state, int x, int y, DWORD
 //	Xuqin modified for flash login
 //		pkScene->InitServerList(pkScene->GetCurSelRegionIndex());
 //		frmServer->SetIsShow(true);
-		g_pGameApp->m_bPlayFlash = TRUE;
-		pkScene->UpdateBounds();
-		pkScene->GotoFrame( 1 );
+	//	g_pGameApp->m_bPlayFlash = TRUE;
+	//	pkScene->UpdateBounds();
+	//	pkScene->GotoFrame( 1 );
 		return;
 	}
 	else if(strName == "btnKeyboard")

@@ -28,7 +28,7 @@ LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_KOP                 ICON                    "C:\\Users\\Jared\\Downloads\\IDI_KOP.ico"
+IDI_KOP                 ICON                    "C:\\IDI_KOP.ico"
 
 IDI_SMALL               ICON                    "11.ico"
 

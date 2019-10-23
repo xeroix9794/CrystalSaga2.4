@@ -244,7 +244,7 @@ void CCharacter::WriteLookData(WPACKET &WtPk, Char chLookType, Char chSynType)
 		SItemGrid *pItem;
 
 		int nItemCnt = enumEQUIP_NUM;
-		
+
 		if(chLookType==LOOK_TEAM) nItemCnt = 3; // 组队类型的外观通知, 只需要上半身信息
 
 #ifdef TEAM_BUFF
@@ -306,32 +306,8 @@ void CCharacter::WriteLookData(WPACKET &WtPk, Char chLookType, Char chSynType)
 			else
 				WRITE_CHAR(WtPk, 0);
 		}
-		pItem = m_SChaPart.SLink + 14;
-		if (pItem)
-		{
-			CItemRecord* pRecord = GetItemRecordInfo(pItem->sID);
-			if (pRecord->sType == enumItemTypePet)
-				WRITE_CHAR(WtPk, 1);
-		}
 	}
 }
-
-#define defEQUIP_LINK_NUM 5
-
-/*pItem = m_SChaPart.SLink + 14;
-
-if (pItem)
-{
-	WRITE_SHORT(pk, pItem->sID);
-	WRITE_CHAR(pk, pItem->IsValid() ? 1 : 0);
-	bHasData = true;
-}
-else
-{
-	WRITE_SHORT(pk, 0);
-	WRITE_CHAR(pk, 0);
-}*/
-
 
 // 注意该函数使用道具栏的改变标志。
 bool CCharacter::WriteAppendLook(CKitbag *pCKb, WPACKET &pk, bool bInit)
@@ -356,6 +332,7 @@ bool CCharacter::WriteAppendLook(CKitbag *pCKb, WPACKET &pk, bool bInit)
 	}
 
 
+
 	for (int i = 14; i < enumEQUIP_NUM; i++)
 	{
 		pItem = m_SChaPart.SLink + i;
@@ -372,6 +349,7 @@ bool CCharacter::WriteAppendLook(CKitbag *pCKb, WPACKET &pk, bool bInit)
 			bHasData = true;
 		}
 	}
+	
 	
 	if (bInit) return true;
 	else return bHasData;

@@ -34,6 +34,8 @@ protected:
 
 private:
 	CForm*		frmNPCchat;
+	CImage*		frmNPCBackdrop;
+	C3DCompent* p3DNpc;
 	CMemo*		memCtrl;
 
 private:

@@ -657,7 +657,7 @@ skip:
 
 BOOL CGameApp::_PrintScreen()
 {
-	if(IsEnableSpAvi()) 
+/*	if(IsEnableSpAvi()) 
     {
         _CreateAviScreen();
     }
@@ -690,7 +690,7 @@ BOOL CGameApp::_PrintScreen()
         Tip(szTip);
         g_nScreenCap++;
 	    EnableSprintScreen(FALSE);
-	}
+	}*/
     return TRUE;
 }
 
@@ -953,9 +953,27 @@ void CGameApp::ShowMidText( const char *pszFormat, ... )
     _stMidFont.btAlpha     = 255;
 
     //g_stUICoze.OnSystemSay( _szOutBuf );
+
+
 	CCozeForm::GetInstance()->OnSystemMsg(_szOutBuf);
 }
+void CGameApp::ShowGuildText(const char *pszFormat, ...)
+{
+	va_list list;
+	va_start(list, pszFormat);
+	_vsnprintf_s(_szOutBuf, sizeof(_szOutBuf), _TRUNCATE, pszFormat, list);
+	va_end(list);
 
+	//strncpy( _stMidFont.szText, _szOutBuf, sizeof(_stMidFont.szText) );
+	strncpy_s(_stMidFont.szText, sizeof(_stMidFont.szText), _szOutBuf, _TRUNCATE);
+	_stMidFont.dwBeginTime = GetCurTick() + SHOW_TEXT_TIME;
+	_stMidFont.btAlpha = 255;
+
+	//g_stUICoze.OnSystemSay( _szOutBuf );
+
+		CCozeForm::GetInstance()->OnSysGuld(_szOutBuf);
+		CCozeForm::GetInstance()->OnSystemMsg(_szOutBuf);
+}
 void CGameApp::AddTipText(const char *pszFormat, ...)
 {
     va_list list;

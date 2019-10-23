@@ -24,7 +24,7 @@ class CStartMgr : public CUIInterface
 	static const int xxoo = 2;
 public:
 	void			MainChaDied();
-
+	void			InitRefCha(int dwId);
     void            RefreshMainLifeNum( long num, long max );
 	void			RefreshMainExperience(	LONG64 num , LONG64 curlev, LONG64 nextlev );
 	void			RefreshMainSP(long num, long max );
@@ -34,7 +34,9 @@ public:
 	void			RefreshMainFace( stNetChangeChaPart& stPart );
 
 	void			RefreshPet( CItemCommand* pItem );
-
+	void			AddStateImageByID(short iconId, string icon, int ID);
+	void			HideStateImgByID(short iconID);
+	void			ResetAllStates();
 	void			SetIsLeader( bool v );
 	bool			GetIsLeader();
 
@@ -69,7 +71,7 @@ public:
 	static void		EventSendTimeChange(CGuiData *pSender);			//	挂机经验选择事件
 	void			ShowExpForm( bool bShow = true );				//	挂机
 	
-	
+	void			showMainChaBG(int sceneID);
 	void			ShowInfoCenterButton(bool bShow = true);
 
 	void			ShowBagButtonForm(bool bShow = true);
@@ -237,7 +239,24 @@ private:
 	CForm*			frmSociliaty;
 	//女神按钮界面 add by alfred.shi 20080724
 	CForm*			frmQueen;
-	
+	CImage*			states[13];
+	CImage*         stateImg0;
+	CImage*         stateImg1;
+	CImage*         stateImg2;
+	CImage*         stateImg3;
+	CImage*         stateImg4;
+	CImage*         stateImg5;
+	CImage*         stateImg6;
+	CImage*         stateImg7;
+	CImage*         stateImg8;
+	CImage*         stateImg9;
+	CImage*         stateImg10;
+	CImage*         stateImg11;
+	CImage*         stateImg12;
+	CImage*         stateImg13;
+	CImage*         stateImg14;
+	CImage*         stateImg15;
+	CImage*			mainBackDrop;
 
 	// NPC指引界面 add by alfred.shi 20080709
 	CForm*			frmNpcShow;
@@ -249,7 +268,10 @@ private:
 	const char*		strMapName;
 private:
 	// 对应的主角外观
-	static CCharacter2D*	pMainCha;				
+	static CCharacter2D*	pMainCha;			
+	static CCharacter2D*	pRefCha;
+
+	static void				_RefChaRenderEvent(C3DCompent *pSender, int x, int y);
     static void				_MainChaRenderEvent(C3DCompent *pSender, int x, int y);
 	static void				_OnSelfMenu(CGuiData *pSender, int x, int y, DWORD key);
 

@@ -154,6 +154,8 @@ public:
 
     void                ShowBigText( const char *pszFormat, ... );
     void                ShowMidText( const char *pszFormat, ... );
+	void                ShowGuildText(const char *pszFormat, ...);
+
 
 	// ÇÐ»»³¡¾°begin
 	CGameScene*	CreateScene( stSceneInitParam* param );

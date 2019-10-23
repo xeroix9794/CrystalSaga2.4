@@ -49,7 +49,7 @@ extern bool				g_IsShowShop;
 CSkillRecord* CCharacter::_pDefaultSkillInfo = NULL;
 CSkillRecord* CCharacter::_pReadySkillInfo = NULL;
 bool CCharacter::_IsShowShadow = true;
-
+int	 CCharacter::_mountPlayerID = 0;
 // 特殊表现
 enum eSpecial
 {
@@ -467,6 +467,8 @@ CCharacter::CCharacter()
  _nServerX(0),
  _nServerY(0),
  _nDanger(0),
+chMountID(0),
+prevMap(1),
  mParentNode(NULL),
  mParentBoneID(0)
 {
@@ -502,7 +504,7 @@ CCharacter::CCharacter()
     memset( _pHandItem, 0, sizeof(_pHandItem) );
 
 
-	memset( &_stChaPart, 0, sizeof(_stChaPart) );
+	memset(&_stChaPart, 0, sizeof(_stChaPart));
 
 	_pChaState = new CChaStateMgr(this);
 	_ChaState.AllTrue();
@@ -522,7 +524,6 @@ CCharacter::~CCharacter()
 	//delete _pActor;
 	//delete _pChaState;
 	//delete _pSceneHeight;
-
 	SAFE_DELETE(_pActor);       // UI当机处理
 	SAFE_DELETE(_pChaState);    // UI当机处理
 	SAFE_DELETE(_pSceneHeight); // UI当机处理
@@ -628,6 +629,14 @@ void CCharacter::_UpdateValid(BOOL bValid)
             }
 		}
 
+		for (int i = 0; i < enumEQUIP_NUM; i++)
+		{
+			if (_pHandEff[i]) {
+				_pHandEff[i]->SetValid(FALSE);
+				_pHandEff[i] = NULL;
+			}
+		}
+
 		for( int i=0; i<ITEM_FACE_MAX; i++ )
 		{
 			if( _pItemFaceEff[i] )
@@ -636,6 +645,7 @@ void CCharacter::_UpdateValid(BOOL bValid)
 				_pItemFaceEff[i] = NULL;
 			}
 		}
+		_Attr.set(ATTR_EXTEND9, 0);
 	    memset( _ItemFace,0,sizeof(_ItemFace) );
 
 		GetScene()->HandleSceneMsg(SCENEMSG_CHA_DESTROY, getID());
@@ -833,16 +843,453 @@ void CCharacter::FrameMove(DWORD dwTimeParam)
 	return;
 }
 
-void CCharacter::Render()
-{ 
-    if(!_pScene->IsPointVisible((float)_nCurX / 100.0f, (float)_nCurY / 100.0f)) return;
-    
+/*
+void CCharacter::Render() {
+	if (!_pScene->IsPointVisible((float)_nCurX / 100.0f, (float)_nCurY / 100.0f)) {
+		return;
+	}
+
+	g_Render.EnableZBuffer(TRUE);
+	CSceneNode::Render();
+	CCharacterModel::Render();
+
+	// Mount Start
+
+	if (this->GetScene()->GetSceneTypeID() == enumWorldScene)
+	{
+
+		// Get Mount ID
+		CItemCommand* itemData;
+
+		itemData = (g_stUIEquip.GetEquipItem(enumEQUIP_MOUNTS) != NULL) ? g_stUIEquip.GetEquipItem(enumEQUIP_MOUNTS) : NULL;
+
+		// check data before moving forward
+		//assert(itemData != nullptr);
+
+		int mountID = 791;//(itemData != NULL) ? itemData->GetItemInfo()->sItemEffect[0] : 0; // Store Mount ID in effect
+		int mountHeightOff = (itemData != NULL) ? itemData->GetItemInfo()->sItemEffect[1] : 0; // Store Mount ID in effect
+		mount = new CMount(mountID, mountHeightOff, GetTypeID(), GetCurX(), GetCurY());
+
+
+		if (mountID > 0 && IsMainCha())
+		{
+			SetMountID(mountID);
+		}
+
+		// If the player has no mount AND mount attr is set
+		// For testing purposes I just checked for lv...
+		if (!GetIsMount() && _Attr.get(ATTR_EXTEND9) > 0) {
+
+			// pChaMount is a nested CCharacter 
+			// ID 791 is Baby Black Dragon from CharacterInfo
+			pChaMount = _pScene->AddCharacter(_Attr.get(ATTR_EXTEND9));
+
+			// To remove the "Player" default name
+			pChaMount->setName("");
+
+			// Summon the pChaMount at the exact position of the character
+			pChaMount->setPos(mount->GetMountX(), mount->GetMountY());
+
+			// Should really make a new control type enumCHACTRL_MOUNT
+			pChaMount->setChaCtrlType(enumCHACTRL_PLAYER_PET);
+
+			// Initial Values for the prev coordinates(Will be used to switch between poses)
+			prevX = GetCurX();
+			prevY = GetCurY();
+
+			// Elevate the character
+			if (mountHeightOff > 0)
+				setHeightOff(mount->GetHeightOff());
+			else
+				setHeightOff(145);
+
+			// Initial Seat
+			PlayPose(GetPose(mount->GetCharacterPose()), PLAY_LOOP_SMOOTH);
+
+			// Pose velocity = MSPD / 800 (For 60FPS)
+			pChaMount->SetPoseVelocity((float)pChaMount->getMoveSpeed() / 800.0);
+
+			// Record the mount state
+			SetIsMount(true);
+		}
+
+		// If the character is mounted AND mount attr is not set or set to -1
+		// For test purposes it's just the reverse check lv condition
+		if (GetIsMount() && mountID == 0) {
+
+			// Marks the character for destruction
+			pChaMount->SetValid(false);
+
+			// Send him back to the ground...
+			setHeightOff(0);
+
+			// Record the mount state
+			SetIsMount(false);
+
+			this->chMountID = 0;
+
+			// STAND UP
+			PlayPose(GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+		}
+
+		// If mount is running then...
+		if (GetIsMount()) {
+
+			// Contiounsly update the mount's MSPD to character's MSPD so that they move in SYNC
+			pChaMount->setMoveSpeed(getMoveSpeed());
+
+			// Contiously update the character's angle to match that of the player.
+			pChaMount->setYaw(getYaw());
+
+			int curX = GetCurX();
+			int curY = GetCurY();
+
+			// If there exists a change in coordinates, change pose and move...
+			if (curX != prevX || curY != prevY) {
+
+				// Play the running pose.
+				pChaMount->PlayPose(pChaMount->GetPose(POSE_RUN), PLAY_LOOP_SMOOTH);
+
+				// Move
+				pChaMount->ForceMove(curX, curY);
+
+				// Update prev coordinates
+				prevX = curX;
+				prevY = curY;
+			}
+			else {
+
+				// If the character stands still then run the waiting pose.
+				pChaMount->PlayPose(pChaMount->GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+			}
+		}
+	}
+
+	}
+	// MOUNT_SYSTEM_END
+	*/
+/*
+void CCharacter::CheckStates() {
+	if (this->timer == 0)
+	{
+		this->timer = GetTickCount();
+	}
+	else if (GetTickCount() - this->timer > (10 * 5000)) {
+		g_stUIStart.ResetAllStates();
+	}
+
+	CChaStateMgr* pState = GetStateMgr();
+	int nCount = pState->GetSkillStateNum();
+	if (nCount > 0 && refreshCount == 0) {
+		for (int s = 0; s < nCount; s++)
+		{
+			//g_stUIStart.HideStateImgByID(s);
+			char chID = pState->GetSkillState(s)->chID;
+
+			if (icons.HasIcon(chID) && !icons.IsValid(chID) && pState->HasSkillState(chID)) {
+				tmpStates.stateID[s] = chID;
+				icons.SetValid(chID, true);
+
+				g_stUIStart.AddHideStateImage(s, icons.GetIcon(chID), chID);
+			}
+			else if(tmpStates.stateID[s] != chID || pState.(tmpStates.stateID[s]));
+			{
+				icons.SetValid(chID, false);
+				tmpStates.stateID[s] = (chID > 0) ? chID : 0;
+				g_stUIStart.HideStateImgByID(s);
+			}
+		}
+	}
+}
+*/
+
+void CCharacter::Render() {
+	if (!_pScene->IsPointVisible((float)_nCurX / 100.0f, (float)_nCurY / 100.0f)) {
+		return;
+	}
+
 	g_Render.EnableZBuffer(TRUE);
 
 	CSceneNode::Render();
 
-    CCharacterModel::Render();
+	CCharacterModel::Render();
+
+	if (GetIsMount() && GetPart().SLink[enumEQUIP_MOUNTS].sID == 0 && pChaMount->GetMountPlayerID() == getHumanID()) {
+		_DestoryMount(pChaMount);
+		//PlayPose(GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+	}
+	
+	if (prevMap == 0)
+	{
+		_DestoryMount(pChaMount);
+	}
+
+	if (GetIsMount()) {
+
+		// Contiounsly update the mount's MSPD to character's MSPD so that they move in SYNC
+		pChaMount->setMoveSpeed(getMoveSpeed());
+
+		// Contiously update the character's angle to match that of the player.
+		pChaMount->setYaw(getYaw());
+
+		int curX = GetCurX();
+		int curY = GetCurY();
+		int curMount = _Attr.get(ATTR_EXTEND9);
+
+		// If there exists a change in coordinates, change pose and move...
+		if (curX != prevX || curY != prevY) {
+			// Play the running pose.
+			pChaMount->PlayPose(pChaMount->GetPose(POSE_RUN), PLAY_LOOP_SMOOTH);
+
+			// Move
+			pChaMount->ForceMove(curX, curY);
+
+			// Update prev coordinates
+			prevX = curX;
+			prevY = curY;
+		}
+		else {
+			// If the character stands still then run the waiting pose.
+			pChaMount->PlayPose(pChaMount->GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+		}
+	}
 }
+/*
+void CCharacter::Render() {
+if (!_pScene->IsPointVisible((float)_nCurX / 100.0f, (float)_nCurY / 100.0f)) {
+	return;
+}
+
+g_Render.EnableZBuffer(TRUE);
+CSceneNode::Render();
+CCharacterModel::Render();
+
+// If the player has no mount AND mount attr is set
+// For testing purposes I just checked for lv...
+//if (!GetIsMount() && _Attr.get(ATTR_EXTEND9) > 0) /*&& (GetMountID() == prevMount || prevMount == 0)) {
+
+	// pChaMount is a nested CCharacter 
+	// ID 791 is Baby Black Dragon from CharacterInfo
+/*		SetMountID(GetMountID());
+
+		pChaMount = _pScene->AddCharacter(_Attr.get(ATTR_EXTEND9));
+
+		pChaMount->SetIsMobMount(true);
+		//prevMount = GetMountID();
+
+		// To remove the "Player" default name
+		pChaMount->setName("");
+		pChaMount->SetShowHP(false);
+		// Summon the pChaMount at the exact position of the character
+		pChaMount->setPos(GetCurX(), GetCurY());
+
+		// Should really make a new control type enumCHACTRL_MOUNT
+		pChaMount->setChaCtrlType(enumCHACTRL_PLAYER_PET);
+
+		// Initial Values for the prev coordinates(Will be used to switch between poses)
+		prevX = GetCurX();
+		prevY = GetCurY();
+
+		long heightOffset = _Attr.get(ATTR_EXTEND10);
+
+		if (heightOffset > 0)
+			setHeightOff(heightOffset);
+		else
+			setHeightOff(145);
+
+		// Elevate the character
+		setHeightOff(145);
+
+		int type = GetDefaultChaInfo()->nID;
+
+		// Initial Seat
+		PlayPose(GetPose(POSE_SEAT2), PLAY_LOOP_SMOOTH);
+
+		// Pose velocity = MSPD / 800 (For 60FPS)
+		pChaMount->SetPoseVelocity((float)pChaMount->getMoveSpeed() / 800.0);
+
+		// Record the mount state
+		SetIsMount(true);
+}
+
+// If the character is mounted AND mount attr is not set or set to -1
+// For test purposes it's just the reverse check lv condition
+//if ((GetIsMount() && _Attr.get(ATTR_EXTEND9) <= 0) && (GetIsMount() && _Attr.get(ATTR_EXTEND9) != this->prevMount)) {
+//if((GetIsMount() && _Attr.get(ATTR_EXTEND9) != prevMount) || (GetIsMount() && _Attr.get(ATTR_EXTEND9) == 0)){
+	if(GetIsMount() && GetPart().SLink[enumEQUIP_MOUNTS].sID == 0 && pChaMount->GetMountPlayerID() == getHumanID()) {
+		// Marks the character for destruction
+		//pChaMount->SetValid(false);
+		_DestoryMount(pChaMount);
+		// Send him back to the ground...
+		//setHeightOff(0);
+
+		// Record the mount state
+		//SetIsMount(false);
+		
+		// STAND UP
+		//PlayPose(GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+//	}
+}
+
+// If mount is running then...
+
+if (GetIsMount()) {
+
+	// Contiounsly update the mount's MSPD to character's MSPD so that they move in SYNC
+	pChaMount->setMoveSpeed(getMoveSpeed());
+
+	// Contiously update the character's angle to match that of the player.
+	pChaMount->setYaw(getYaw());
+
+	int curX = GetCurX();
+	int curY = GetCurY();
+	int curMount = _Attr.get(ATTR_EXTEND9);
+
+	// If there exists a change in coordinates, change pose and move...
+	if (curX != prevX || curY != prevY) {
+		// Play the running pose.
+		pChaMount->PlayPose(pChaMount->GetPose(POSE_RUN), PLAY_LOOP_SMOOTH);
+
+		// Move
+		pChaMount->ForceMove(curX, curY);
+
+		// Update prev coordinates
+		prevX = curX;
+		prevY = curY;
+	}
+	else {
+		// If the character stands still then run the waiting pose.
+		pChaMount->PlayPose(pChaMount->GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+	}
+
+}
+
+// MOUNT_SYSTEM_END
+}
+*/
+/*
+void CCharacter::Render() {
+	if (!_pScene->IsPointVisible((float)_nCurX / 100.0f, (float)_nCurY / 100.0f)) {
+		return;
+	}
+
+	g_Render.EnableZBuffer(TRUE);
+	CSceneNode::Render();
+	CCharacterModel::Render();
+
+	// Mount Start
+
+	if (this->GetScene()->GetSceneTypeID() == enumWorldScene)
+	{
+
+		// Get Mount ID
+		CItemCommand* itemData;
+
+		itemData = (g_stUIEquip.GetEquipItem(enumEQUIP_MOUNTS) != NULL) ? g_stUIEquip.GetEquipItem(enumEQUIP_MOUNTS) : NULL;
+
+		// check data before moving forward
+		//assert(itemData != nullptr);
+
+		int mountID = (itemData != NULL) ? itemData->GetItemInfo()->sItemEffect[0] : 0; // Store Mount ID
+		int mountHeightOff = (itemData != NULL) ? itemData->GetItemInfo()->sItemEffect[1] : 0; // Store Mount height offset
+
+		mount = new CMount(mountID, mountHeightOff, GetTypeID(), GetCurX(), GetCurY());
+
+		// If the player has no mount AND mount attr is set
+		// For testing purposes I just checked for lv...
+		if (!GetIsMount() && mount->mountID > 0 && IsPlayer() && !IsNPC() && !IsMonster()) {
+
+			// pChaMount is a nested CCharacter 
+			// ID 791 is Baby Black Dragon from CharacterInfo
+			pChaMount = _pScene->AddCharacter(mount->mountID);
+
+			// To remove the "Player" default name
+			pChaMount->setName("");
+
+			// Summon the pChaMount at the exact position of the character
+			pChaMount->setPos(mount->GetMountX(), mount->GetMountY());
+
+			// Should really make a new control type enumCHACTRL_MOUNT
+			pChaMount->setChaCtrlType(enumCHACTRL_PLAYER_PET);
+
+			// Initial Values for the prev coordinates(Will be used to switch between poses)
+			prevX = GetCurX();
+			prevY = GetCurY();
+
+			// Elevate the character
+			if (mountHeightOff > 0)
+				setHeightOff(mount->GetHeightOff());
+			else
+				setHeightOff(145);
+
+			// Initial Seat
+			PlayPose(GetPose(mount->GetCharacterPose()), PLAY_LOOP_SMOOTH);
+
+			// Pose velocity = MSPD / 800 (For 60FPS)
+			pChaMount->SetPoseVelocity((float)pChaMount->getMoveSpeed() / 800.0);
+
+			// Record the mount state
+			SetIsMount(true);
+		}
+		// If the character is mounted AND mount attr is not set or set to -1
+		// For test purposes it's just the reverse check lv condition
+		if (GetIsMount() && mount->mountID == 0) {
+
+			// Marks the character for destruction
+			pChaMount->SetValid(false);
+
+			// Send him back to the ground...
+			setHeightOff(0);
+
+			// Record the mount state
+			SetIsMount(false);
+
+			// STAND UP
+			PlayPose(GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+
+			mount = nullptr;
+		}
+
+
+
+		// If mount is running then...
+		if (GetIsMount()) {
+
+			// Contiounsly update the mount's MSPD to character's MSPD so that they move in SYNC
+			pChaMount->setMoveSpeed(getMoveSpeed());
+
+			// Contiously update the character's angle to match that of the player.
+			pChaMount->setYaw(getYaw());
+
+			int curX = GetCurX();
+			int curY = GetCurY();
+
+			// If there exists a change in coordinates, change pose and move...
+			if (GetCurX() != prevX || GetCurY() != prevY) {
+
+				// Play the running pose.
+				pChaMount->PlayPose(pChaMount->GetPose(POSE_RUN), PLAY_LOOP_SMOOTH);
+
+				mount->UpdateX(GetCurX());
+				mount->UpdateY(GetCurY());
+
+				// Move
+				pChaMount->ForceMove(curX, curY);
+
+				// Update prev coordinates
+
+				prevX = GetCurX();
+				prevY = GetCurY();
+			}
+			else {
+
+				// If the character stands still then run the waiting pose.
+				pChaMount->PlayPose(pChaMount->GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+			}
+		}
+	}
+	// MOUNT_SYSTEM_END
+}*/
 
 void CCharacter::RefreshLevel( int nMainLevel )
 {
@@ -890,7 +1337,7 @@ void CCharacter::RefreshUI(int nParam)
 {
 	//_pHeadSay->SetLifeNum( _Attr.get(ATTR_HP), _Attr.get(ATTR_MXHP) );
 	_pHeadSay->SetLifeNum( (int)_Attr.get(ATTR_HP), (int)_Attr.get(ATTR_MXHP) );
-
+	_pHeadSay->SetSPNum((int)_Attr.get(ATTR_SP), (int)_Attr.get(ATTR_MXSP));
 	if( g_stUIBoat.GetHuman()==this )
 	{
 		/*g_stUIStart.RefreshMainLifeNum( _Attr.get(ATTR_HP), _Attr.get(ATTR_MXHP)) ;
@@ -1430,6 +1877,7 @@ void CCharacter::InitState()
 	setSideID( 0 );
 }
 
+
 void CCharacter::setPlayerNameColor(int v)
 {
 	this->SetOldColor(getGameAttr()->get(ATTR_EXTEND9));
@@ -1646,6 +2094,8 @@ bool CCharacter::PlayPose( DWORD pose, DWORD type, int time, int fps, bool isBle
 	CGameApp::GetFrameFPS();
 //	LG( getLogName(), "Pose:%d, type:%d, time:%d\n", pose, type, time, fps );
 
+
+
     bool rv = GetCurPoseType()==pose;
 #if 1
 	// 飞行用（测试代码）
@@ -1656,12 +2106,30 @@ bool CCharacter::PlayPose( DWORD pose, DWORD type, int time, int fps, bool isBle
 		if(pose == POSE_SHOW)  pose = POSE_FLY_SHOW;	// 摆酷 -> 空中摆酷
 		if(pose == POSE_SEAT)  pose = POSE_FLY_SEAT;	// 坐下 -> 空中悬空坐 
 	}
-#endif
+
 	if (GetIsSit())
 	{
 		if (pose == POSE_WAITING || pose == POSE_WAITING2)
 			pose = POSE_SEAT2;
 	}
+#endif
+	if (GetIsMount()) { 
+		pose = POSE_SEAT2;
+	}
+
+	if ((GetCurPoseType() == POSE_RUN2) || (GetCurPoseType() == POSE_RUN) || GetCurPoseType() == POSE_FLY_RUN) {
+		if ((pose != POSE_RUN2) && (pose != POSE_RUN) && (pose != POSE_FLY_RUN)) {
+			GetScene()->HandleSceneMsg(SCENEMSG_CHA_ENDMOVE, getTypeID(), getID());
+		}
+	}
+	else {
+
+		// You need to add ~ || pose == POSE_SEAT ~ to this condition for the camera to follow
+		if ((pose == POSE_RUN2) || (pose == POSE_RUN) || (pose == POSE_FLY_RUN) || pose == POSE_SEAT2) {
+			GetScene()->HandleSceneMsg(SCENEMSG_CHA_BEGINMOVE, getTypeID(), getID());
+		}
+	}
+
     if( (GetCurPoseType()==POSE_RUN2) || (GetCurPoseType()==POSE_RUN) || GetCurPoseType() == POSE_FLY_RUN)
     {
         if( (pose!=POSE_RUN2) && (pose!=POSE_RUN) && (pose!=POSE_FLY_RUN))
@@ -1829,6 +2297,9 @@ void CCharacter::UpdataFace( stNetChangeChaPart& stPart )
 
 		if( _pHandItem[enumEQUIP_LHAND] )
 			_pHandItem[enumEQUIP_LHAND]->SetForgeEffect( stPart.SLink[enumEQUIP_LHAND].lDBParam[0], nCharID );
+
+	//	if (_pHandItem[enumEQUIP_BODY])
+		//	_pHandItem[enumEQUIP_BODY]->SetForgeEffect(1, nCharID);
 	}
 //
 //    // 拳套特殊处理，左手自动装入另一只拳套
@@ -1902,7 +2373,7 @@ void CCharacter::UpdataFace( stNetChangeChaPart& stPart )
     // 最后才确定武器摆放方式 
     RefreshItem( true );
 }
-
+#define MOUNT_BONE_LINK 0
 xShipInfo* CCharacter::ConvertPartTo8DWORD( stNetChangeChaPart& stPart, DWORD* dwBuf )
 {
 	xShipInfo* pInfo = ::GetShipInfo( stPart.sBoatID );
@@ -1954,6 +2425,65 @@ xShipInfo* CCharacter::ConvertPartTo8DWORD( stNetChangeChaPart& stPart, DWORD* d
 		}
 	}
 	return pInfo;
+}
+
+void CCharacter::_DestoryMount(CCharacter*& mount)
+{
+	if (!mount) return;
+	if (mount->_mountPlayerID == this->getHumanID()) {
+		if (mount) mount->Destroy();
+		//this->pChaMount->_mountPlayerID = NULL;
+		//mount = NULL;
+		SetIsMount(false);
+		setHeightOff(0);
+		//PlayPose(GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+	}
+}
+
+void CCharacter::_SummonMount()
+{
+	//if (!pChaMount) pChaMount = new CCharacter();
+	pChaMount->_mountPlayerID = this->getHumanID();
+	if (!GetIsMount() && IsPlayer() && this->getHumanID() == pChaMount->_mountPlayerID)
+	{
+		CItemRecord* pRec = GetItemRecordInfo(GetPart().SLink[enumEQUIP_MOUNTS].sID);
+		if (pRec)
+		{
+
+			int heightOffset = (pRec->sItemEffect[1] == NULL) ? 145 : pRec->sItemEffect[1];
+			SetPrevMountID(pRec->lID);
+			SetMountID((pRec->sItemEffect[0] > 0 ? pRec->sItemEffect[0] : 0));
+
+			pChaMount = _pScene->AddCharacter(pRec->sItemEffect[0]);
+
+			pChaMount->SetIsMobMount(true);
+
+			pChaMount->setName("");
+
+			pChaMount->SetShowHP(false);
+
+			pChaMount->setPos(GetCurX(), GetCurY());
+
+			pChaMount->setChaCtrlType(enumCHACTRL_PLAYER_MOUNT);
+
+			prevX = GetCurX();
+
+			prevY = GetCurY();
+			pChaMount->linkTo(this, MOUNT_BONE_LINK);
+			
+			//if (pRec->sItemEffect[1] > 0)
+				//setHeightOff(pRec->sItemEffect[1]);
+			//else
+			setHeightOff(heightOffset);
+
+			//pChaMount->setHeightOff(pChaMount->getHeightOff() + 20);
+
+
+			pChaMount->SetPoseVelocity((float)pChaMount->getMoveSpeed() / 800.0);
+
+			SetIsMount(true);
+		}
+	}
 }
 
 bool CCharacter::UpdataItem(int nItem, DWORD nLink)
@@ -2017,7 +2547,44 @@ bool CCharacter::UpdataItem(int nItem, DWORD nLink)
 	case enumEQUIP_Jewelry2:
 	case enumEQUIP_Jewelry3:
 	case enumEQUIP_Jewelry4:
-	//case enumEQUIP_CLOAK:
+	case enumEQUIP_FAIRY:
+	case enumEQUIP_CLOAK:
+	case enumEQUIP_WINGS:
+	case enumEQUIP_MOUNTS: {
+		if (nLink == enumEQUIP_MOUNTS) {
+			pChaMount->SetMountPlayerID(this->getHumanID());
+			if (GetPart().SLink[nLink].sID > 0 && CGameApp::GetCurScene()->GetSceneTypeID() == enumWorldScene) {
+				if (!this->GetIsMount() && pChaMount->GetMountPlayerID() == this->getHumanID()) {
+					CItemRecord* pRec = GetItemRecordInfo(GetPart().SLink[nLink].sID);
+					if (pRec) {
+						_SummonMount(); 
+					}
+				}
+				else if (nLink == enumEQUIP_MOUNTS)
+				{
+					if (GetPart().SLink[enumEQUIP_MOUNTS].sID == 0 && GetIsMount() && pChaMount->GetMountPlayerID() == this->getHumanID())
+					{
+						if(pChaMount->_mountPlayerID == this->getHumanID())
+							_DestoryMount(pChaMount);
+					}
+					else if (GetPrevMap() != 1 && GetIsMount() && pChaMount->GetMountPlayerID() == this->getHumanID())
+					{
+						_DestoryMount(pChaMount);
+					}
+					else if (GetPart().SLink[enumEQUIP_MOUNTS].sID != GetPrevMountID())
+					{
+						if (pChaMount->_mountPlayerID == this->getHumanID())
+						{
+							_DestoryMount(pChaMount); // Clean up old mount
+							_SummonMount(); // Sumnmon New mount
+						}
+					}
+				}
+			}
+		}
+		return true;
+	}
+	case enumEQUIP_SWINGS:
 		return true;
 	}
 	return false;
@@ -2858,7 +3425,13 @@ bool CCharacter::GetIsSit()
 
 bool CCharacter::GetIsFly()
 {
+	bool enableAllWings = false;
+
 	int nID = GetHandFace(2);
+
+	if (enableAllWings)
+		return (GetItemRecordInfo(nID)->sType == enumItemTypeWing) ? true : false;  
+
 	return (128 <= nID && nID <= 140 && nID != 135 && GetHandFace(4) < 9000) ? true : false;
 
 	//CItemRecord* pItem = GetItemRecordInfo(GetItemFace(0));

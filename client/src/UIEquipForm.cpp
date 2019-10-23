@@ -38,9 +38,11 @@ static char szBuf[32] = { 0 };
 CGuiPic	CEquipMgr::_imgCharges[enumEQUIP_NUM];
 CEquipMgr::SSplitItem CEquipMgr::SSplit;
 
-
+CCharacter* CEquipMgr::characterCopy = NULL;
+bool CEquipMgr::refreshChaModel = true;
+int CEquipMgr::m_rotate = 0;
 extern CDoublePwdMgr g_stUIDoublePwd;
-
+//C3DCompent* CEquipMgr::ui3dCreateCha = NULL;
 //---------------------------------------------------------------------------
 // class CMainMgr
 //---------------------------------------------------------------------------
@@ -108,7 +110,7 @@ bool CEquipMgr::Init()
 	SetIsLock(false);	// 默认不锁定
 
 	// new
-	C3DCompent* ui3dCreateCha = (C3DCompent*)frmItem->Find("ui3dCreateCha");
+	this->ui3dCreateCha = (C3DCompent*)frmItem->Find("ui3dCreateCha");
 	if (ui3dCreateCha)
 	{
 		ui3dCreateCha->SetRenderEvent(_cha_render_event);
@@ -163,6 +165,14 @@ bool CEquipMgr::Init()
             }
         }
     }
+
+	rotateLeft = dynamic_cast<CTextButton*>(frmItem->Find("charRotateL"));
+	if (rotateLeft)
+	{
+		rotateLeft->SetHover(false);
+		rotateLeft->evtMouseClick = _evtChaLeftRotate;
+	}
+
 	//_pActiveFastLabel = dynamic_cast<CLabel*>(frmMain800->Find( "labFast" ) );
     _ActiveFast( 0 );
 
@@ -189,6 +199,7 @@ bool CEquipMgr::Init()
 	cnmEquip[enumEQUIP_WINGS] = dynamic_cast<COneCommand*>(frmItem->Find("cmdWing"));
 	cnmEquip[enumEQUIP_MOUNTS] = dynamic_cast<COneCommand*>(frmItem->Find("cmdMount"));
 	cnmEquip[enumEQUIP_SWINGS] = dynamic_cast<COneCommand*>(frmItem->Find("cmdSwing"));
+
 
 //cnmEquip[enumEQUIP_SWING] = dynamic_cast<COneCommand*>(frmItem->Find("cmdSwing"));
 
@@ -233,6 +244,8 @@ void CEquipMgr::End()
 {
 	//RefreshServerShortCut(); Human已经无效
 	SAFE_DELETE_ARRAY(_pFastCommands);
+	SAFE_DELETE(ui3dCreateCha);
+	SAFE_DELETE(characterCopy);
 }
 
 void CEquipMgr::_evtSkillUpgrade(CSkillList *pSender, CSkillCommand* pSkill)
@@ -429,6 +442,8 @@ void CEquipMgr::_evtItemFormShow(CGuiData *pSender)
 	if(g_stUIStore.GetStoreForm()->GetIsShow())
 	{
 		g_stUIEquip.frmItem->SetIsShow(false);
+		g_stUIEquip.characterCopy = NULL;
+		g_stUIEquip.ui3dCreateCha = NULL;
 	}
 }
 
@@ -442,7 +457,6 @@ void CEquipMgr::UpdataEquipData( const stNetChangeChaPart& SPart, CCharacter* pC
 		//if( SPart.SLink[i].sID==0 ) continue;
 		if( cnmEquip[i] == NULL || SPart.SLink[i].sID==0 ) continue;
 		// End
-
         pItem = dynamic_cast<CItemCommand*>(cnmEquip[i]->GetCommand());
         if( pItem && pItem->GetItemInfo()->lID==SPart.SLink[i].sID )
         {
@@ -474,10 +488,10 @@ void CEquipMgr::UpdataEquip( const stNetChangeChaPart& SPart, CCharacter* pCha )
     //}
 
     // 更新UI装备栏
-    for( int i=0; i<enumEQUIP_NUM; i++ )
-    {
-        _UpdataEquip( stEquip.SLink[i], i );
-    }
+	for (int i = 0; i < enumEQUIP_NUM; i++)
+	{
+		_UpdataEquip(stEquip.SLink[i], i);
+	}
 }
 
 bool CEquipMgr::_UpdataEquip( SItemGrid& Item, int nLink )
@@ -506,6 +520,7 @@ bool CEquipMgr::_UpdataEquip( SItemGrid& Item, int nLink )
 		 pItem = new CItemCommand( pInfo, false);//modified guojiangang 20090108
         pItem->SetData( Item );
         cnmEquip[nLink]->AddCommand( pItem );
+
     }
     else
     {
@@ -740,6 +755,10 @@ void CEquipMgr::_evtEquipEvent(CGuiData *pSender, CCommandObj* pItem, bool& isAc
 		stNetUseItem info;
 		info.sGridID = g_stUIEquip.grdItem->GetDragIndex();
 		CS_BeginAction( g_stUIBoat.GetHuman(), enumACTION_ITEM_USE, &info );
+		if (pCha->GetScene()->GetSceneTypeID() == enumWorldScene)
+		{
+			pCha->getGameAttr()->set(ATTR_EXTEND9, 0);
+		}
 	}
 }
 
@@ -878,6 +897,9 @@ void CEquipMgr::evtSwapItemEvent(CGuiData *pSender,int nFirst, int nSecond, bool
 
 	CItemCommand* pItem = dynamic_cast<CItemCommand*>( pGood->GetItem( nSecond ) );
 	CItemCommand* pTarget = dynamic_cast<CItemCommand*>( pGood->GetItem( nFirst ) );
+	/*if (pItem->GetItemInfo()->sType == 89) {
+		return;
+	}*/
 	if (pItem && !pItem->GetIsValid())
 	{
 		return;
@@ -1124,7 +1146,7 @@ void CEquipMgr::FrameMove(DWORD dwTime)
 				if (labChaName)
 				{
 					int lv = pCChaAttr->get(ATTR_LV);
-					_snprintf_s(pszCha, _countof(pszCha), _TRUNCATE, "Lv%d %s", lv, pMainCha->getName());
+					_snprintf_s(pszCha, _countof(pszCha), _TRUNCATE, "Lv%d %s \n%s\n", lv, g_GetJobName((short)pCChaAttr->get(ATTR_JOB)), pMainCha->getName());
 					labChaName->SetCaption((const char*)pszCha);
 				}
 				if (labChaGuild)
@@ -1135,14 +1157,15 @@ void CEquipMgr::FrameMove(DWORD dwTime)
 					}
 					else
 					{
-						labChaGuild->SetCaption("(no guild)");
+						labChaGuild->SetCaption("(No guild)");
 					}
 				}
 
 				CCharacter* pMainCha = g_stUIBoat.GetHuman();
-				if (!pMainCha) { LG("frmItem3dcha", RES_STRING(CL_LANGUAGE_MATCH_619)); return; }
-				m_pCurrMainCha = pMainCha;
-
+			//	if (!pMainCha) { LG("frmItem3dcha", RES_STRING(CL_LANGUAGE_MATCH_619)); return; }
+				//else {
+					//characterCopy = new CCharacter(*CGameApp::GetCurScene()->GetMainCha());
+			//	}
 				//m_pCurrMainCha->FightSwitch(true);
 
 				imgItem4->SetIsShow(grdItem->GetFirstShow() == 0);
@@ -1221,10 +1244,14 @@ void CEquipMgr::UnfixToGrid( CCommandObj* pItem, int nGridID, int nLink )
 	_StartUnfix( _sUnfix );
 }
 
-void CEquipMgr::_evtItemFormClose( CForm *pForm, bool& IsClose )
+void CEquipMgr::_evtItemFormClose(CForm *pForm, bool& IsClose)
 {
-	if ( g_stUITrade.IsTrading() )
+	if (g_stUITrade.IsTrading())
 		IsClose = false;
+
+		//g_stUIEquip.m_pCurrMainCha = NULL;
+	g_stUIEquip.characterCopy = NULL;
+	g_stUIEquip.ui3dCreateCha = NULL;
 }
 
 void CEquipMgr::_SendUnfixData(const stUnfix& unfix, int nUnfixNum)
@@ -1465,25 +1492,77 @@ void CEquipMgr::_CheckLockMouseEvent(CCompent *pSender, int nMsgType, int x, int
     }
 }
 
+#define SMALL_RES_X 800
+#define SMALL_RES_Y 600
+void CEquipMgr::RenderModel(int x, int y, CCharacter* original, CCharacter* model, int rotation, bool refresh) {
+
+	characterCopy = new CCharacter(*CGameApp::GetCurScene()->GetMainCha());
+
+
+	if (!original || !model) return;
+
+	g_Render.LookAt(D3DXVECTOR3(11.0f, 36.0f, 10.0f), D3DXVECTOR3(8.70f, 12.0f, 8.0f), LERender::VIEW_3DUI);
+
+	drMatrix44 matrix = *characterCopy->GetMatrix();
+
+//	characterCopy->SetScale(D3DXVECTOR3(0.8f, 0.8f, 0.8f));
+
+	characterCopy->SetUIYaw(160 + rotation);
+
+	int typeID = characterCopy->getTypeID();
+
+	characterCopy->SetUIScaleDis(13.0f* g_Render.GetScrWidth() / 800);
+	characterCopy->RenderForUI(x, y,false);
+	characterCopy->SetMatrix(&matrix);
+
+	g_Render.SetTransformView(&g_Render.GetWorldViewMatrix());
+
+	//characterCopy->PlayPose(characterCopy->GetPose(POSE_WAITING), PLAY_LOOP_SMOOTH);
+
+}
+
+void CEquipMgr::ChaLeftRotate()
+{
+	m_rotate += 180;
+	m_rotate += -(-1) * 15;
+	m_rotate = (m_rotate + 360) % 360;
+	m_rotate -= 180;
+}
+
+// 试穿 3D 角色向右旋转
+void CEquipMgr::ChaRightRotate()
+{
+	m_rotate += 180;
+	m_rotate += -(1) * 15;
+	m_rotate = (m_rotate + 360) % 360;
+	m_rotate -= 180;
+}
+
+void CEquipMgr::_evtChaLeftRotate(CGuiData *sender, int x, int y, DWORD key) {
+	ChaLeftRotate();
+	//characterCopy->SetUIYaw(m_rotate);
+}
 void CEquipMgr::RenderCha(int x, int y)
 {
-	if (!m_pCurrMainCha) return;
+	if (!characterCopy) return;
+
 	g_Render.LookAt(D3DXVECTOR3(11.0f, 36.0f, 10.0f), D3DXVECTOR3(8.70f, 12.0f, 8.0f), LERender::VIEW_3DUI);
 	y += 90;
 
-	drMatrix44 matCha = *m_pCurrMainCha->GetMatrix();
+	drMatrix44 matCha = *characterCopy->GetMatrix();
 
-	m_pCurrMainCha->SetScale(D3DXVECTOR3(0.8f, 0.8f, 0.8f));
-	m_pCurrMainCha->SetUIYaw(165);
-	m_pCurrMainCha->SetUIScaleDis(13.0f * g_Render.GetScrWidth() / 800);
-	m_pCurrMainCha->RenderForUI(x, y, true);
-	m_pCurrMainCha->SetMatrix(&matCha);
-	m_pCurrMainCha->SetPoseVelocity(0.2f);
+	characterCopy->SetScale(D3DXVECTOR3(0.8f, 0.8f, 0.8f));
+	characterCopy->SetUIYaw(165);
+	characterCopy->SetUIScaleDis(13.0f * g_Render.GetScrWidth() / 800);
+	characterCopy->RenderForUI(x, y, false);
+	characterCopy->SetMatrix(&matCha);
+	characterCopy->SetPoseVelocity(0.2f);
 
 	g_Render.SetTransformView(&g_Render.GetWorldViewMatrix());
 }
 
 void CEquipMgr::_cha_render_event(C3DCompent *pSender, int x, int y)
 {
-	g_stUIEquip.RenderCha(x, y);
+		RenderModel(x, y , g_stUIBoat.GetHuman(), characterCopy, m_rotate, refreshChaModel);
+		refreshChaModel = false;
 }

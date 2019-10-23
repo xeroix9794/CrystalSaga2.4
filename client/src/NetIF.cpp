@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+ï»¿#include "StdAfx.h"
 #pragma warning(disable: 4018)
 #include "NetIF.h"
 #include "GameApp.h"
@@ -9,17 +9,19 @@
 #include "procirculate.h"
 #include "GameConfig.h"
 #include "ProCirculate.h"
-//=============¸÷¸ö¹¦ÄÜÍ·ÎÄ¼şBEGIN=============
+#include "MapSet.h"
+//=============Â¸Ã·Â¸Ã¶Â¹Â¦Ã„ÃœÃÂ·ÃÃ„Â¼Ã¾BEGIN=============
 #include "PacketCmd.h"
 #include "NetChat.h"
 #include "NetGuild.h"
+#include "UIPortalTime.h"
 
 #ifdef _TEST_CLIENT
 #include "..\..\TestClient\testclient.h"
 #endif
-//=============¸÷¸ö¹¦ÄÜÍ·ÎÄ¼şEND===============
+//=============Â¸Ã·Â¸Ã¶Â¹Â¦Ã„ÃœÃÂ·ÃÃ„Â¼Ã¾END===============
 
-//ÈÎºÎÈË²»µÃĞŞ¸ÄÏÂÃæ2ĞĞ£¬Ğ»Ğ»ºÏ×÷¡£
+//ÃˆÃÂºÃÃˆÃ‹Â²Â»ÂµÃƒÃÃÂ¸Ã„ÃÃ‚ÃƒÃ¦2ÃÃÂ£Â¬ÃÂ»ÃÂ»ÂºÃÃ—Ã·Â¡Â£
 uLong	NetBuffer[]		= {100,10,0};
 bool	g_logautobak	= false;
 
@@ -30,7 +32,7 @@ NetIF		*g_NetIF;
 extern short g_sClientVer;
 
 //-------------------
-// PacketÏûÏ¢´¦Àíº¯Êı
+// PacketÃÃ»ÃÂ¢Â´Â¦Ã€Ã­ÂºÂ¯ÃŠÃ½
 //-------------------
 
 BOOL NetIF::HandlePacketMessage(DataSocket *datasock,LPRPACKET pk)
@@ -97,7 +99,18 @@ BOOL NetIF::HandlePacketMessage(DataSocket *datasock,LPRPACKET pk)
 		// End
 
 	case CMD_MC_BEGIN_ITEM_AMPHITHEATER: return SC_Amphitheater(pk);//Add by sunny.sun20080716
-
+	case CMD_MC_PORTALTIMESï»¿: {
+		for (auto portalCount = pk.ReverseReadShort(); portalCount > 0; --portalCount) {
+			static char buf[500];
+			const auto mapID = pk.ReadChar();
+			const time_t EntryFirstTm = pk.ReadLongLong();
+			const time_t tEntryTmDis = pk.ReadLongLong();
+			const time_t tEntryOutTmDis = pk.ReadLongLong();
+			const time_t tMapClsTmDis = pk.ReadLongLong();
+			std::string s = GetMapInfo(mapID)->szName;
+			g_stUIPortalTime.Add({ static_cast<CMapInfo*>(GetMapInfo(mapID))->szName, EntryFirstTm, tEntryTmDis, tEntryOutTmDis, tMapClsTmDis });
+		}
+	}break;
 	case CMD_MC_BEGIN_ITEM_UNITE: return SC_Unite(pk);
 	case CMD_MC_BEGIN_ITEM_MILLING: return SC_Milling(pk);
 	case CMD_MC_BEGIN_ITEM_FUSION:  return SC_Fusion(pk);
@@ -138,7 +151,7 @@ BOOL NetIF::HandlePacketMessage(DataSocket *datasock,LPRPACKET pk)
 		long guildID = pk.ReadLong();
 		cChar* message = pk.ReadString();
 		if(strlen(message) > 0)
-			g_pGameApp->ShowMidText(message);
+			g_pGameApp->ShowGuildText(message);
 	}
 	case CMD_PC_GUILD_PERM: return PC_GUILD_PERMISSIONS(pk);
 	case CMD_PC_SESS_CREATE:	return PC_SESS_CREATE(pk);
@@ -242,7 +255,7 @@ BOOL NetIF::HandlePacketMessage(DataSocket *datasock,LPRPACKET pk)
 
     case CMD_PC_GARNER2_ORDER: return PC_PKSilver(pk);
 
-	//	Add by Rain begin ¹Ò»úÊ±¼ä
+	//	Add by Rain begin Â¹Ã’Â»ÃºÃŠÂ±Â¼Ã¤
 	case CMD_MC_LEAVE_TIME_ASR:	return SC_LeaveTimeShow(pk);
 	case CMD_MC_SELECT_TIME_ASR: return SC_LeaveExpShow(pk);
 	//	End
@@ -251,7 +264,7 @@ BOOL NetIF::HandlePacketMessage(DataSocket *datasock,LPRPACKET pk)
     case CMD_MC_LIFESKILL_ASK: return SC_LifeSkill(pk);
     case CMD_MC_LIFESKILL_ASR: return SC_LifeSkillAsr(pk);
 	case CMD_CM_ITEM_LOCK_ASR:	return	SC_DropLockAsr(pk);
-	case CMD_MC_ITEM_UNLOCK_ASR: return SC_UnlockItemAsr(pk); // add by ning.yan µÀ¾ß½âËøµÄ»ØÓ¦ÏûÏ¢ 2008-11-12
+	case CMD_MC_ITEM_UNLOCK_ASR: return SC_UnlockItemAsr(pk); // add by ning.yan ÂµÃ€Â¾ÃŸÂ½Ã¢Ã‹Ã¸ÂµÃ„Â»Ã˜Ã“Â¦ÃÃ»ÃÂ¢ 2008-11-12
 	case CMD_MC_VOLUNTER_LIST: return SC_VolunteerList(pk);
 	case CMD_MC_VOLUNTER_STATE: return SC_VolunteerState(pk);
 	case CMD_MC_VOLUNTER_OPEN: return SC_VolunteerOpen(pk);
@@ -454,7 +467,7 @@ NetIF::NetIF(ThreadPool *comm):TcpClientApp(this,0,comm),RPCMGR(this),PKQueue(fa
 {
 	TcpCommApp::WSAStartup();
 
-    // ³õÊ¼»¯¼ÓÃÜ²¿·Ö
+    // Â³ÃµÃŠÂ¼Â»Â¯Â¼Ã“ÃƒÃœÂ²Â¿Â·Ã–
     memset(_key, 0, sizeof _key);
     _key_len = 0;
     g_rLvm = init_lua();
@@ -554,7 +567,7 @@ void NetIF::SwitchNet(bool isConnected)
     }
 }
 
-//·µ»ØÖµ:true-ÔÊĞíÁ¬½Ó,false-²»ÔÊĞíÁ¬½Ó
+//Â·ÂµÂ»Ã˜Ã–Âµ:true-Ã”ÃŠÃÃ­ÃÂ¬Â½Ã“,false-Â²Â»Ã”ÃŠÃÃ­ÃÂ¬Â½Ã“
 bool	NetIF::OnConnect(DataSocket *datasock)
 {
 //  LG("connect","\tOnConnect\n");
@@ -563,7 +576,7 @@ bool	NetIF::OnConnect(DataSocket *datasock)
 	datasock->SetSendBuf(64*1024);
 	return	true;
 }
-//reasonÖµ:0-±¾µØ³ÌĞòÕı³£ÍË³ö£»-1-Socket´íÎó£»-3-ÍøÂç±»¶Ô·½¹Ø±Õ£»-5-°ü³¤¶È³¬¹ıÏŞÖÆ¡£
+//reasonÃ–Âµ:0-Â±Â¾ÂµÃ˜Â³ÃŒÃÃ²Ã•Ã½Â³Â£ÃÃ‹Â³Ã¶Â£Â»-1-SocketÂ´Ã­ÃÃ³Â£Â»-3-ÃÃ¸Ã‚Ã§Â±Â»Â¶Ã”Â·Â½Â¹Ã˜Â±Ã•Â£Â»-5-Â°Ã¼Â³Â¤Â¶ÃˆÂ³Â¬Â¹Ã½ÃÃÃ–Ã†Â¡Â£
 void	NetIF::OnDisconnect(DataSocket *datasock,int reason)
 {
 //	LG("connect","\tOnDisconnect, Reason:%d, Tick:%u,recvTime:%u  \n", reason, GetCurrentTick(),GetRecvTime(datasock) );
@@ -642,13 +655,13 @@ void NetIF::OnEncrypt(dbc::DataSocket *datasock,char *ciphertext,const char *tex
         pClient->OnEncrypt( datasock, ciphertext, text, len );
 #else
         if (_comm_enc > 0 && _enc)
-        { // ¼ÓÃÜ
+        { // Â¼Ã“ÃƒÃœ
         #if 0
             encrypt_B(ciphertext, len, _key, _key_len);
         #endif
 
 
-		// ÍøÂçĞ­ÒéÊÇ·ñ¼ÓÃÜ
+		// ÃÃ¸Ã‚Ã§ÃÂ­Ã’Ã©ÃŠÃ‡Â·Ã±Â¼Ã“ÃƒÃœ
 		#if NET_PROTOCOL_ENCRYPT
 		{
 			encrypt_Noise( g_szSendKey, ciphertext, len );
@@ -678,7 +691,7 @@ void NetIF::OnDecrypt(dbc::DataSocket *datasock,char *ciphertext,unsigned long &
 		// static int i =0, j = 0;
 
 	 //i++;
-		// LG("ddd","µ÷ÓÃ´ÎÊı%d\n",i);
+		// LG("ddd","ÂµÃ·Ã“ÃƒÂ´ÃÃŠÃ½%d\n",i);
     TcpCommApp::OnDecrypt(datasock, ciphertext, len);
 	 try 
      {
@@ -687,7 +700,7 @@ void NetIF::OnDecrypt(dbc::DataSocket *datasock,char *ciphertext,unsigned long &
         pClient->OnDecrypt(datasock,ciphertext,len);
 #else
         if (_comm_enc > 0 && _enc)
-        { // ½âÃÜ
+        { // Â½Ã¢ÃƒÃœ
         #if 0
             encrypt_B(text, len, _key, _key_len, false);
         #endif
@@ -701,7 +714,7 @@ void NetIF::OnDecrypt(dbc::DataSocket *datasock,char *ciphertext,unsigned long &
         #endif
 
 		
-		// ÍøÂçĞ­ÒéÊÇ·ñ¼ÓÃÜ
+		// ÃÃ¸Ã‚Ã§ÃÂ­Ã’Ã©ÃŠÃ‡Â·Ã±Â¼Ã“ÃƒÃœ
 		#if NET_PROTOCOL_ENCRYPT
 		{
 			//lua_getglobal(g_sLvm, "decryptNoise");
@@ -723,7 +736,7 @@ void NetIF::OnDecrypt(dbc::DataSocket *datasock,char *ciphertext,unsigned long &
 	}
 }
 
-//------------- Packet·¢ËÍº¯Êı    Client -> Server ÏûÏ¢·¢³ö×Ü¿Ø----------------------------
+//------------- PacketÂ·Â¢Ã‹ÃÂºÂ¯ÃŠÃ½    Client -> Server ÃÃ»ÃÂ¢Â·Â¢Â³Ã¶Ã—ÃœÂ¿Ã˜----------------------------
 void NetIF::SendPacketMessage(LPWPACKET pk)
 {
 	BOOL bUseFakeServer = FALSE;

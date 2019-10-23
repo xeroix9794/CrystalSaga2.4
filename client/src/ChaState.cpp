@@ -4,7 +4,7 @@
 #include "netprotocol.h"
 #include "character.h"
 #include "EffectObj.h"
-
+#include "UIStartForm.h"
 //---------------------------------------------------------------------------
 // class CChaStateMgr
 //---------------------------------------------------------------------------
@@ -45,6 +45,19 @@ void CChaStateMgr::ChaDestroy()
 
 	memcpy( _sChaState, _sInitState, sizeof(_sChaState) );
 	_states.clear();
+}
+void CChaStateMgr::RenderStates()
+{
+	if (this->_pCha->IsMainCha())
+	{
+		if (this->HasSkillState(0)) {
+			for (int i = 0; i < this->GetSkillStateNum(); i++) {
+				if (this->HasSkillState(i)) {
+
+				}
+			}
+		}
+	}
 }
 
 CBoolSet& CChaStateMgr::Synchro( stSkillState* pState, int nCount )
@@ -114,18 +127,25 @@ CBoolSet& CChaStateMgr::Synchro( stSkillState* pState, int nCount )
 			if( pChaState->pEffect )
 			{
 //				LG( _pCha->getLogName(), RES_STRING(CL_LANGUAGE_MATCH_31), pChaState->pEffect->getIdxID(), pChaState->pEffect );
+				
+
 
 				pChaState->pEffect->SetValid( FALSE );
 				pChaState->pEffect = NULL;
 			}
 			pChaState->chStateLv = 0;
+
+		/*	if (_pCha->icons.HasIcon(pChaState->pInfo->nID) && pChaState->chStateLv == 0 && _pCha->icons.IsValid(pChaState->pInfo->nID)) {
+				g_stUIStart.HideStateImgByID(pChaState->iconID);
+				_pCha->icons.SetValid(pChaState->pInfo->nID, false, pChaState->iconID);
+			}
+			pChaState->iconID = 0;*/
 		}
 		else
 		{
 			// Ôö¼Ó
 			_states.push_back( pChaState );
 //			LG( _pCha->getLogName(), RES_STRING(CL_LANGUAGE_MATCH_32), pChaState->pInfo->nID, pChaState->pInfo->szName, pChaState->pInfo->sEffect );
-
 			pInfo = pChaState->pInfo;
 			if( pInfo->sBitEffect>0 )
 			{
@@ -149,6 +169,13 @@ CBoolSet& CChaStateMgr::Synchro( stSkillState* pState, int nCount )
 				_nShopLevel = pChaState->chStateLv;
 				_ChaState.SetFalse( enumChaStateNoShop );
 			}
+
+		/*	if (!_pCha->icons.IsValid(pInfo->nID))
+			{
+				_pCha->icons.SetValid(pChaState->pInfo->nID, true, i);
+				pChaState->iconID = i;
+				g_stUIStart.AddStateImageByID(i, _pCha->icons.GetIcon(pChaState->pInfo->nID), pChaState->pInfo->nID);
+			}*/
 
 			if( pInfo->sEffect>0 && !pChaState->pEffect )
 			{

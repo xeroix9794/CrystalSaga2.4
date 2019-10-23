@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\src</FILEPATH>
+      <FILENAME>pi_memory.cpp</FILENAME>
+      <LINE>3</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'pi_Memory::m_minuteInterval' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>pi_Memory::{ctor}</FUNCTION>
+    <DECORATED>??0pi_Memory@@QAE@PBD@Z</DECORATED>
+    <FUNCLINE>3</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\src</FILEPATH>
+      <FILENAME>pi_memory.cpp</FILENAME>
+      <LINE>40</LINE>
+      <COLUMN>21</COLUMN>
+    </SFA>
+    <DEFECTCODE>6258</DEFECTCODE>
+    <DESCRIPTION>Using TerminateThread does not allow proper thread clean up.</DESCRIPTION>
+    <FUNCTION>pi_Memory::wait</FUNCTION>
+    <DECORATED>?wait@pi_Memory@@QAE_NXZ</DECORATED>
+    <FUNCLINE>31</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\src</FILEPATH>
+      <FILENAME>pi_memory.cpp</FILENAME>
+      <LINE>86</LINE>
+      <COLUMN>30</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '*' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '*' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>pi_Memory::ThreadProc</FUNCTION>
+    <DECORATED>?ThreadProc@pi_Memory@@CGKPAX@Z</DECORATED>
+    <FUNCLINE>61</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::limitPartIndex' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>brkiter.h</FILENAME>
+      <LINE>632</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::BreakIterator::actualLocale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::BreakIterator::{ctor}</FUNCTION>
+    <DECORATED>??0BreakIterator@icu_59@@IAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>632</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>38</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CFormatParameter::m_MsgArgs' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CFormatParameter::{ctor}</FUNCTION>
+    <DECORATED>??0CFormatParameter@@AAE@XZ</DECORATED>
+    <FUNCLINE>38</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_pResourceBundle' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

@@ -1352,6 +1352,7 @@ int UI_SetChatColor(DWORD world, DWORD road, DWORD team, DWORD guild, DWORD gm, 
 	CCharMsg::SetChannelColor(CCharMsg::CHANNEL_TEAM, team);
 	CCharMsg::SetChannelColor(CCharMsg::CHANNEL_GUILD, guild);
 	CCharMsg::SetChannelColor(CCharMsg::CHANNEL_WORLD, world);
+	CCharMsg::SetChannelColor(CCharMsg::CHANNEL_SYSTEM_GUILD, guild);
 	CCharMsg::SetChannelColor(CCharMsg::CHANNEL_SYSTEM, system);
 	CCharMsg::SetChannelColor(CCharMsg::CHANNEL_TRADE, trade);
 	CCharMsg::SetChannelColor(CCharMsg::CHANNEL_PUBLISH, gm);
@@ -1582,8 +1583,25 @@ int UI_LoadHeadSayLifeImage( int uw, int uh, char *file, int w, int h, int tx, i
 	p->SetScale( uw, uh );
 	return R_OK;
 }
+  
+int UI_LoadHeadSaySPImage(int uw, int uh, char *file, int w, int h, int tx, int ty, int isHorizontal)
+{
+	CGuiPic* p = CHeadSay::GetSPPic();
+	if (!p)  return R_FAIL;
 
-
+	if (isHorizontal == TRUE)
+	{
+		p->LoadImage(file, w, h, 0, tx, ty);
+		p->LoadImage(file, w, h, 1, tx + w, ty);
+	}
+	else
+	{
+		p->LoadImage(file, w, h, 0, tx, ty);
+		p->LoadImage(file, w, h, 1, tx, ty + h);
+	}
+	p->SetScale(uw, uh);
+	return R_OK;
+}
 
 int UI_SetDragSnapToGrid( int nGridWidth, int nGridHeight ) 
 {
@@ -1865,7 +1883,8 @@ void MPInitLua_Gui()
 	CLU_RegisterFunction("UI_LoadHeadSayFaceImage", "int", "int,int,int,int,char*,int,int,int,int", CLU_CDECL, CLU_CAST(UI_LoadHeadSayFaceImage));
 	CLU_RegisterFunction("UI_LoadHeadSayShopImage", "int", "int,int,int,char*,int,int,int,int", CLU_CDECL, CLU_CAST(UI_LoadHeadSayShopImage));
 	CLU_RegisterFunction("UI_LoadHeadSayLifeImage", "int", "int,int,char*,int,int,int,int,int", CLU_CDECL, CLU_CAST(UI_LoadHeadSayLifeImage));
-	
+	CLU_RegisterFunction("UI_LoadHeadSaySPImage", "int", "int,int,char*,int,int,int,int,int", CLU_CDECL, CLU_CAST(UI_LoadHeadSaySPImage));
+
 	//from style
 	CLU_RegisterFunction("UI_SetFormStyle", "int", "int,int", CLU_CDECL, CLU_CAST(UI_SetFormStyle));
 	CLU_RegisterFunction("UI_SetFormStyleEx", "int", "int,int,int,int", CLU_CDECL, CLU_CAST(UI_SetFormStyleEx));

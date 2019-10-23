@@ -154,8 +154,8 @@ void CItemCommand::SaleRender( int x, int y, int nWidth, int nHeight )
 
 		xNum = nX + ITEM_WIDTH - w;
 		yNum = nY + ITEM_HEIGHT - h;
-		GetRender().FillFrame( xNum, yNum, xNum + w, yNum + h, 0xE0ADF6F7 );
-		CGuiFont::s_Font.Render( buf, xNum, yNum, COLOR_BLACK );
+		GetRender().FillFrame(xNum, yNum, xNum + w, yNum + h);//, 0xE0ADF6F7 );
+		CGuiFont::s_Font.Render( buf, xNum, yNum, COLOR_WHITE );
 	}
 
 	CGuiFont::s_Font.GetSize( _pItem->szName, w, h );	
@@ -197,7 +197,6 @@ void CItemCommand::SaleRender( int x, int y, int nWidth, int nHeight )
 void CItemCommand::Render( int x, int y )
 {
 	_pImage->Render( x, y, _ItemData.IsValid() ? _dwColor : (DWORD)0xff757575 );
-
 	// 显示道具数量
     if( _ItemData.sNum>1 )
     {
@@ -207,8 +206,8 @@ void CItemCommand::Render( int x, int y )
 
 		x += ITEM_WIDTH - w;
 		y += ITEM_HEIGHT - h;
-		GetRender().FillFrame( x, y, x + w, y + h, 0xE0ADF6F7 );
-        CGuiFont::s_Font.Render( buf, x, y, COLOR_BLACK );
+		GetRender().FillFrame(x, y, x + w, y + h);// , 0xE0ADF6F7 );
+        CGuiFont::s_Font.Render( buf, x, y, COLOR_WHITE );
     }
 
 
@@ -222,19 +221,31 @@ void CItemCommand::Render( int x, int y )
 			{
 				lv += Forge.nStoneLevel[i];
 			}
-			_snprintf_s(buf, _countof(buf), _TRUNCATE, "APP+%d", lv);
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, "[A]+%d", lv);
 		}
 		else
 		{
-			_snprintf_s(buf, _countof(buf), _TRUNCATE, "APP");
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, "[A]");
 		}
 		static int w, h;
 		CGuiFont::s_Font.GetSize(buf, w, h);
 
 		x += ITEM_WIDTH - w;
 		y += ITEM_HEIGHT - h;
-		GetRender().FillFrame(x, y, x + w, y + h, 0xE0ADF6F7);
-		CGuiFont::s_Font.Render(buf, x, y, COLOR_BLACK);
+		GetRender().FillFrame(x, y, x + w, y + h);// , 0xE0ADF6F7);
+		CGuiFont::s_Font.Render(buf, x, y, COLOR_WHITE);
+	}
+
+	if (_pItem->sType == 89)
+	{
+		_snprintf_s(buf, _countof(buf), _TRUNCATE, "[M]");
+		static int w, h;
+		CGuiFont::s_Font.GetSize(buf, w, h);
+
+		x += ITEM_WIDTH - w;
+		y += ITEM_HEIGHT - h;
+		GetRender().FillFrame(x, y, x + w, y + h);//0xE0ADF6F7);
+		CGuiFont::s_Font.Render(buf, x, y, COLOR_WHITE);
 	}
 
 	if (_pItem->sType == 59)
@@ -267,8 +278,8 @@ void CItemCommand::Render( int x, int y )
 
 		x += ITEM_WIDTH - w;
 		y += ITEM_HEIGHT - h;
-		GetRender().FillFrame(x, y, x + w, y + h, 0xE0ADF6F7);
-		CGuiFont::s_Font.Render(buf, x, y, COLOR_BLACK);
+		GetRender().FillFrame(x, y, x + w, y + h);// , 0xE0ADF6F7);
+		CGuiFont::s_Font.Render(buf, x, y, COLOR_WHITE);
 	}
 
 	if (_pItem->sType == 49 || _pItem->sType == 50)
@@ -323,8 +334,8 @@ void CItemCommand::Render( int x, int y )
 
 			x += ITEM_WIDTH - w;
 			y += ITEM_HEIGHT - h;
-			GetRender().FillFrame(x, y, x + w, y + h, 0xE0ADF6F7);
-			CGuiFont::s_Font.Render(buf, x, y, COLOR_BLACK);
+			GetRender().FillFrame(x, y, x + w, y + h);//, 0xE0ADF6F7);
+			CGuiFont::s_Font.Render(buf, x, y, COLOR_WHITE);
 		}
 	}
 
@@ -360,6 +371,43 @@ void CItemCommand::OwnDefRender( int x, int y, int nWidth, int nHeight )
 		yNum = nY + ITEM_HEIGHT - h;
 		GetRender().FillFrame( xNum, yNum, xNum + w, yNum + h, 0xE0ADF6F7 );
 		CGuiFont::s_Font.Render( buf, xNum, yNum, COLOR_BLACK );
+	}
+
+	if (_ItemData.sEndure[1] == 25000 || _ItemData.GetFusionItemID() > 0)
+	{
+		SItemForge& Forge = GetForgeInfo();
+		if (_hints.GetCount() > 0 && Forge.IsForge && Forge.nStoneNum > 0)
+		{
+			char lv = 0;
+			for (int i = 0; i < Forge.nStoneNum && i < Forge.nHoleNum; i++)
+			{
+				lv += Forge.nStoneLevel[i];
+			}
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, "[A]+%d", lv);
+		}
+		else
+		{
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, "[A]");
+		}
+		static int w, h;
+		CGuiFont::s_Font.GetSize(buf, w, h);
+
+		x += ITEM_WIDTH - w;
+		y += ITEM_HEIGHT - h;
+		GetRender().FillFrame(x, y, x + w, y + h);// , 0xE0ADF6F7);
+		CGuiFont::s_Font.Render(buf, x, y, COLOR_WHITE);
+	}
+
+	if (_pItem->sType == 89)
+	{
+		_snprintf_s(buf, _countof(buf), _TRUNCATE, "[M]");
+		static int w, h;
+		CGuiFont::s_Font.GetSize(buf, w, h);
+
+		x += ITEM_WIDTH - w;
+		y += ITEM_HEIGHT - h;
+		GetRender().FillFrame(x, y, x + w, y + h);//0xE0ADF6F7);
+		CGuiFont::s_Font.Render(buf, x, y, COLOR_WHITE);
 	}
 
 	CGuiFont::s_Font.GetSize( _pItem->szName, w, h );	
@@ -398,316 +446,344 @@ void CItemCommand::OwnDefRender( int x, int y, int nWidth, int nHeight )
 	CGuiFont::s_Font.Render ( _OwnDefText.c_str(), x + ( nWidth - w ) / 2, nY + ITEM_HEIGHT + 2, COLOR_BLACK );
 }
 
-void CItemCommand::AddHint( int x, int y, int index )
+void CItemCommand::AddHint(int x, int y, int index)
 {
 	bool isMain = false;	// 判断是否要除二（卖出价）
-	if( GetParent() )
+	if (GetParent())
 	{
-		string name=GetParent()->GetForm()->GetName(); 
-		if( name == "frmPlayertrade" || name == "frmItem" || name == "frmNPCstorage" || name == "frmTempBag" || 
-			name == "frmBreak"       || name == "frmCooking" || name == "frmFound"   || name == "frmBreak"   || 
-			name == "frmStore"       || name == "frmViewAll" ||
-			name == "frmSpiritMarry" || name == "frmSpiritErnie" || name == "frmEquipPurify") 
+		string name = GetParent()->GetForm()->GetName();
+		if (name == "frmPlayertrade" || name == "frmItem" || name == "frmNPCstorage" || name == "frmTempBag" ||
+			name == "frmBreak" || name == "frmCooking" || name == "frmFound" || name == "frmBreak" ||
+			name == "frmStore" || name == "frmViewAll" ||
+			name == "frmSpiritMarry" || name == "frmSpiritErnie" || name == "frmEquipPurify")
 		{
 			isMain = true;
 		}
 	}
 
 	bool isStore = false;	// 判断是否是商城
-	if( GetParent() )
+	if (GetParent())
 	{
-		string name = GetParent()->GetForm()->GetName(); 
-		if( name == "frmStore" ) 
+		string name = GetParent()->GetForm()->GetName();
+		if (name == "frmStore")
 		{
 			isStore = true;
 		}
 	}
 
-    SGameAttr* pAttr = NULL;
-	if( g_stUIBoat.GetHuman() )
-    {
-        pAttr = g_stUIBoat.GetHuman()->getGameAttr();
+	SGameAttr* pAttr = NULL;
+	if (g_stUIBoat.GetHuman())
+	{
+		pAttr = g_stUIBoat.GetHuman()->getGameAttr();
 	}
-    if( !pAttr ) return;
+	if (!pAttr) return;
 
-    SetHintIsCenter( true );
+	SetHintIsCenter(true);
 
 	static SItemHint item;
-	memset( &item, 0, sizeof(SItemHint) );
+	memset(&item, 0, sizeof(SItemHint));
 	CItemRecord* pEquipItem(0);
 	// modify by ning.yan  20080821  begin
-	if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 )// end
+	if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// end
 	{	// 
 		pEquipItem = GetItemRecordInfo(_ItemData.GetFusionItemID());
 		if (pEquipItem)
 		{
-			item.Convert( _ItemData, pEquipItem );
+			item.Convert(_ItemData, pEquipItem);
 		}
 	}
 	else
 	{
-		item.Convert( _ItemData, _pItem );
+		item.Convert(_ItemData, _pItem);
 	}
 
 	//	2008-7-31	yangyinyu	add	begin!
 	//	增加对道具锁定的处理。
-	if(	_ItemData.dwDBID	)
+	if (_ItemData.dwDBID)
 	{
-		PushHint( RES_STRING(CL_LANGUAGE_MATCH_960), COLOR_RED, 5, 0, index );
-		AddHintHeight( 6, index );
+		PushHint(RES_STRING(CL_LANGUAGE_MATCH_960), COLOR_RED, 5, 0, index);
+		AddHintHeight(6, index);
 	}
 	//	2008-7-31	yangyinyu	add	end!
 
-    if( _pItem->sType>=1 && _pItem->sType<=10 )          // 武器:剑,巨剑,弓,火绳枪,刀,拳套,匕首,钱袋,短棒,锤子
-    {
-		if( _pItem->sType==2 )
+	if (_pItem->sType >= 1 && _pItem->sType <= 10)          // 武器:剑,巨剑,弓,火绳枪,刀,拳套,匕首,钱袋,短棒,锤子
+	{
+		if (_pItem->sType == 2)
 		{
 			// modify by Philip.Wu  2006-06-09
 			// 将双手换一行显示，防止因用户ID过长而无法显示出双手
 
-			if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 )// modify by ning.yan  20080821
+			if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// modify by ning.yan  20080821
 			{
-				_snprintf_s( buf, _countof( buf ), _TRUNCATE, "Lv%d %s",_ItemData.GetItemLevel(), GetName());
+				_snprintf_s(buf, _countof(buf), _TRUNCATE, "Lv%d %s", _ItemData.GetItemLevel(), GetName());
+				// 
+					pEquipItem = GetItemRecordInfo(_ItemData.GetFusionItemID());
+					if (pEquipItem)
+					{
+						char dItemApp[80];
+						_snprintf_s(dItemApp, _countof(dItemApp), _TRUNCATE, "[ITEM] : %s", pEquipItem->szName);
+						PushHint(dItemApp, COLOR_RED, 5, 0, index);
+					}
 			}
 			else
 			{
-				_snprintf_s( buf, _countof( buf ), _TRUNCATE, "%s", GetName() );
+				_snprintf_s(buf, _countof(buf), _TRUNCATE, "%s", GetName());
 			}
 
-			PushHint( buf, COLOR_WHITE, 5, 1, index );
-			if( index != -1 )
-				PushHint( RES_STRING( CL_LANGUAGE_MATCH_1041 ), COLOR_WHITE, 5, 1, index );
-			
-			PushHint( RES_STRING(CL_LANGUAGE_MATCH_624), COLOR_WHITE, 5, 1, index );
+			PushHint(buf, COLOR_WHITE, 5, 1, index);
+			if (index != -1)
+				PushHint(RES_STRING(CL_LANGUAGE_MATCH_1041), COLOR_WHITE, 5, 1, index);
+
+			PushHint(RES_STRING(CL_LANGUAGE_MATCH_624), COLOR_WHITE, 5, 1, index);
 		}
 		else
 		{
-			if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 )// modify by ning.yan  20080821
+			if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// modify by ning.yan  20080821
 			{
-				_snprintf_s( buf, _countof( buf ), _TRUNCATE, "Lv%d %s",_ItemData.GetItemLevel(), GetName());
-				PushHint( buf, COLOR_WHITE, 5, 1, index );
+				_snprintf_s(buf, _countof(buf), _TRUNCATE, "Lv%d %s", _ItemData.GetItemLevel(), GetName());
+				PushHint(buf, COLOR_WHITE, 5, 1, index);
+				pEquipItem = GetItemRecordInfo(_ItemData.GetFusionItemID());
+				if (pEquipItem)
+				{
+					char dItemApp[80];
+					_snprintf_s(dItemApp, _countof(dItemApp), _TRUNCATE, "[ITEM] : %s", pEquipItem->szName);
+					PushHint(dItemApp, COLOR_RED, 5, 0, index);
+				}
 			}
 			else
 			{
 
-				PushHint( GetName(), COLOR_WHITE, 5, 1, index );
+				PushHint(GetName(), COLOR_WHITE, 5, 1, index);
 			}
 
-			if( index != -1 )
-				PushHint( RES_STRING( CL_LANGUAGE_MATCH_1041 ), COLOR_WHITE, 5, 1, index );
+			if (index != -1)
+				PushHint(RES_STRING(CL_LANGUAGE_MATCH_1041), COLOR_WHITE, 5, 1, index);
 		}
 
-        // 基本类:攻击力,耐久度
-        AddHintHeight( 6, index );
-		if(_pItem->lID != 3669)	// 道具特殊处理，浪漫烟花，不显示攻击力
+		// 基本类:攻击力,耐久度
+		AddHintHeight(6, index);
+		if (_pItem->lID != 3669)	// 道具特殊处理，浪漫烟花，不显示攻击力
 		{
-			_snprintf_s( buf, _countof( buf ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_625), _GetValue( ITEMATTR_VAL_MNATK, item ), _GetValue( ITEMATTR_VAL_MXATK, item ) );
-			PushHint( buf, GENERIC_COLOR, 5, 1, index );
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_625), _GetValue(ITEMATTR_VAL_MNATK, item), _GetValue(ITEMATTR_VAL_MXATK, item));
+			PushHint(buf, GENERIC_COLOR, 5, 1, index);
 		}
 
-		if(! isStore)	// 商城内不显示耐久
+		if (!isStore)	// 商城内不显示耐久
 		{
-			_snprintf_s( buf, _countof( buf ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_626), item.sEndure[0], item.sEndure[1] );
-			PushHint( buf, GENERIC_COLOR, 5, 1, index );
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_626), item.sEndure[0], item.sEndure[1]);
+			PushHint(buf, GENERIC_COLOR, 5, 1, index);
 		}
 
-		if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 )// modify by ning.yan  20080821
+		if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// modify by ning.yan  20080821
 		{
-			_snprintf_s( buf, _countof( buf ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_627), _ItemData.GetItemLevel() * 2 + 80 );	// 发挥度定义 0级-80% 1级-82% ...
-			PushHint( buf, GENERIC_COLOR, 5, 1, index );
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_627), _ItemData.GetItemLevel() * 2 + 80);	// 发挥度定义 0级-80% 1级-82% ...
+			PushHint(buf, GENERIC_COLOR, 5, 1, index);
 		}
 
-        // 需求类:力量，敏捷，体质，精神，幸运，专注,等级,职业
-        AddHintHeight( 6, index );
+		// 需求类:力量，敏捷，体质，精神，幸运，专注,等级,职业
+		AddHintHeight(6, index);
 
-		if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 )// modify by ning.yan  20080821
+		if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// modify by ning.yan  20080821
 		{
 			if (_pItem->sNeedLv > pEquipItem->sNeedLv)
 			{
-				PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV)>=_pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+				PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV) >= _pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 			}
 			else
 			{
-				PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), pEquipItem->sNeedLv, pAttr->get(ATTR_LV)>=pEquipItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+				PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), pEquipItem->sNeedLv, pAttr->get(ATTR_LV) >= pEquipItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 			}
 		}
 		else
 		{
-			PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV)>=_pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+			PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV) >= _pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 		}
 
-		if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 ) // modify by ning.yan  20080821
+		if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0) // modify by ning.yan  20080821
 		{
-			_ShowFusionBody(pEquipItem, index );
-			_ShowFusionWork(_pItem, pEquipItem, pAttr, index );
+			_ShowFusionBody(pEquipItem, index);
+			_ShowFusionWork(_pItem, pEquipItem, pAttr, index);
 		}
 		else
 		{
-			_ShowBody( index );
-			_ShowWork( _pItem, pAttr, index );
+			_ShowBody(index);
+			_ShowWork(_pItem, pAttr, index);
 		}
 	}
-    else if( _pItem->sType==22 || _pItem->sType==11 || _pItem->sType==27 )	// 衣服,盾,图腾
-    {
+	else if (_pItem->sType == 22 || _pItem->sType == 11 || _pItem->sType == 27)	// 衣服,盾,图腾
+	{
 		// 名字  modify by ning.yan 20080821 begin
-		if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 ) // end
+		if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0) // end
 		{
-			_snprintf_s( buf, _countof( buf ), _TRUNCATE, "Lv%d %s",_ItemData.GetItemLevel(), GetName());
-			PushHint( buf, COLOR_WHITE, 5, 1, index );
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, "Lv%d %s", _ItemData.GetItemLevel(), GetName());
+			PushHint(buf, COLOR_WHITE, 5, 1, index);
+
+				pEquipItem = GetItemRecordInfo(_ItemData.GetFusionItemID());
+				if (pEquipItem)
+				{
+					char dItemApp[80];
+					_snprintf_s(dItemApp, _countof(dItemApp), _TRUNCATE, "[ITEM] : %s", pEquipItem->szName);
+					PushHint(dItemApp, COLOR_RED, 5, 0, index);
+				}
 		}
 		else
 		{
-			PushHint( GetName(), COLOR_WHITE, 5, 1, index );
+			PushHint(GetName(), COLOR_WHITE, 5, 1, index);
 		}
 
-		if( index != -1 )
-			PushHint( RES_STRING( CL_LANGUAGE_MATCH_1041 ), COLOR_WHITE, 5, 1, index );
+		if (index != -1)
+			PushHint(RES_STRING(CL_LANGUAGE_MATCH_1041), COLOR_WHITE, 5, 1, index);
 
-        // 基本类:防御力,耐久度
-        AddHintHeight( 6, index );
+		// 基本类:防御力,耐久度
+		AddHintHeight(6, index);
 
-		_PushValue( RES_STRING(CL_LANGUAGE_MATCH_629), ITEMATTR_VAL_DEF, item, COLOR_WHITE, index );
+		_PushValue(RES_STRING(CL_LANGUAGE_MATCH_629), ITEMATTR_VAL_DEF, item, COLOR_WHITE, index);
 
-		if(! isStore)	// 商城内不显示耐久
+		if (!isStore)	// 商城内不显示耐久
 		{
-			_snprintf_s( buf, _countof( buf ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_626), item.sEndure[0], item.sEndure[1] );
-			PushHint( buf, COLOR_WHITE, 5, 1, index );
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_626), item.sEndure[0], item.sEndure[1]);
+			PushHint(buf, COLOR_WHITE, 5, 1, index);
 		}
 
-		_PushValue( RES_STRING(CL_LANGUAGE_MATCH_630), ITEMATTR_VAL_PDEF, item, COLOR_WHITE, index );
+		_PushValue(RES_STRING(CL_LANGUAGE_MATCH_630), ITEMATTR_VAL_PDEF, item, COLOR_WHITE, index);
 
-		if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 )// modify by ning.yan  20080821
+		if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// modify by ning.yan  20080821
 		{
 
-			_snprintf_s( buf, _countof( buf ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_627), _ItemData.GetItemLevel() * 2 + 80 );	// 发挥度定义 0级-80% 1级-82% ...
-			PushHint( buf, GENERIC_COLOR, 5, 1, index );
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_627), _ItemData.GetItemLevel() * 2 + 80);	// 发挥度定义 0级-80% 1级-82% ...
+			PushHint(buf, GENERIC_COLOR, 5, 1, index);
 
 		}
 
-        AddHintHeight( 6, index );
+		AddHintHeight(6, index);
 
-		if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 )// modify by ning.yan  20080821
+		if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// modify by ning.yan  20080821
 		{
 			if (_pItem->sNeedLv > pEquipItem->sNeedLv)
 			{
-				PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV)>=_pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+				PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV) >= _pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 			}
 			else
 			{
-				PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), pEquipItem->sNeedLv, pAttr->get(ATTR_LV)>=pEquipItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+				PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), pEquipItem->sNeedLv, pAttr->get(ATTR_LV) >= pEquipItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 			}
 		}
 		else
 		{
-			PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV)>=_pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+			PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV) >= _pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 		}
 
-		if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 )// modify by ning.yan  20080821
+		if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// modify by ning.yan  20080821
 		{
-			_ShowFusionBody(pEquipItem, index );
-			_ShowFusionWork(_pItem, pEquipItem, pAttr, index );
+			_ShowFusionBody(pEquipItem, index);
+			_ShowFusionWork(_pItem, pEquipItem, pAttr, index);
 		}
 		else
 		{
-			_ShowBody( index );
-			_ShowWork( _pItem, pAttr, index );
+			_ShowBody(index);
+			_ShowWork(_pItem, pAttr, index);
 		}
-    }
-	else if( _pItem->sType==25 )	// 项链
+	}
+	else if (_pItem->sType == 25)	// 项链
 	{
-		PushHint( GetName(), COLOR_WHITE, 5, 1, index ); // 名字
-		if( index != -1 )
-			PushHint( RES_STRING( CL_LANGUAGE_MATCH_1041 ), COLOR_WHITE, 5, 1, index );
+		PushHint(GetName(), COLOR_WHITE, 5, 1, index); // 名字
+		if (index != -1)
+			PushHint(RES_STRING(CL_LANGUAGE_MATCH_1041), COLOR_WHITE, 5, 1, index);
 		//	曾亚要求加入耐久显示 Rain Add Begin.
-		if(! isStore)	// 商城内不显示耐久
+		if (!isStore)	// 商城内不显示耐久
 		{
-			_snprintf_s( buf, _countof( buf ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_626), item.sEndure[0], item.sEndure[1] );
-			PushHint( buf, COLOR_WHITE, 5, 1, index );
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_626), item.sEndure[0], item.sEndure[1]);
+			PushHint(buf, COLOR_WHITE, 5, 1, index);
 		}
 		//	End.
 
-		if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 )// modify by ning.yan  20080821
+		if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// modify by ning.yan  20080821
 		{
 			if (_pItem->sNeedLv > pEquipItem->sNeedLv)
 			{
-				PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV)>=_pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+				PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV) >= _pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 			}
 			else
 			{
-				PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), pEquipItem->sNeedLv, pAttr->get(ATTR_LV)>=pEquipItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+				PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), pEquipItem->sNeedLv, pAttr->get(ATTR_LV) >= pEquipItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 			}
 		}
 		else
 		{
-			PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV)>=_pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+			PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV) >= _pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 		}
-	
-		if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 ) // modify by ning.yan  20080821
+
+		if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0) // modify by ning.yan  20080821
 		{
-			_ShowFusionBody(pEquipItem, index );
-			_ShowFusionWork(_pItem, pEquipItem, pAttr, index );
+			_ShowFusionBody(pEquipItem, index);
+			_ShowFusionWork(_pItem, pEquipItem, pAttr, index);
 		}
 		else
 		{
-			_ShowBody( index );
-			_ShowWork( _pItem, pAttr, index );
+			_ShowBody(index);
+			_ShowWork(_pItem, pAttr, index);
 		}
-		if( _pItem->lID == 6386 ||_pItem->lID == 6387 ||_pItem->lID == 6388||_pItem->lID == 6389||_pItem->lID == 6390||_pItem->lID == 6391
+		if (_pItem->lID == 6386 || _pItem->lID == 6387 || _pItem->lID == 6388 || _pItem->lID == 6389 || _pItem->lID == 6390 || _pItem->lID == 6391
 			|| _pItem->lID == 6434 || _pItem->lID == 6428 || _pItem->lID == 6429 || _pItem->lID == 6430 || _pItem->lID == 6431 || _pItem->lID == 6432)
 		{
-			_AddDescriptor( index );
+			_AddDescriptor(index);
 		}
 	}
-	else if( _pItem->sType==26 )	// 戒指
+	else if (_pItem->sType == 26)	// 戒指
 	{
-		PushHint( GetName(), COLOR_WHITE, 5, 1, index ); // 名字
-		if( index != -1 )
-			PushHint( RES_STRING( CL_LANGUAGE_MATCH_1041 ), COLOR_WHITE, 5, 1, index );
+		PushHint(GetName(), COLOR_WHITE, 5, 1, index); // 名字
+		if (index != -1)
+			PushHint(RES_STRING(CL_LANGUAGE_MATCH_1041), COLOR_WHITE, 5, 1, index);
 
 		//	曾亚要求加入耐久显示 Rain Add Begin.
-		if(! isStore)	// 商城内不显示耐久
+		if (!isStore)	// 商城内不显示耐久
 		{
-			_snprintf_s( buf, _countof( buf ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_626), item.sEndure[0], item.sEndure[1] );
-			PushHint( buf, COLOR_WHITE, 5, 1, index );
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_626), item.sEndure[0], item.sEndure[1]);
+			PushHint(buf, COLOR_WHITE, 5, 1, index);
 		}
 		//	End.
 
-		if( _pItem->lID == 1034 )	// 团队之星（特殊处理）
+		if (_pItem->lID == 1034)	// 团队之星（特殊处理）
 		{
-			_snprintf_s( buf, _countof( buf ), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_862), _ItemData.sEndure[0] * 10 - 1000, _ItemData.sEndure[1] * 10 - 1000);// 具体计算方式询问策划
-			PushHint( buf, COLOR_WHITE, 5, 1, index );
+			_snprintf_s(buf, _countof(buf), _TRUNCATE, RES_STRING(CL_LANGUAGE_MATCH_862), _ItemData.sEndure[0] * 10 - 1000, _ItemData.sEndure[1] * 10 - 1000);// 具体计算方式询问策划
+			PushHint(buf, COLOR_WHITE, 5, 1, index);
 
 			return;
 		}
 		else
 		{
-			if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 ) // modify by ning.yan  20080821
+			if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0) // modify by ning.yan  20080821
 			{
 				if (_pItem->sNeedLv > pEquipItem->sNeedLv)
 				{
-					PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV)>=_pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+					PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV) >= _pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 				}
 				else
 				{
-					PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), pEquipItem->sNeedLv, pAttr->get(ATTR_LV)>=pEquipItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+					PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), pEquipItem->sNeedLv, pAttr->get(ATTR_LV) >= pEquipItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 				}
 			}
 			else
 			{
-				PUSH_HINT( RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV)>=_pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index );
+				PUSH_HINT(RES_STRING(CL_LANGUAGE_MATCH_628), _pItem->sNeedLv, pAttr->get(ATTR_LV) >= _pItem->sNeedLv ? GENERIC_COLOR : VALID_COLOR, index);
 			}
 
-			if ( CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0 ) // modify by ning.yan  20080821
+			if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0) // modify by ning.yan  20080821
 			{
-				_ShowFusionBody(pEquipItem, index );
-				_ShowFusionWork(_pItem, pEquipItem, pAttr, index );
+				_ShowFusionBody(pEquipItem, index);
+				_ShowFusionWork(_pItem, pEquipItem, pAttr, index);
 			}
 			else
 			{
-				_ShowBody( index );
-				_ShowWork( _pItem, pAttr, index );
+				_ShowBody(index);
+				_ShowWork(_pItem, pAttr, index);
 			}
 		}
+	}
+	else if (_pItem->sType == 89)
+	{
+		_snprintf_s(buf, _countof(buf), _TRUNCATE, "%s", GetName());
+		PushHint(buf, Colors[3], 5, 1, index);
 	}
 	else if (_pItem->lID == 9205)
 	{
@@ -721,6 +797,13 @@ void CItemCommand::AddHint( int x, int y, int index )
 		{
 			_snprintf_s( buf, _countof( buf ), _TRUNCATE, "Lv%d %s",_ItemData.GetItemLevel(), GetName());
 			PushHint( buf, COLOR_WHITE, 5, 1, index );
+			pEquipItem = GetItemRecordInfo(_ItemData.GetFusionItemID());
+			if (pEquipItem)
+			{
+				char dItemApp[80];
+				_snprintf_s(dItemApp, _countof(dItemApp), _TRUNCATE, "[ITEM] : %s", pEquipItem->szName);
+				PushHint(dItemApp, COLOR_RED, 5, 0, index);
+			}
 		}
 		else
 		{
@@ -789,6 +872,13 @@ void CItemCommand::AddHint( int x, int y, int index )
 		{
 			_snprintf_s( buf, _countof( buf ), _TRUNCATE, "Lv%d %s",_ItemData.GetItemLevel(), GetName());
 			PushHint( buf, COLOR_WHITE, 5, 1, index );
+			pEquipItem = GetItemRecordInfo(_ItemData.GetFusionItemID());
+			if (pEquipItem)
+			{
+				char dItemApp[80];
+				_snprintf_s(dItemApp, _countof(dItemApp), _TRUNCATE, "Fused Item : %s", pEquipItem->szName);
+				PushHint(dItemApp, COLOR_GREEN, 5, 0, index);
+			}
 		}
 		else
 		{
@@ -852,6 +942,13 @@ void CItemCommand::AddHint( int x, int y, int index )
 		{
 			_snprintf_s( buf, _countof( buf ), _TRUNCATE, "Lv%d %s",_ItemData.GetItemLevel(), GetName());
 			PushHint( buf, COLOR_WHITE, 5, 1, index );
+			pEquipItem = GetItemRecordInfo(_ItemData.GetFusionItemID());
+			if (pEquipItem)
+			{
+				char dItemApp[80];
+				_snprintf_s(dItemApp, _countof(dItemApp), _TRUNCATE, "Fused Item : %s", pEquipItem->szName);
+				PushHint(dItemApp, COLOR_GREEN, 5, 0, index);
+			}
 		}
 		else
 		{
@@ -1911,7 +2008,7 @@ void CItemCommand::AddHint( int x, int y, int index )
 		CItemRecord* sNameInfo = GetItemRecordInfo(isZero);
 		if ( isZero != 0)
 		{
-			_snprintf_s( buf, _countof(buf), _TRUNCATE,"装备：%s",sNameInfo->szName);
+			_snprintf_s( buf, _countof(buf), _TRUNCATE,"%s",sNameInfo->szName);
 			PushHint( buf, showcolor, 5, 1, index );
 		}
 		SetHintIsCenter(true);
@@ -2098,16 +2195,7 @@ void CItemCommand::AddHint( int x, int y, int index )
 		//_snprintf_s( buf, _countof( buf ), _TRUNCATE, "%s", ConvertNumToChinese( isMain ? _nPrice / 2 : _nPrice ).c_str() );
 		//PushHint( buf, COLOR_WHITE, 5, 1, index );
 	}
-	if (CItemRecord::IsVaildFusionID(_pItem) && _ItemData.GetFusionItemID() > 0)// end
-	{	// 
-		pEquipItem = GetItemRecordInfo(_ItemData.GetFusionItemID());
-		if (pEquipItem)
-		{
-			char dItemApp[80];
-			_snprintf_s(dItemApp, _countof(dItemApp), _TRUNCATE, "Fused Item : %s", pEquipItem->szName);
-			PushHint(dItemApp, COLOR_GREEN, 5, 0, index);
-		}
-	}
+
 	//SetHintIsCenter(true);
 	PUSH_HINT("Trade                 ", -1, _pItem->chIsTrade != 0 ? COLOR_GREEN : COLOR_RED, index);
 	PUSH_HINT("Throw                 ", -1, _pItem->chIsThrow != 0 ? COLOR_GREEN : COLOR_RED, index);
@@ -2703,32 +2791,32 @@ bool CItemCommand::MouseDown()
 		}
 		return false;
 	}
-	else if( CFeedState* pState = dynamic_cast<CFeedState*>(pCha->GetActor()->GetCurState()) )
+	else if (CFeedState* pState = dynamic_cast<CFeedState*>(pCha->GetActor()->GetCurState()))
 	{
 		// 喂食状态
-		if( _pItem->sType!=enumItemTypePet )
+		if (_pItem->sType != enumItemTypePet)
 		{
-			g_pGameApp->SysInfo( RES_STRING(CL_LANGUAGE_MATCH_676) );
+			g_pGameApp->SysInfo(RES_STRING(CL_LANGUAGE_MATCH_676));
 			return false;
 		}
 
-		CGoodsGrid* pOwn = dynamic_cast<CGoodsGrid*>(GetParent());
-		if( pOwn )
+		//CGoodsGrid* pOwn = dynamic_cast<CGoodsGrid*>(GetParent());
+		//if( pOwn )
+		//{
+		if (_pItem->nID == g_stUIEquip.GetEquipItem(14)->GetItemInfo()->nID)
 		{
-			if( pOwn==g_stUIEquip.GetGoodsGrid() )
-			{
-				int GridID = pOwn->FindCommand( this );
-				if( GridID==-1 ) return false;
+			//int GridID = pOwn->FindCommand( this );
+			//if( GridID==-1 ) return false;
 
-				stNetUseItem param;
-				param.sGridID = pState->GetFeedGridID();
-				param.sTarGridID = GridID;
-				CS_BeginAction( g_stUIBoat.GetHuman(), enumACTION_ITEM_USE, (void*)&param );
+			stNetUseItem param;
+			param.sGridID = pState->GetFeedGridID();
+			//param.sTarGridID = GridID;
+			CS_BeginAction(g_stUIBoat.GetHuman(), enumACTION_ITEM_USE, (void*)&param);
 
-				pState->PopState();
-				return true;
-			}
+			pState->PopState();
+			return true;
 		}
+		//}
 		return false;
 	}
 	else if( CFeteState* pState = dynamic_cast<CFeteState*>(pCha->GetActor()->GetCurState()) )
@@ -2767,23 +2855,23 @@ bool CItemCommand::MouseDown()
 			return false;
 		}
 
-		CGoodsGrid* pOwn = dynamic_cast<CGoodsGrid*>(GetParent());
-		if (pOwn)
-		{
-			if (pOwn == g_stUIEquip.GetGoodsGrid())
+	//	CGoodsGrid* pOwn = dynamic_cast<CGoodsGrid*>(GetParent());
+	//	if (pOwn)
+	//	{
+			if (_pItem->nID == g_stUIEquip.GetEquipItem(enumEQUIP_CLOAK)->GetItemInfo()->nID)
 			{
-				int GridID = pOwn->FindCommand(this);
-				if (GridID == -1) return false;
+				//int GridID = pOwn->FindCommand(this);
+				//if (GridID == -1) return false;
 
 				stNetUseItem param;
 				param.sGridID = pState->GetAdmiralGridID();
-				param.sTarGridID = GridID;
+				//param.sTarGridID = GridID;
 				CS_BeginAction(g_stUIBoat.GetHuman(), enumACTION_ITEM_USE, (void*)& param);
 
 				pState->PopState();
 				return true;
 			}
-		}
+	//	}
 		return false;
 	}
 	return false;

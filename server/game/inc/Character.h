@@ -849,6 +849,7 @@ public:
 	bool				m_bStoreEnable;
 
 	int					m_nPetNum;
+	int					m_Mount;
 	
 	stNetChangeChaPart	m_SChaPart;
 	bool				m_ActContrl[enumACTCONTROL_MAX];	// 角色的行动控制

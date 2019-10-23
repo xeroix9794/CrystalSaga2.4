@@ -1075,7 +1075,7 @@ bool CTextButton::LoadImage( const char* file, int w, int h, int tx, int ty, boo
 	if( isHorizontal )
 	{
 		_pImage->LoadImage( csNormal, id, tx, ty, w, h );
-		_pImage->LoadImage( csHover, id, tx+w, ty, w, h );
+		_pImage->LoadImage( csHover,id , tx+w, ty, w, h );
 		_pImage->LoadImage( csDown, id, tx+w*2, ty, w, h );
 		_pImage->LoadImage( csDisable,id, tx+w*3, ty, w, h );
 	}

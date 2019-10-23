@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>infonet.cpp</FILENAME>
+      <LINE>329</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'InfoThread::m_param' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>InfoThread::{ctor}</FUNCTION>
+    <DECORATED>??0InfoThread@@QAE@XZ</DECORATED>
+    <FUNCLINE>329</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>infonet.cpp</FILENAME>
+      <LINE>445</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'InfoNetBase::m_ip' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>InfoNetBase::{ctor}</FUNCTION>
+    <DECORATED>??0InfoNetBase@@QAE@XZ</DECORATED>
+    <FUNCLINE>445</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>infonet.cpp</FILENAME>
+      <LINE>96</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable '_InfoClient_::sock' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>_InfoClient_::{ctor}</FUNCTION>
+    <DECORATED>??0_InfoClient_@@QAE@XZ</DECORATED>
+    <FUNCLINE>96</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>infonet.cpp</FILENAME>
+      <LINE>550</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>6386</DEFECTCODE>
+    <DESCRIPTION>Buffer overrun while writing to 'buf':  the writable size is 'size*1' bytes, but '40' bytes might be written.</DESCRIPTION>
+    <FUNCTION>InfoNetBase::PostInfoSend</FUNCTION>
+    <DECORATED>?PostInfoSend@InfoNetBase@@UAE_NPAU_NetMessage_@@_N@Z</DECORATED>
+    <FUNCLINE>536</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+        <FILENAME>infonet.cpp</FILENAME>
+        <LINE>538</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+        <FILENAME>infonet.cpp</FILENAME>
+        <LINE>539</LINE>
+        <COLUMN>16</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+        <FILENAME>infonet.cpp</FILENAME>
+        <LINE>541</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+        <FILENAME>infonet.cpp</FILENAME>
+        <LINE>545</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+        <FILENAME>infonet.cpp</FILENAME>
+        <LINE>546</LINE>
+        <COLUMN>8</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'buf' is a 1 byte array</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+        <FILENAME>infonet.cpp</FILENAME>
+        <LINE>547</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+        <FILENAME>infonet.cpp</FILENAME>
+        <LINE>549</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'buf' is an In/Out argument to 'memset' (declared at c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vcruntime_string.h:60)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+        <FILENAME>infonet.cpp</FILENAME>
+        <LINE>550</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'_Old_9`40' is equal to 40</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+        <FILENAME>infonet.cpp</FILENAME>
+        <LINE>550</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>Invalid write to 'buf', (outside its writable range)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>log.cpp</FILENAME>
+      <LINE>104</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: '_getcwd'.</DESCRIPTION>
+    <FUNCTION>LogMgr::{ctor}</FUNCTION>
+    <DECORATED>??0LogMgr@@QAE@XZ</DECORATED>
+    <FUNCLINE>100</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>log.cpp</FILENAME>
+      <LINE>100</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LogMgr::m_folder' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LogMgr::{ctor}</FUNCTION>
+    <DECORATED>??0LogMgr@@QAE@XZ</DECORATED>
+    <FUNCLINE>100</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>log.cpp</FILENAME>
+      <LINE>111</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: '_mkdir'.</DESCRIPTION>
+    <FUNCTION>LogMgr::SetFolder</FUNCTION>
+    <DECORATED>?SetFolder@LogMgr@@QAEXPBD@Z</DECORATED>
+    <FUNCLINE>107</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>thread.cpp</FILENAME>
+      <LINE>27</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Thread::m_ui_idx' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Thread::{ctor}</FUNCTION>
+    <DECORATED>??0Thread@@QAE@XZ</DECORATED>
+    <FUNCLINE>27</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\infonet\src</FILEPATH>
+      <FILENAME>thread.cpp</FILENAME>
+      <LINE>58</LINE>
+      <COLUMN>34</COLUMN>
+    </SFA>
+    <DEFECTCODE>6258</DEFECTCODE>
+    <DESCRIPTION>Using TerminateThread does not allow proper thread clean up.</DESCRIPTION>
+    <FUNCTION>Thread::Terminate</FUNCTION>
+    <DECORATED>?Terminate@Thread@@UAE_NXZ</DECORATED>
+    <FUNCLINE>56</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT></DEFECTS>

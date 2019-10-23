@@ -112,13 +112,27 @@ private:
 
 	CImage*			imgLock;
 	CImage*			imgUnLock;
-
+	CTextButton*    rotateLeft;
 private:
-	void RenderCha(int x, int y);
+	static void RenderCha(int x, int y);
+
+	static void RenderModel(int x, int y, CCharacter* original, CCharacter* model, int rotation, bool refresh);
+	static void ChaLeftRotate();
+	static void ChaRightRotate();
+	static void _evtChaLeftRotate(CGuiData *sender, int x, int y, DWORD key);
+	static int m_rotate;
+	static void _evtChaRightRotate(CGuiData *sender, int x, int y, DWORD key);
+
+	static void _evtChaLeftContinueRotate(CGuiData *sender);
+
+	static void _evtChaRightContinueRotate(CGuiData *sender);
+	
+	static bool refreshChaModel;
 	static void _cha_render_event(C3DCompent *pSender, int x, int y);
+    C3DCompent* ui3dCreateCha;
 
-
-	CCharacter      * m_pCurrMainCha;
+    CCharacter      * m_pCurrMainCha;
+	static CCharacter* characterCopy;
 	CLabel*         labChaName;
 	CLabel*         labChaGuild;
 

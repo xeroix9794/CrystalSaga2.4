@@ -239,9 +239,9 @@ BOOL SC_EnterMap(LPRPACKET pk)
 	ReadChaBasePacket(pk, SCreateInfo);
 	SCreateInfo.chSeeType = enumENTITY_SEEN_NEW;
 	SCreateInfo.chMainCha = 1;
-	SCreateInfo.CreateCha();
+	 SCreateInfo.CreateCha();
 	g_pGameApp->GetMainCam()->m_bSelectMode = false;
-	
+
 	g_ulWorldID = SCreateInfo.ulWorldID;
 
 // 	char* szLogName = g_LogName.GetLogName( SCreateInfo.ulWorldID );

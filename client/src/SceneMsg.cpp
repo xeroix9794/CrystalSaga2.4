@@ -149,6 +149,9 @@ void CGameScene::HandleSceneMsg(int nMsgType, int nParam1, int nParam2, int nPar
 		case SCENEMSG_CHA_DESTROY:
 		{
 			pCha = GetCha(nParam1);
+			if (pCha && pCha->GetIsMount() && pCha->pChaMount && pCha->pChaMount->GetMountPlayerID() == pCha->getHumanID())
+				pCha->_DestoryMount(pCha->pChaMount);
+				
 			int size = (int)pCha->GetEffectNum();
 			int id;
 			CEffectObj *pEff;

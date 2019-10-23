@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dbccommon.h</FILENAME>
+      <LINE>36</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>Inconsistent annotation for 'InitializeCriticalSectionAndSpinCount': this instance has no annotations. See c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\synchapi.h(150). </DESCRIPTION>
+    <FUNCTION>InitializeCriticalSectionAndSpinCount</FUNCTION>
+    <DECORATED>InitializeCriticalSectionAndSpinCount@8</DECORATED>
+    <FUNCLINE>36</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dbccommon.h</FILENAME>
+      <LINE>44</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>Inconsistent annotation for 'TryEnterCriticalSection': this instance has no annotations. See c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\synchapi.h(184). </DESCRIPTION>
+    <FUNCTION>TryEnterCriticalSection</FUNCTION>
+    <DECORATED>TryEnterCriticalSection@4</DECORATED>
+    <FUNCLINE>44</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dbccommon.h</FILENAME>
+      <LINE>165</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'dbc::Mutex::m_handle' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>dbc::Mutex::{ctor}</FUNCTION>
+    <DECORATED>??0Mutex@dbc@@QAE@K@Z</DECORATED>
+    <FUNCLINE>165</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dbccommon.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>40</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'InitializeCriticalSectionAndSpinCount'.</DESCRIPTION>
+    <FUNCTION>dbc::Mutex::Create</FUNCTION>
+    <DECORATED>?Create@Mutex@dbc@@QAE_N_N@Z</DECORATED>
+    <FUNCLINE>168</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dstring.h</FILENAME>
+      <LINE>115</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'dbc::dstring::m_overwrite' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>dbc::dstring::{ctor}</FUNCTION>
+    <DECORATED>??0dstring@dbc@@AAE@PAVdstrbuf@1@@Z</DECORATED>
+    <FUNCLINE>115</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>thread.h</FILENAME>
+      <LINE>64</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'dbc::TaskWait::m_retval' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>dbc::TaskWait::{ctor}</FUNCTION>
+    <DECORATED>??0TaskWait@dbc@@QAE@K@Z</DECORATED>
+    <FUNCLINE>64</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>thread.h</FILENAME>
+      <LINE>64</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'dbc::TaskWait::next' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>dbc::TaskWait::{ctor}</FUNCTION>
+    <DECORATED>??0TaskWait@dbc@@QAE@K@Z</DECORATED>
+    <FUNCLINE>64</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>prealloc.h</FILENAME>
+      <LINE>409</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory 'l_lockPtr'.</DESCRIPTION>
+    <FUNCTION>dbc::PreAllocHeapPtr&lt;dbc::TaskWait&gt;::Init</FUNCTION>
+    <DECORATED>?Init@?$PreAllocHeapPtr@VTaskWait@dbc@@@dbc@@AAEXXZ</DECORATED>
+    <FUNCLINE>392</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>394</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>395</LINE>
+        <COLUMN>13</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>398</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume '!m_ptr')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>400</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>406</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>407</LINE>
+        <COLUMN>3</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>408</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>409</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is an Output from 'dbc::MutexArmor::unlock' (declared at c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc\dbccommon.h:216)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>409</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>prealloc.h</FILENAME>
+      <LINE>355</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory 'l_lockPtr'.</DESCRIPTION>
+    <FUNCTION>dbc::PreAllocHeapPtr&lt;dbc::TaskWait&gt;::Init</FUNCTION>
+    <DECORATED>?Init@?$PreAllocHeapPtr@VTaskWait@dbc@@@dbc@@QAE_NQAK@Z</DECORATED>
+    <FUNCLINE>338</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>340</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>341</LINE>
+        <COLUMN>13</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>344</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume '!m_ptr')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>346</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>352</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>353</LINE>
+        <COLUMN>3</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>354</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>355</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is an Output from 'dbc::MutexArmor::unlock' (declared at c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc\dbccommon.h:216)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>355</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>prealloc.h</FILENAME>
+      <LINE>409</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory 'l_lockPtr'.</DESCRIPTION>
+    <FUNCTION>dbc::PreAllocHeapPtr&lt;dbc::dstrbuf&gt;::Init</FUNCTION>
+    <DECORATED>?Init@?$PreAllocHeapPtr@Vdstrbuf@dbc@@@dbc@@AAEXXZ</DECORATED>
+    <FUNCLINE>392</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>394</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>395</LINE>
+        <COLUMN>13</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>398</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume '!m_ptr')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>400</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>406</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>407</LINE>
+        <COLUMN>3</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>408</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>409</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is an Output from 'dbc::MutexArmor::unlock' (declared at c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc\dbccommon.h:216)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>409</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>prealloc.h</FILENAME>
+      <LINE>355</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory 'l_lockPtr'.</DESCRIPTION>
+    <FUNCTION>dbc::PreAllocHeapPtr&lt;dbc::dstrbuf&gt;::Init</FUNCTION>
+    <DECORATED>?Init@?$PreAllocHeapPtr@Vdstrbuf@dbc@@@dbc@@QAE_NQAK@Z</DECORATED>
+    <FUNCLINE>338</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>340</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>341</LINE>
+        <COLUMN>13</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>344</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume '!m_ptr')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>346</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>352</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>353</LINE>
+        <COLUMN>3</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>354</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>355</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is an Output from 'dbc::MutexArmor::unlock' (declared at c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc\dbccommon.h:216)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>355</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>

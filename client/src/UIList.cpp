@@ -501,7 +501,7 @@ bool CListItemsEx::SetColumnWidth( unsigned int nCol, unsigned int width )
 // class CList
 //---------------------------------------------------------------------------
 CList::CList(CForm& frmOwn)
-: CCompent(frmOwn), _nRowHeight(22), _nSpaceBottom(0), _dwFontColor(COLOR_BLACK), _dwSelectColor(0xFF00FF71)
+: CCompent(frmOwn), _nRowHeight(22), _nSpaceBottom(0), _dwFontColor(COLOR_RED), _dwSelectColor(0xFF00FF71)
 , _nLeftMargin(5), _nTopMargin(5), _nRightMargin(5), _nBottomMargin(5), _IsChangeColor(true)
 , evtSelectChange(NULL), evtListMouseDown(NULL), evtListMouseDB(NULL)
 {
@@ -516,7 +516,7 @@ CList::CList(CForm& frmOwn)
 }
 
 CList::CList(CForm& frmOwn, int nCol)
-: CCompent(frmOwn), _nRowHeight(22), _nSpaceBottom(0), _dwFontColor(COLOR_BLACK), _dwSelectColor(0xFF00FF71)
+: CCompent(frmOwn), _nRowHeight(22), _nSpaceBottom(0), _dwFontColor(COLOR_RED), _dwSelectColor(0xFF00FF71)
 , _nLeftMargin(5), _nTopMargin(5), _nRightMargin(5), _nBottomMargin(5), _IsChangeColor(true)
 , evtSelectChange(NULL), evtListMouseDown(NULL), evtListMouseDB(NULL)
 {
@@ -532,6 +532,7 @@ CList::CList(CForm& frmOwn, int nCol)
 
 	_SetSelf();
 }
+
 
 CList::CList( const CList& rhs )
 : CCompent(rhs), _pImage( new CGuiPic( *rhs._pImage ) ), _pScroll( new CScroll( *rhs._pScroll ) )
@@ -630,7 +631,12 @@ void CList::Refresh()
 
 	_SetScrollRange();
 }
-
+void CList::SetForeColor(CList& list, DWORD RGB) {
+	list._dwFontColor = RGB;
+}
+void CList::SetSelectColor(CList& list, DWORD RGB) {
+	list._dwSelectColor = RGB;
+}
 bool CList::MouseRun( int x, int y, DWORD key )
 {
 	if( !IsNormal() ) return false;

@@ -1588,6 +1588,15 @@ void	CAniClock::Render(int x,int y)
 
 	g_Render.GetDevice()->DrawPrimitiveUP(D3DPT_TRIANGLEFAN,8,&_vTempVer,sizeof(ClockVer));
 
+	static char buf[30];
+	const auto seconds_remaining = _fPlayTime - _fCurTime;
+	const auto minutes = static_cast<int>(seconds_remaining / 60);
+	const auto seconds = static_cast<int>(seconds_remaining - (minutes * 60));
+	minutes > 1 ? _snprintf_s(buf, _countof(buf), _TRUNCATE, "CD\n %.2d:%.2d", minutes, seconds)
+		: seconds > 1 ? _snprintf_s(buf, _countof(buf), _TRUNCATE, "CD\n %d", seconds)
+		: _snprintf_s(buf, _countof(buf), _TRUNCATE, "CD\n %.1f", seconds_remaining);
+
+	CGuiFont::s_Font.BRender(0, buf, x, y, CTimerRGB[0], COLOR_BLACK);
 }
 //////////////////////////////////////////////////////////////////////////
 CCharacter2D::CCharacter2D(void)

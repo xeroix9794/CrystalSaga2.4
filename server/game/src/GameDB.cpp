@@ -184,7 +184,7 @@ bool CTableAccountDetails::Init(void)
 	 m_pDataBase->SetAutoCommit(true);
 
 	 char buffer[1024];
-
+	 
 	if (!pPlayer)
 	{
 		return false;

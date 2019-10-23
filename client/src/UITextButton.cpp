@@ -10,18 +10,18 @@ CTextButton* CTextButton::m_pCurButton = NULL;	// 当前激活的Button
 CTextButton::CTextButton(CForm& frmOwn)
 : CCompent(frmOwn), _isDown(false), _textColor( 0xffff0000), _eFormModal(CForm::mrNone)
 , evtMouseClick(NULL), evtMouseDownContinue(NULL), _dwFlashCycle(0), _dwLastClick(0)
-, evtMouseRClick(NULL), evtMouseDBClick(NULL)
+, evtMouseRClick(NULL), evtMouseDBClick(NULL), _dontHover(false)
 {
 	_pImage = new CGuiPic( this, csEnd );
 }
 
 CTextButton::CTextButton(const CTextButton& rhs)
-: CCompent( rhs ), _pImage( new CGuiPic(*rhs._pImage) ), _strCaption(rhs._strCaption)
-, _textColor(rhs._textColor), _isDown(rhs._isDown), _eFormModal(rhs._eFormModal)
-, evtMouseClick(rhs.evtMouseClick), evtMouseDownContinue(rhs.evtMouseDownContinue), _dwFlashCycle(0), _dwLastClick(0)
-, evtMouseRClick(NULL), evtMouseDBClick(NULL)
+	: CCompent(rhs), _pImage(new CGuiPic(*rhs._pImage)), _strCaption(rhs._strCaption)
+	, _textColor(rhs._textColor), _isDown(rhs._isDown), _eFormModal(rhs._eFormModal)
+	, evtMouseClick(rhs.evtMouseClick), evtMouseDownContinue(rhs.evtMouseDownContinue), _dwFlashCycle(0), _dwLastClick(0)
+	, evtMouseRClick(NULL), evtMouseDBClick(NULL), _dontHover(false)
 {
-	_pImage->SetParent( this );
+	_pImage->SetParent(this);
 }
 
 CTextButton& CTextButton::operator=(const CTextButton& rhs)
@@ -201,7 +201,8 @@ void CTextButton::_ClearOldState()
 		{
 			m_pCurButton->_isDown = false;
 			m_pCurButton->_SetState( csNormal );
-			m_pCurButton = this;
+			if(_dontHover)
+				m_pCurButton = this;
 		}
 	}
 	else

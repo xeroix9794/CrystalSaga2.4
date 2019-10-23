@@ -76,7 +76,46 @@ enum eChaPkState
 	enumChaPkSelf=1,		// 自己的PK开关
 	enumChaPkScene,			// 是否为竞技场,即是否可以操作PK开关
 };
+/*
+struct CMount {
 
+	int mountID, heightOff, chType, poseID, x, y;
+	CMount(int mountId, int height, int cType, int cordx, int cordy) {
+		this->mountID = mountId;
+		this->heightOff = height;
+		this->chType = cType;
+		this->x = cordx;
+		this->y = cordy;
+		switch (chType)
+		{
+		case 1:
+			this->poseID = POSE_SEAT2;
+			break;
+		case 2:
+			this->poseID = POSE_SEAT;
+			break;
+		case 3:
+			this->poseID = POSE_SEAT;
+			break;
+		case 4:
+			this->poseID = POSE_SEAT;
+			break;
+		default:
+			this->poseID = POSE_SEAT2;
+		}
+	}
+
+	int GetMountID() { return mountID; }
+	int GetHeightOff() { return heightOff; }
+	int GetCharacterType() { return chType; }
+	int GetCharacterPose() { return poseID; }
+	int GetMountX() { return x; }
+	int GetMountY() { return y; }
+	void UpdateX(int newX) { this->x = newX; }
+	void UpdateY(int newY) { this->y = newY; }
+	void SetHeightOffset(int offset) { this->heightOff = offset; }
+	 
+};*/
 class CCharacter : public CSceneNode, public CCharacterModel
 {
 	friend class CHeadSay;
@@ -85,9 +124,33 @@ class CCharacter : public CSceneNode, public CCharacterModel
 private:
 	virtual BOOL	_Create(int nCharTypeID, int nType);
 
+private:
+	bool bIsMount = false;
+	bool isChaMount = false;
+	int  prevMap;
+	bool _ShowSPBar = false;
+	bool _ShowHPBar = true;
+	bool _ShowHPMPText = false;
+public:
+	// This is public and this is wrong but meh it's a mess anyways
+    CCharacter* pChaMount;
+	//CMount* mount;
+	bool GetIsMount() { return bIsMount; }
+	void SetIsMount(bool isMount) { this->bIsMount = isMount; }
+	void			_DestoryMount(CCharacter*& mount);
+	void			_SummonMount();
+	bool GetIsMobMount() { return isChaMount; }
+	void SetIsMobMount(bool isMount) { this->isChaMount = isMount; }
+	void SetShowSP(bool show) { _ShowSPBar = show; }
+	void SetShowHP(bool show) { _ShowHPBar = show; }
+	void SetShowHPMPText(bool show) { _ShowHPMPText = show; }
+	bool GetShowSP() { return _ShowSPBar; }
+	bool GetShowHP() { return _ShowHPBar; }
+	int GetPrevMap() { return prevMap; }
+	void SetMountMap(int id) { prevMap = id; }
+	bool GetShowHPMPText() { return _ShowHPMPText; }
 public:	
 	virtual bool    GetRunTimeMatrix(drMatrix44* mat, DWORD dummy_id);
-
 public:	
 	void			InitState();						// 将状态初始化
 
@@ -96,7 +159,7 @@ public:
 	int			    FaceTo( int yaw );
 	int 			FaceTo( int x, int y )	{ return FaceTo(_GetTargetAngle(x, y));	    }
 	int				GetTargetDistance();
-
+	int				chMountID;
     void			StopMove();
 	CActor*			GetActor()				{ return _pActor;	    }
 
@@ -116,8 +179,8 @@ public:
 
 	void			RefreshShadow();
 	void			SetHide(BOOL bHide);
-
-
+	void			SetMountPlayerID(int id) { _mountPlayerID = id; }
+	int				GetMountPlayerID() { return _mountPlayerID; }
 	//void			SetHieght(float fhei);
 public: // 与主角的技能相关
 	bool			ChangeReadySkill( int nSkillID );
@@ -178,6 +241,180 @@ public:
 
 	bool			GetIsFight()				{	return this->_InFight;			}
 	void			FightSwitch(bool isFight)	{   _FightSwitch(isFight);			}
+	void			CheckStates();
+	
+    int	stateCount;
+	vector<int> allStates;
+	int	refreshCount;
+	int timer;
+	struct uiState {
+		short stateID;
+		string stateName;
+		string iconName;
+		bool enabled;
+		char iconID;
+		uiState(short id, string name, string ico) {
+			stateID = id;
+			stateName = name;
+			iconName = ico;
+			enabled = false;
+			iconID = -1;
+		}
+		void SetValidID(int id) { this->iconID = id; }
+		char GetIconIndex() { return this->iconID; }
+		short GetStateID() { return stateID; }
+		string GetStateName() { return stateName; }
+		string GetIcon() { return string("texture\\stateicon\\") + iconName; }
+		bool isEnabled() { return enabled; }
+	};
+	struct TempStates {
+		int stateID[13];
+		int isActive[13];
+
+		TempStates() {
+			memset(stateID, 0, _countof(stateID));
+			memset(isActive, 0, _countof(stateID));
+		}
+
+		int GetState(int index) {
+			return stateID[index];
+		}
+		bool IsActive(int index) {
+			return (isActive[index] == 0) ? false : true;
+		}
+
+		void Reset() {
+			memset(stateID, 0, _countof(stateID));
+			memset(isActive, 0, _countof(isActive));
+		}
+	};
+	struct StateIcons {
+		vector<uiState> states;
+		vector<int> activeStates;
+		StateIcons() {
+			ifstream file("scripts/txt/states.txt");
+			string line;
+			string data[3];
+			if (file.is_open())
+			{
+				while (getline(file, line)) {
+					// load data
+					Util_ResolveTextLine(line.c_str(), data, 3, '\t');
+					// Save to structure
+					uiState uiStateIt(Str2Int(data[0]), data[1], data[2]);
+					states.push_back(uiStateIt);
+				}
+			}
+		}
+
+		string GetIcon(int id) {
+			string icon;
+			for (auto it = states.begin(); it != states.end(); ++it) {
+				if (it->GetStateID() == id)
+					icon = it->GetIcon();
+			}
+			return icon;
+		}
+
+		bool activeState(int id)
+		{
+			bool ret = false;
+			for (auto it = activeStates.begin(); it != activeStates.end(); ++it)
+			{
+				if (*it == id)
+				{
+					ret = true;
+				}
+			}
+			return ret;
+		}
+
+		void removeActiveState(int id)
+		{
+			for (auto it = activeStates.begin(); it != activeStates.end(); ++it)
+			{
+				if (*it == id)
+				{
+					activeStates.erase(it);
+				}
+			}
+		}
+
+		int GetStateID(int id) {
+			int getID;
+			for (auto it = states.begin(); it != states.end(); ++it) {
+				if (it->GetStateID() == id)
+					getID = it->GetStateID();
+			}
+			return getID;
+		}
+
+		string GetIcon(string name) {
+			string icon;
+			for (auto it = states.begin(); it != states.end(); ++it) {
+				if (it->GetStateName() == name)
+					icon = it->GetIcon();
+			}
+			return icon;
+		}
+
+		void SetValid(int id, bool isValid, int IconID)
+		{
+			for (auto it = states.begin(); it != states.end(); ++it) {
+				if (it->GetStateID() == id)
+				{
+					it->enabled = isValid;
+					it->iconID = IconID;
+					if (isValid == true) it->SetValidID(IconID);
+					else it->SetValidID(-1);// = -1;
+				}
+			}
+		}
+
+		vector<int> GetIconsEnabled() {
+			vector<int> ret;
+			for (auto it = states.begin(); it != states.end(); ++it) {
+				if (it->isEnabled())
+				{
+					ret.push_back(it->GetStateID());
+				}
+			}
+			return ret;
+		}
+
+		char GetValidIconID(int state) {
+			char ret = -1;
+			for (auto it = states.begin(); it != states.end(); ++it) {
+				if (it->GetStateID() == state) {
+					ret = it->iconID;
+				}
+			}
+			return ret;
+		}
+		bool IsValid(int id) {
+			bool valid = false;
+			for (auto it = states.begin(); it != states.end(); ++it) {
+				if (it->GetStateID() == id)
+				{
+					valid = (it->enabled == true) ? true : false;
+				}
+			}
+			return valid;
+		}
+
+		bool HasIcon(int id)
+		{
+			bool ret = false;
+			for (auto it = states.begin(); it != states.end(); ++it) {
+				if (it->GetStateID() == id)
+					ret = true;
+			}
+			return ret;
+		}
+	};
+	StateIcons icons;
+	TempStates tmpStates;
+
 
 #ifdef	_KOSDEMO_
 	int				nPetHideCount;
@@ -197,7 +434,9 @@ private:		// 移动
 	int				_GetTargetAngle(int nTargetX, int nTargetY, BOOL bBack = FALSE);
     void            _DetachAllItem();
     void            _FightSwitch( bool isFight );
-
+	
+	int				ActiveStates[13];
+	static int		_mountPlayerID;
 	float			_fStepProgressRate;
 	float			_fProgressYaw;
 	float			_fStep;
@@ -210,6 +449,8 @@ private:		// 移动
     bool            _isStopMove;
 	float			_fMapHeight;	    // 在地图上的总高度，单位：米
 	CSceneHeight*	_pSceneHeight;
+	int prevX, prevY;
+	int prevMount = 0;
 
 	static			bool _IsShowName;
     
@@ -286,6 +527,10 @@ public:	// 应用层
 
 	void			setPlayerNameColor(int v);
 	int			    GetOldColor() { return this->_szOldColor; }
+	void			SetMountID(int mountID) { getGameAttr()->set(ATTR_EXTEND9, mountID);  }
+	int				GetMountID() { return (int)getGameAttr()->get(ATTR_EXTEND9); }
+	int				GetPrevMountID() { return prevMount; }
+	void			SetPrevMountID(int id) { this->prevMount = id; }
 	void			SetOldColor(int v) { this->_szOldColor = v; }
 	DWORD			getOldGuildColor() { return _dwGuildCircleColor; }
 	void			setOldGuildColor(DWORD colorID) { if (colorID != -1) _dwGuildCircleColor = Colors[colorID]; }
@@ -312,6 +557,7 @@ public:	// 应用层
 	void			setNpcType( int type )				{   _nNpcType = type;				}
 
 	void			setGMLv( char v )					{   _chGMLv = v;					}
+
 	char			getGMLv()							{   return _chGMLv;					}
 public:
 	CCharacter();
@@ -321,6 +567,7 @@ public:
 
 	virtual	void	FrameMove(DWORD dwTimeParam);
 	virtual void	Render();
+				
 	void			RefreshUI(int nParam = 0);
 	void			RefreshLevel( int nMainLevel );
     void            RefreshItem( bool isFirst=false );
@@ -799,6 +1046,8 @@ inline void CCharacter::setChaCtrlType( int type )
 	case enumCHACTRL_MONS_DBOAT: _nDanger = 7; break;
 
 	case enumCHACTRL_PLAYER_PET: _nDanger = 8; break;
+	case enumCHACTRL_PLAYER_MOUNT: _nDanger = 0;
+	
 	case enumCHACTRL_MONS_REPAIRABLE: _nDanger = 9; break;
 
 	case enumCHACTRL_MONS: _nDanger = 10; break;

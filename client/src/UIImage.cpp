@@ -12,6 +12,7 @@ CImage::CImage(CForm& frmOwn, unsigned int max)
 CImage::CImage( const CImage& rhs )
 : CCompent(rhs), _pImage( new CGuiPic( *rhs._pImage) )
 {
+	
 }
 
 CImage& CImage::operator=(const CImage& rhs)

@@ -96,7 +96,7 @@ inline int g_IsUseSeaLiveSkill(long lFitNo, CSkillRecord *p)
 
 inline bool g_IsPlyCtrlCha(int nChaCtrlType)
 {
-	if (nChaCtrlType == enumCHACTRL_PLAYER || nChaCtrlType == enumCHACTRL_PLAYER_PET)
+	if (nChaCtrlType == enumCHACTRL_PLAYER || nChaCtrlType == enumCHACTRL_PLAYER_PET || nChaCtrlType == enumCHACTRL_PLAYER_MOUNT)
 		return true;
 	return false;
 }

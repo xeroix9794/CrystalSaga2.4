@@ -1291,7 +1291,9 @@ void NetSwitchMap(stNetSwitchMap &switchmap)
             LG( "switchmap", "msgNetSwitchMap(%s) SwitchMap Failed\n", switchmap.szMapName );
             return;
         }
-    }
+	}
+	//CCharacter* pCha = CGameScene::GetMainCha();
+	//pCha->SetMountMap(0);
 }
 
 void NetBickerInfo( const char szData[] )
@@ -2244,10 +2246,12 @@ void NetChangeKitbag(DWORD dwChaID, stNetKitbag& SKitbag)
 			//pObj->SetPrice(pGrid[i].SGridContent)
 			nMarginNum = pObj->GetTotalNum() - nMarginNum;
 
-			if( item->sType==enumItemTypePet && pGrid[i].sGridID==1 && grd==g_stUIEquip.GetGoodsGrid() )
+			// Second Fairy slot removed @ XEON
+
+			/*if( item->sType==enumItemTypePet && pGrid[i].sGridID==1 && grd==g_stUIEquip.GetGoodsGrid() )
 			{
 				g_stUIStart.RefreshPet( pObj );
-			}
+			}*/
 
 
 			if( SKitbag.chBagType!=1 && nMarginNum > 0 )	// modify by Philip.Wu  2006-06-21  拾起0个的BUG修正
@@ -2314,14 +2318,11 @@ void NetChangeKitbag(DWORD dwChaID, stNetKitbag& SKitbag)
         g_pGameApp->PlaySound( 22 );
     }
 
-	CItemCommand* pItem = NULL;
+		CItemCommand* pItem = NULL;
 
 		pItem = g_stUIEquip.GetEquipItem(enumEQUIP_FAIRY);
-		if (pItem && IsPetFairy(pItem->GetData().sID) == true)
+		if (pItem && IsPetFairy(pItem->GetData().sID) == true && pItem->GetData().GetInstAttr(ITEMATTR_URE) > 0)
 		{
-			//char tmp[100];
-			//sprintf_s(tmp, _TRUNCATE, "NID = %d", pItem->GetData().sID);
-			//MessageBoxA(0, tmp, "", 0);
 			g_stUIStart.RefreshPet(pItem);
 		}
 }

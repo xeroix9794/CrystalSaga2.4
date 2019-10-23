@@ -238,7 +238,8 @@ bool CUIGuildMgr::Init()
 	// FEATURE: GUILD_BANK
 	FORM_CONTROL_LOADING_CHECK(m_plabGuildGold, m_pGuildMgrForm, CLabelEx, "manage.clu", "labGuildMoney");
 
-
+	
+	
 	m_pbtnGuildMottoEdit->evtMouseClick=_OnClickEditMottoName;
 	m_pbtnGuildDismiss->evtMouseClick=_OnClickDismiss;
 	m_pbtnMemberRecruit->evtMouseClick=_OnClickRecruit;
@@ -299,7 +300,8 @@ bool CUIGuildMgr::Init()
 	grdBank->evtSwapItem = _evtBankToBank;
 	m_pGuildMgrForm->evtEntrustMouseEvent = _MainMousePlayerTradeEvent;
 
-
+	m_plstGuildMember->GetList()->SetForeColor(*m_plstGuildMember->GetList(), 0xFF00FF00);
+	m_plstGuildMember->GetList()->SetSelectColor(0xFFFF0000);
 
 	return true;
 }
@@ -1089,12 +1091,13 @@ void CUIGuildMgr::RefreshList()
 	{
 		CGuildMemberData* pMemberData=CGuildMembersMgr::FindGuildMemberByIndex(i);
 		if (!pMemberData) continue;
+		if (i == 0) i = 1;
 		CItemRow *pRow=m_plstGuildMember->GetList()->NewItem();
-		CItem*	pMemberNameItem=new CItem(pMemberData->GetName().c_str(),COLOR_BLACK);
-		CItem*	pMemberJobItem=new CItem(pMemberData->GetJob().c_str(),COLOR_BLACK);
+		CItem*	pMemberNameItem=new CItem(pMemberData->GetName().c_str(),0xFF00FF00);
+		CItem*	pMemberJobItem=new CItem(pMemberData->GetJob().c_str(), 0xFF00FF00);
 		//CItem*	pMemberLevelItem=new CItem(_i64toa(pMemberData->GetLevel(),buf,10),COLOR_BLACK);
 		_i64toa_s(pMemberData->GetLevel(),buf,sizeof(buf) ,10);
-		CItem*	pMemberLevelItem=new CItem(buf,COLOR_BLACK);
+		CItem*	pMemberLevelItem=new CItem(buf, 0xFF00FF00);
 		pRow->SetIndex(0,pMemberNameItem);
 		pRow->SetIndex(1,pMemberJobItem);
 		pRow->SetIndex(2,pMemberLevelItem);
@@ -1106,12 +1109,13 @@ void CUIGuildMgr::RefreshList()
 	{
 		CRecruitMemberData* pMemberData=CRecruitMembersMgr::FindRecruitMemberByIndex(i);
 		if (!pMemberData) continue;
+		if (i == 0) i = 1;
 		CItemRow *pRow=m_plstRecruitMember->GetList()->NewItem();
-		CItem*	pMemberNameItem=new CItem(pMemberData->GetName().c_str(),COLOR_BLACK);
-		CItem*	pMemberJobItem=new CItem(pMemberData->GetJob().c_str(),COLOR_BLACK);
+		CItem*	pMemberNameItem=new CItem(pMemberData->GetName().c_str(), 0xFF00FF00);
+		CItem*	pMemberJobItem=new CItem(pMemberData->GetJob().c_str(), 0xFF00FF00);
 		//CItem*	pMemberLevelItem=new CItem(_i64toa(pMemberData->GetLevel(),buf,10),COLOR_BLACK);
 		_i64toa_s(pMemberData->GetLevel(),buf,sizeof(buf) ,10);
-		CItem*	pMemberLevelItem=new CItem(buf,COLOR_BLACK);
+		CItem*	pMemberLevelItem=new CItem(buf, 0xFF00FF00);
 		pRow->SetIndex(0,pMemberNameItem);
 		pRow->SetIndex(1,pMemberJobItem);
 		pRow->SetIndex(2,pMemberLevelItem);

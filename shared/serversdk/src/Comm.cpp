@@ -277,7 +277,7 @@ void TcpCommApp::BeforeSel(selparm &p)
 	}else if(l_tick <uLong(m_TickCount))
 	{
 		l_tick		=++m_TickCount;
-		std::cout<<std::endl<<"system GetTickCount function wrong: later < before."<<std::endl;
+		//std::cout<<std::endl<<"system GetTickCount function wrong: later < before."<<std::endl;
 	}
 	uLong	l_sendbytes,l_recvbytes,l_sendpkts,l_recvpkts;
 	uLong	l_intertime;

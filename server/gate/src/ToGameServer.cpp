@@ -1,4 +1,4 @@
-#include "gateserver.h"
+﻿#include "gateserver.h"
 #include <algorithm>
 
 ToGameServer::ToGameServer(char const* fname, ThreadPool* proc, ThreadPool* comm) : TcpServerApp(this, proc, comm), RPCMGR(this), _mut_game(), _game_heap(1, 20), _game_list(NULL), _map_game() {
@@ -329,7 +329,6 @@ void ToGameServer::OnProcessData(DataSocket* datasock, RPacket &recvbuf) {
 			}
 			break;
 		}
-
 		case CMD_MT_KICKUSER: {
 			uShort	l_aimnum = recvbuf.ReverseReadShort();
 			for (uShort i = 0; i < l_aimnum; i++) {
@@ -342,7 +341,13 @@ void ToGameServer::OnProcessData(DataSocket* datasock, RPacket &recvbuf) {
 			}
 			break;
 		}
-
+		/*case CMD_MC_PORTALTIMES﻿: {
+			RPacket rpk = recvbuf;
+			Player *player = (Player *)MakePointer(recvbuf.ReverseReadLong());
+			rpk.DiscardLast(sizeof(sizeof(uLong)));
+			auto wpk = WPacket(rpk).Duplicate();
+			g_gtsvr->cli_conn->SendData(player->m_datasock, wpk);
+		} break;*/
 		case CMD_MT_MAPENTRY: {
 			WPacket l_wpk = WPacket(recvbuf).Duplicate();
 			RPacket	l_rpk = recvbuf;

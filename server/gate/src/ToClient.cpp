@@ -870,7 +870,6 @@ void ToClient::CM_BGNPLAY(DataSocket* datasock, RPacket& recvbuf) {
 						l_wpk.WriteShort(ERR_MC_NOTARRIVE);
 						SendData(datasock, l_wpk);
 					}
-
 					// MRF_SOURCE_LIMIT: Players can't exceed 15000 ( Contradicts the 10240 rule )
 					// Too many
 					else if (l_game->m_plynum > 15000) {
@@ -881,6 +880,10 @@ void ToClient::CM_BGNPLAY(DataSocket* datasock, RPacket& recvbuf) {
 					}
 					
 					else {
+						auto wpk = GetWPacket();
+						wpk.WriteCmd(CMD_TM_PORTALTIMES);
+						wpk.WriteLong(MakeULong(l_ply));
+						g_gtsvr->gm_conn->SendAllGameServer(wpk);
 						// Select the role of success, placed in the game play state
 						l_ply->m_status = 2;
 

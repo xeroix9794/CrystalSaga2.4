@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?><DEFECTS><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+      <FILENAME>enclib.cpp</FILENAME>
+      <LINE>76</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6386</DEFECTCODE>
+    <DESCRIPTION>Buffer overrun while writing to 'tmp':  the writable size is 'size*1' bytes, but '2' bytes might be written.</DESCRIPTION>
+    <FUNCTION>Encrypt</FUNCTION>
+    <DECORATED>?Encrypt@@YAHPAEHPBEH@Z</DECORATED>
+    <FUNCLINE>53</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>56</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>57</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>58</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>66</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>68</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'tmp' is an array of 1 elements (1 bytes)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>69</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'tmp' is an In/Out argument to 'memset' (declared at c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vcruntime_string.h:60)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>70</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'tmp' is an In/Out argument to 'memcpy' (declared at c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vcruntime_string.h:40)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>72</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>75</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>76</LINE>
+        <COLUMN>8</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>Invalid write to 'tmp[1]', (writable range is 0 to 0)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+      <FILENAME>enclib.cpp</FILENAME>
+      <LINE>163</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>6385</DEFECTCODE>
+    <DESCRIPTION>Reading invalid data from 'tmp':  the readable size is '_Old_6`size' bytes, but '5' bytes may be read.</DESCRIPTION>
+    <FUNCTION>Decrypt</FUNCTION>
+    <DECORATED>?Decrypt@@YAHPAEHPBEH@Z</DECORATED>
+    <FUNCLINE>120</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>134</LINE>
+        <COLUMN>5</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'bsize' receives the Return value from 'str2bin' (declared on line 28)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>121</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>122</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>126</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>127</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>132</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'tmp' is a 1 byte array</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>133</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'tmp' is an In/Out argument to 'memset' (declared at c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vcruntime_string.h:60)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>134</LINE>
+        <COLUMN>5</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'tmp' is an In/Out argument to 'str2bin' (declared on line 28)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>136</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>138</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>139</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>141</LINE>
+        <COLUMN>1</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this loop, (assume '1')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>142</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>143</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>144</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>145</LINE>
+        <COLUMN>19</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>141</LINE>
+        <COLUMN>1</COLUMN>
+        <KEYEVENT>
+          <ID>6</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this loop, (assume '1')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>142</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>143</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>144</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>145</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>7</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume '((eptr-tmp))&gt;=bsize' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>141</LINE>
+        <COLUMN>1</COLUMN>
+        <KEYEVENT>
+          <ID>8</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Continue this loop, (assume '1')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>142</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>143</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>144</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>145</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>9</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume '((eptr-tmp))&gt;=bsize' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>150</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>151</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>10</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'tmp' is an In/Out argument to 'memset' (declared at c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vcruntime_string.h:60)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>152</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>153</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>153</LINE>
+        <COLUMN>19</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>154</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>155</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>155</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>156</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>157</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>157</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>158</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>159</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>159</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>160</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>161</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>161</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>153</LINE>
+        <COLUMN>19</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>163</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>11</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'tmp' is an Input to 'memcpy' (declared at c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vcruntime_string.h:40)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\enclib\src</FILEPATH>
+        <FILENAME>enclib.cpp</FILENAME>
+        <LINE>163</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>12</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>Invalid read from 'tmp', (outside its readable range)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT></DEFECTS>

@@ -614,7 +614,7 @@ void GroupServerApp::OnProcessData(DataSocket *datasock, RPacket &recvbuf) {
 			//cout << guild->m_level << "\n";
 
 			guild->m_exp += exp;
-
+			cout << "EXP " + guild->m_exp  << endl;
 			bool lvUp = false;
 			while (true) {
 				int guildExpReq = pow(guild->m_level * 10, 2) + 1000;

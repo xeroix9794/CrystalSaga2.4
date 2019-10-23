@@ -19,10 +19,10 @@ public:
 		CHANNEL_SYSTEM			= 128,
 		CHANNEL_PUBLISH			= 256,
 		CHANNEL_SIDE			= 512,	// 阵营
-
 #ifdef MANAGE_VER
 		CHANNEL_MANAGE			= 1024, // 超级管理员
 #endif
+		CHANNEL_SYSTEM_GUILD	= 2048,
 	};
 
 	struct sTextInfo
@@ -78,7 +78,7 @@ private:
 private:
 
 #ifdef MANAGE_VER
-	static const WORD			m_wTotalChannelsCount = 12;
+	static const WORD			m_wTotalChannelsCount = 13;
 #else
 	static const WORD			m_wTotalChannelsCount = 11;	// 添加阵营修改 10 -> 11
 #endif
@@ -169,6 +169,7 @@ public:
 	void OnTeamMsg(DWORD dwCharID, string strMsg);
 	void OnGuildMsg(string strName, string strMsg);
 	void OnSystemMsg(string strMsg);
+	void OnSysGuld(string strMsg);
 	void OnSideMsg(string strName, string strMsg);
 	void OnPublishMsg(string strName, string strMsg);
 	void OnPublishMsg1(string strMsg,int setnum);//Add by sunny.sun20080804

@@ -6,6 +6,7 @@
 
 #include "boolset.h"
 #include "skillstatetype.h"
+#include "Character.h"
 
 struct stSkillState;
 class CCharacter;
@@ -21,7 +22,7 @@ public:
 	void		ChaDied()	{ ChaDestroy();	}					// 角色死亡时调用
 
 	CBoolSet&	Synchro( stSkillState* pState, int nCount );	// 同步状态时调用
-
+	void		RenderStates();
 	int					GetSkillStateNum()					{ return (int)_states.size();	}
 	CSkillStateRecord*	GetSkillState( unsigned int nID )	{ return _states[nID]->pInfo;	}
 
@@ -29,14 +30,13 @@ public:
 
 	static CSkillStateRecord* GetLastActInfo()				{ return _pLastActInfo;			}
 	static int				  GetLastShopLevel()			{ return _nShopLevel;			}
-
 private:
 	CCharacter*		_pCha;
 
 	struct stChaState
 	{
 		bool				IsDel;
-
+		int					iconID;
 		unsigned char		chStateLv;
 		CSkillStateRecord*	pInfo;
 		CEffectObj*			pEffect;

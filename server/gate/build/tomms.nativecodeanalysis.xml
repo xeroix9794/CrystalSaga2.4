@@ -1,0 +1,5191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dbccommon.h</FILENAME>
+      <LINE>36</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>Inconsistent annotation for 'InitializeCriticalSectionAndSpinCount': this instance has no annotations. See c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\synchapi.h(150). </DESCRIPTION>
+    <FUNCTION>InitializeCriticalSectionAndSpinCount</FUNCTION>
+    <DECORATED>InitializeCriticalSectionAndSpinCount@8</DECORATED>
+    <FUNCLINE>36</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dbccommon.h</FILENAME>
+      <LINE>44</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>28251</DEFECTCODE>
+    <DESCRIPTION>Inconsistent annotation for 'TryEnterCriticalSection': this instance has no annotations. See c:\program files (x86)\windows kits\10\include\10.0.17134.0\um\synchapi.h(184). </DESCRIPTION>
+    <FUNCTION>TryEnterCriticalSection</FUNCTION>
+    <DECORATED>TryEnterCriticalSection@4</DECORATED>
+    <FUNCLINE>44</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dbccommon.h</FILENAME>
+      <LINE>165</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'dbc::Mutex::m_handle' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>dbc::Mutex::{ctor}</FUNCTION>
+    <DECORATED>??0Mutex@dbc@@QAE@K@Z</DECORATED>
+    <FUNCLINE>165</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dbccommon.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>40</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: 'InitializeCriticalSectionAndSpinCount'.</DESCRIPTION>
+    <FUNCTION>dbc::Mutex::Create</FUNCTION>
+    <DECORATED>?Create@Mutex@dbc@@QAE_N_N@Z</DECORATED>
+    <FUNCLINE>168</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>dstring.h</FILENAME>
+      <LINE>115</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'dbc::dstring::m_overwrite' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>dbc::dstring::{ctor}</FUNCTION>
+    <DECORATED>??0dstring@dbc@@AAE@PAVdstrbuf@1@@Z</DECORATED>
+    <FUNCLINE>115</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>190</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'LETimer::_liStartTime' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>LETimer::{ctor}</FUNCTION>
+    <DECORATED>??0LETimer@@QAE@XZ</DECORATED>
+    <FUNCLINE>190</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>224</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBlockData::_nHeight' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBlockData::{ctor}</FUNCTION>
+    <DECORATED>??0CBlockData@@QAE@XZ</DECORATED>
+    <FUNCLINE>224</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>224</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBlockData::_nWidth' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBlockData::{ctor}</FUNCTION>
+    <DECORATED>??0CBlockData@@QAE@XZ</DECORATED>
+    <FUNCLINE>224</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>224</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CBlockData::_nByteWidth' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CBlockData::{ctor}</FUNCTION>
+    <DECORATED>??0CBlockData@@QAE@XZ</DECORATED>
+    <FUNCLINE>224</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>245</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>6029</DEFECTCODE>
+    <DESCRIPTION>Possible buffer overrun in call to 'fread':  use of unchecked value 'this'.</DESCRIPTION>
+    <FUNCTION>CBlockData::Load</FUNCTION>
+    <DECORATED>?Load@CBlockData@@QAEHPBD@Z</DECORATED>
+    <FUNCLINE>231</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>util2.h</FILENAME>
+      <LINE>245</LINE>
+      <COLUMN>27</COLUMN>
+    </SFA>
+    <DEFECTCODE>6029</DEFECTCODE>
+    <DESCRIPTION>Possible buffer overrun in call to 'fread':  use of unchecked value 'this'.</DESCRIPTION>
+    <FUNCTION>CBlockData::Load</FUNCTION>
+    <DECORATED>?Load@CBlockData@@QAEHPBD@Z</DECORATED>
+    <FUNCLINE>231</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>stacktrace.h</FILENAME>
+      <LINE>94</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26439</DEFECTCODE>
+    <DESCRIPTION>This kind of function may not throw. Declare it 'noexcept' (f.6).</DESCRIPTION>
+    <FUNCTION>TraceableException::{dtor}</FUNCTION>
+    <DECORATED>??1TraceableException@@UAE@XZ</DECORATED>
+    <FUNCLINE>94</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>db3.h</FILENAME>
+      <LINE>174</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSQLBase::m_bConvertQuotes' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSQLBase::{ctor}</FUNCTION>
+    <DECORATED>??0CSQLBase@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>174</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc</FILEPATH>
+      <FILENAME>db3.h</FILENAME>
+      <LINE>227</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSQLException::m_nRetCode' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSQLException::{ctor}</FUNCTION>
+    <DECORATED>??0CSQLException@@AAE@ABV0@@Z</DECORATED>
+    <FUNCLINE>227</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>itemattr.h</FILENAME>
+      <LINE>16</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CItemAttr::m_sAttr' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CItemAttr::{ctor}</FUNCTION>
+    <DECORATED>??0CItemAttr@@QAE@XZ</DECORATED>
+    <FUNCLINE>16</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>compcommand.h</FILENAME>
+      <LINE>339</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'stNetChangeChaPart::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::sCannon' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>stNetChangeChaPart::{ctor}</FUNCTION>
+    <DECORATED>??0stNetChangeChaPart@@QAE@XZ</DECORATED>
+    <FUNCLINE>339</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>compcommand.h</FILENAME>
+      <LINE>339</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'stNetChangeChaPart::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::sEngine' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>stNetChangeChaPart::{ctor}</FUNCTION>
+    <DECORATED>??0stNetChangeChaPart@@QAE@XZ</DECORATED>
+    <FUNCLINE>339</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>compcommand.h</FILENAME>
+      <LINE>339</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'stNetChangeChaPart::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::sBody' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>stNetChangeChaPart::{ctor}</FUNCTION>
+    <DECORATED>??0stNetChangeChaPart@@QAE@XZ</DECORATED>
+    <FUNCLINE>339</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>compcommand.h</FILENAME>
+      <LINE>339</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'stNetChangeChaPart::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::sHeader' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>stNetChangeChaPart::{ctor}</FUNCTION>
+    <DECORATED>??0stNetChangeChaPart@@QAE@XZ</DECORATED>
+    <FUNCLINE>339</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>compcommand.h</FILENAME>
+      <LINE>339</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'stNetChangeChaPart::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::sPosID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>stNetChangeChaPart::{ctor}</FUNCTION>
+    <DECORATED>??0stNetChangeChaPart@@QAE@XZ</DECORATED>
+    <FUNCLINE>339</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>compcommand.h</FILENAME>
+      <LINE>339</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'stNetChangeChaPart::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::sHairID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>stNetChangeChaPart::{ctor}</FUNCTION>
+    <DECORATED>??0stNetChangeChaPart@@QAE@XZ</DECORATED>
+    <FUNCLINE>339</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>compcommand.h</FILENAME>
+      <LINE>339</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'stNetChangeChaPart::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::SLink' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>stNetChangeChaPart::{ctor}</FUNCTION>
+    <DECORATED>??0stNetChangeChaPart@@QAE@XZ</DECORATED>
+    <FUNCLINE>339</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>compcommand.h</FILENAME>
+      <LINE>339</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'stNetChangeChaPart::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::sEquipment' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>stNetChangeChaPart::{ctor}</FUNCTION>
+    <DECORATED>??0stNetChangeChaPart@@QAE@XZ</DECORATED>
+    <FUNCLINE>339</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>compcommand.h</FILENAME>
+      <LINE>339</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'stNetChangeChaPart::&lt;anonymous-tag&gt;::&lt;anonymous-tag&gt;::sBoatID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>stNetChangeChaPart::{ctor}</FUNCTION>
+    <DECORATED>??0stNetChangeChaPart@@QAE@XZ</DECORATED>
+    <FUNCLINE>339</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::type' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::limitPartIndex' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::value' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::index' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>messagepattern.h</FILENAME>
+      <LINE>717</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::MessagePattern::Part::length' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::MessagePattern::Part::{ctor}</FUNCTION>
+    <DECORATED>??0Part@MessagePattern@icu_59@@QAE@XZ</DECORATED>
+    <FUNCLINE>717</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>brkiter.h</FILENAME>
+      <LINE>632</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::BreakIterator::validLocale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::BreakIterator::{ctor}</FUNCTION>
+    <DECORATED>??0BreakIterator@icu_59@@IAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>632</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icu\inc\unicode</FILEPATH>
+      <FILENAME>brkiter.h</FILENAME>
+      <LINE>632</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'icu_59::BreakIterator::actualLocale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>icu_59::BreakIterator::{ctor}</FUNCTION>
+    <DECORATED>??0BreakIterator@icu_59@@IAE@ABV01@@Z</DECORATED>
+    <FUNCLINE>632</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>38</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CFormatParameter::paraNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CFormatParameter::{ctor}</FUNCTION>
+    <DECORATED>??0CFormatParameter@@AAE@XZ</DECORATED>
+    <FUNCLINE>38</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>38</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CFormatParameter::m_MsgArgs' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CFormatParameter::{ctor}</FUNCTION>
+    <DECORATED>??0CFormatParameter@@AAE@XZ</DECORATED>
+    <FUNCLINE>38</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_pLocale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_ResLocale' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_ResDir' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_pResourceBundle' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_pConverter' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\icuhelper\inc</FILEPATH>
+      <FILENAME>resourcebundlemanage.h</FILENAME>
+      <LINE>99</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CResourceBundleManage::m_MaxSize' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CResourceBundleManage::{ctor}</FUNCTION>
+    <DECORATED>??0CResourceBundleManage@@AAE@XZ</DECORATED>
+    <FUNCLINE>99</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>38</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CRawDataInfo::nID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CRawDataInfo::{ctor}</FUNCTION>
+    <DECORATED>??0CRawDataInfo@@QAE@XZ</DECORATED>
+    <FUNCLINE>38</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>221</LINE>
+      <COLUMN>36</COLUMN>
+    </SFA>
+    <DEFECTCODE>28159</DEFECTCODE>
+    <DESCRIPTION>Consider using 'GetTickCount64' instead of 'GetTickCount'. Reason: GetTickCount overflows roughly every 49 days.  Code that does not take that into account can loop indefinitely.  GetTickCount64 operates on 64 bit values and does not have that problem</DESCRIPTION>
+    <FUNCTION>CRawDataSet::GetRawData</FUNCTION>
+    <DECORATED>?GetRawData@CRawDataSet@@QAEPAXHH@Z</DECORATED>
+    <FUNCLINE>216</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>401</LINE>
+      <COLUMN>31</COLUMN>
+    </SFA>
+    <DEFECTCODE>28159</DEFECTCODE>
+    <DESCRIPTION>Consider using 'GetTickCount64' instead of 'GetTickCount'. Reason: GetTickCount overflows roughly every 49 days.  Code that does not take that into account can loop indefinitely.  GetTickCount64 operates on 64 bit values and does not have that problem</DESCRIPTION>
+    <FUNCTION>CRawDataSet::DynamicRelease</FUNCTION>
+    <DECORATED>?DynamicRelease@CRawDataSet@@QAEXH@Z</DECORATED>
+    <FUNCLINE>377</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>468</LINE>
+      <COLUMN>6</COLUMN>
+    </SFA>
+    <DEFECTCODE>6387</DEFECTCODE>
+    <DESCRIPTION>'fp' could be '0':  this does not adhere to the specification for the function 'fread'. </DESCRIPTION>
+    <FUNCTION>CRawDataSet::_LoadRawDataInfo_Bin</FUNCTION>
+    <DECORATED>?_LoadRawDataInfo_Bin@CRawDataSet@@IAEHPBD@Z</DECORATED>
+    <FUNCLINE>453</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>456</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>457</LINE>
+        <COLUMN>36</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' may be NULL (Skip this branch)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>463</LINE>
+        <COLUMN>8</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an In/Out argument to 'Util_GetFileSize' (declared at c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc\util2.h:110)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>464</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>465</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>467</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>468</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an In/Out argument to 'fread' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:234)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>468</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'fp' should not be NULL, because this is not consistent with the SAL annotation on 'fread'</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>504</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>6387</DEFECTCODE>
+    <DESCRIPTION>'fp' could be '0':  this does not adhere to the specification for the function 'fclose'. See line 468 for an earlier location where this can occur</DESCRIPTION>
+    <FUNCTION>CRawDataSet::_LoadRawDataInfo_Bin</FUNCTION>
+    <DECORATED>?_LoadRawDataInfo_Bin@CRawDataSet@@IAEHPBD@Z</DECORATED>
+    <FUNCLINE>453</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>456</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>457</LINE>
+        <COLUMN>36</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' may be NULL (Skip this branch)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>463</LINE>
+        <COLUMN>8</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an In/Out argument to 'Util_GetFileSize' (declared at c:\users\jared\documents\dev\2.4_old - copy\shared\logutil\inc\util2.h:110)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>464</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>465</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>467</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>468</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an In/Out argument to 'fread' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:234)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>472</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>474</LINE>
+        <COLUMN>15</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'dwInfoSize!=RawDataSize' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>481</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>482</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an In/Out argument to 'fread' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:234)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>484</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>484</LINE>
+        <COLUMN>21</COLUMN>
+        <KEYEVENT>
+          <ID>6</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this loop, (assume 'i&lt;nResCnt' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>502</LINE>
+        <COLUMN>4</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>504</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>7</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an Input to 'fclose' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:147)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>504</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>8</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'fp' should not be NULL, because this is not consistent with the SAL annotation on 'fclose'</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>636</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory '*pszDataName'.</DESCRIPTION>
+    <FUNCTION>CRawDataSet::_LoadRawDataInfo_Txt</FUNCTION>
+    <DECORATED>?_LoadRawDataInfo_Txt@CRawDataSet@@IAEHPBDH@Z</DECORATED>
+    <FUNCLINE>536</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>538</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>539</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>540</LINE>
+        <COLUMN>19</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>546</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>547</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>548</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>549</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>551</LINE>
+        <COLUMN>16</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>554</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>555</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>558</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>560</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>561</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>563</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>564</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>572</LINE>
+        <COLUMN>14</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>575</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>576</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>577</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>585</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>587</LINE>
+        <COLUMN>13</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>588</LINE>
+        <COLUMN>26</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>602</LINE>
+        <COLUMN>36</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>602</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>603</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>610</LINE>
+        <COLUMN>17</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>612</LINE>
+        <COLUMN>21</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>613</LINE>
+        <COLUMN>16</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>615</LINE>
+        <COLUMN>23</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>616</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>617</LINE>
+        <COLUMN>14</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>617</LINE>
+        <COLUMN>21</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>621</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>621</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>622</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>622</LINE>
+        <COLUMN>23</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>622</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>621</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>621</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>622</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>622</LINE>
+        <COLUMN>23</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>622</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>621</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>621</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>625</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>630</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>634</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>636</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>637</LINE>
+        <COLUMN>12</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'*pszDataName' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>639</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>639</LINE>
+        <COLUMN>14</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>639</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>641</LINE>
+        <COLUMN>13</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>644</LINE>
+        <COLUMN>13</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>645</LINE>
+        <COLUMN>22</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>652</LINE>
+        <COLUMN>11</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume '!bLocalRet' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>561</LINE>
+        <COLUMN>19</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>659</LINE>
+        <COLUMN>1</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>558</LINE>
+        <COLUMN>10</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Continue this loop, (assume '!in.eof()')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>560</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>561</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>563</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>564</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>572</LINE>
+        <COLUMN>14</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>575</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>576</LINE>
+        <COLUMN>8</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'n&lt;2' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>577</LINE>
+        <COLUMN>8</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'n&gt;_nMaxFieldCnt' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>585</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>6</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume '!bSaveFieldCnt' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>591</LINE>
+        <COLUMN>17</COLUMN>
+        <KEYEVENT>
+          <ID>7</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'nFieldCnt!=n' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>602</LINE>
+        <COLUMN>36</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>602</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>603</LINE>
+        <COLUMN>12</COLUMN>
+        <KEYEVENT>
+          <ID>8</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume '!this-&gt;IsValidID(nID)' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>610</LINE>
+        <COLUMN>17</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>612</LINE>
+        <COLUMN>21</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>613</LINE>
+        <COLUMN>16</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>615</LINE>
+        <COLUMN>23</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>616</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>617</LINE>
+        <COLUMN>14</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>617</LINE>
+        <COLUMN>21</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>621</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>621</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>625</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>630</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>634</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>636</LINE>
+        <COLUMN>11</COLUMN>
+        <KEYEVENT>
+          <ID>9</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'*pszDataName' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>731</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>6387</DEFECTCODE>
+    <DESCRIPTION>'fp' could be '0':  this does not adhere to the specification for the function 'fwrite'. See line 729 for an earlier location where this can occur</DESCRIPTION>
+    <FUNCTION>CRawDataSet::Pack</FUNCTION>
+    <DECORATED>?Pack@CRawDataSet@@QAEXPBD0@Z</DECORATED>
+    <FUNCLINE>714</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>717</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>718</LINE>
+        <COLUMN>36</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' may be NULL (Skip this branch)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>721</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>721</LINE>
+        <COLUMN>18</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this loop, (assume 'i&lt;_nIDCnt')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>723</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>724</LINE>
+        <COLUMN>5</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume '!pInfo-&gt;bExist' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>725</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>726</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>727</LINE>
+        <COLUMN>5</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume 'pbtFileContent')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>729</LINE>
+        <COLUMN>32</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an Input to 'ftell' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:281)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>730</LINE>
+        <COLUMN>23</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>731</LINE>
+        <COLUMN>9</COLUMN>
+        <KEYEVENT>
+          <ID>6</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an In/Out argument to 'fwrite' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:292)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>731</LINE>
+        <COLUMN>9</COLUMN>
+        <KEYEVENT>
+          <ID>7</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'fp' should not be NULL, because this is not consistent with the SAL annotation on 'fwrite'</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>729</LINE>
+      <COLUMN>32</COLUMN>
+    </SFA>
+    <DEFECTCODE>6387</DEFECTCODE>
+    <DESCRIPTION>'fp' could be '0':  this does not adhere to the specification for the function 'ftell'. </DESCRIPTION>
+    <FUNCTION>CRawDataSet::Pack</FUNCTION>
+    <DECORATED>?Pack@CRawDataSet@@QAEXPBD0@Z</DECORATED>
+    <FUNCLINE>714</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>717</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>718</LINE>
+        <COLUMN>36</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' may be NULL (Skip this branch)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>721</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>721</LINE>
+        <COLUMN>18</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this loop, (assume 'i&lt;_nIDCnt')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>723</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>724</LINE>
+        <COLUMN>5</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume '!pInfo-&gt;bExist' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>725</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>726</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>727</LINE>
+        <COLUMN>5</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume 'pbtFileContent')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>729</LINE>
+        <COLUMN>32</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an Input to 'ftell' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:281)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>729</LINE>
+        <COLUMN>32</COLUMN>
+        <KEYEVENT>
+          <ID>6</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'fp' should not be NULL, because this is not consistent with the SAL annotation on 'ftell'</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>735</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>6387</DEFECTCODE>
+    <DESCRIPTION>'fp' could be '0':  this does not adhere to the specification for the function 'fclose'. </DESCRIPTION>
+    <FUNCTION>CRawDataSet::Pack</FUNCTION>
+    <DECORATED>?Pack@CRawDataSet@@QAEXPBD0@Z</DECORATED>
+    <FUNCLINE>714</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>717</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>718</LINE>
+        <COLUMN>36</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' may be NULL (Skip this branch)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>721</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>721</LINE>
+        <COLUMN>18</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this loop, (assume 'i&lt;_nIDCnt' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>735</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an Input to 'fclose' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:147)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>735</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'fp' should not be NULL, because this is not consistent with the SAL annotation on 'fclose'</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>777</LINE>
+      <COLUMN>11</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory '*pszDataName'.</DESCRIPTION>
+    <FUNCTION>CRawDataSet::PackFromDirectory</FUNCTION>
+    <DECORATED>?PackFromDirectory@CRawDataSet@@QAEXAAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@PBD1@Z</DECORATED>
+    <FUNCLINE>745</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>747</LINE>
+        <COLUMN>14</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>748</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>748</LINE>
+        <COLUMN>54</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>754</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>757</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>758</LINE>
+        <COLUMN>36</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>761</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>53</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>764</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>767</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>770</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>772</LINE>
+        <COLUMN>17</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>777</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>780</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>781</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'*pszDataName' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>783</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>784</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>785</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>75</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>53</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Continue this loop, (assume 'it!=(FileList.end())')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>764</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>767</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>770</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>772</LINE>
+        <COLUMN>17</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'pszDataName==0' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>777</LINE>
+        <COLUMN>11</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'*pszDataName' is an Output from '_strlwr_s' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\string.h:224)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>777</LINE>
+        <COLUMN>11</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'*pszDataName' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>788</LINE>
+      <COLUMN>32</COLUMN>
+    </SFA>
+    <DEFECTCODE>6387</DEFECTCODE>
+    <DESCRIPTION>'fp' could be '0':  this does not adhere to the specification for the function 'ftell'. </DESCRIPTION>
+    <FUNCTION>CRawDataSet::PackFromDirectory</FUNCTION>
+    <DECORATED>?PackFromDirectory@CRawDataSet@@QAEXAAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@PBD1@Z</DECORATED>
+    <FUNCLINE>745</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>747</LINE>
+        <COLUMN>14</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>748</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>748</LINE>
+        <COLUMN>54</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>754</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>757</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>758</LINE>
+        <COLUMN>36</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' may be NULL (Skip this branch)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>761</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>53</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this loop, (assume 'it!=(FileList.end())')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>764</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>767</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>770</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>772</LINE>
+        <COLUMN>17</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'pszDataName==0' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>777</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>780</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>781</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>783</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>784</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>785</LINE>
+        <COLUMN>5</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume 'pbtFileContent')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>787</LINE>
+        <COLUMN>26</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>788</LINE>
+        <COLUMN>32</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an Input to 'ftell' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:281)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>788</LINE>
+        <COLUMN>32</COLUMN>
+        <KEYEVENT>
+          <ID>6</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'fp' should not be NULL, because this is not consistent with the SAL annotation on 'ftell'</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>790</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>6387</DEFECTCODE>
+    <DESCRIPTION>'fp' could be '0':  this does not adhere to the specification for the function 'fwrite'. See line 788 for an earlier location where this can occur</DESCRIPTION>
+    <FUNCTION>CRawDataSet::PackFromDirectory</FUNCTION>
+    <DECORATED>?PackFromDirectory@CRawDataSet@@QAEXAAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@PBD1@Z</DECORATED>
+    <FUNCLINE>745</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>747</LINE>
+        <COLUMN>14</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>748</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>748</LINE>
+        <COLUMN>54</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>754</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>757</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>758</LINE>
+        <COLUMN>36</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' may be NULL (Skip this branch)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>761</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>53</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this loop, (assume 'it!=(FileList.end())')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>764</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>767</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>770</LINE>
+        <COLUMN>7</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>772</LINE>
+        <COLUMN>17</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'pszDataName==0' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>777</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>780</LINE>
+        <COLUMN>11</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>781</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>783</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>784</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>785</LINE>
+        <COLUMN>5</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume 'pbtFileContent')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>787</LINE>
+        <COLUMN>26</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>788</LINE>
+        <COLUMN>32</COLUMN>
+        <KEYEVENT>
+          <ID>5</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an Input to 'ftell' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:281)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>789</LINE>
+        <COLUMN>23</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>790</LINE>
+        <COLUMN>9</COLUMN>
+        <KEYEVENT>
+          <ID>6</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an In/Out argument to 'fwrite' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:292)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>790</LINE>
+        <COLUMN>9</COLUMN>
+        <KEYEVENT>
+          <ID>7</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'fp' should not be NULL, because this is not consistent with the SAL annotation on 'fwrite'</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>tabledata.h</FILENAME>
+      <LINE>796</LINE>
+      <COLUMN>7</COLUMN>
+    </SFA>
+    <DEFECTCODE>6387</DEFECTCODE>
+    <DESCRIPTION>'fp' could be '0':  this does not adhere to the specification for the function 'fclose'. </DESCRIPTION>
+    <FUNCTION>CRawDataSet::PackFromDirectory</FUNCTION>
+    <DECORATED>?PackFromDirectory@CRawDataSet@@QAEXAAV?$list@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@PBD1@Z</DECORATED>
+    <FUNCLINE>745</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>4</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>747</LINE>
+        <COLUMN>14</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>748</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>748</LINE>
+        <COLUMN>54</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>754</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>757</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>758</LINE>
+        <COLUMN>36</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' may be NULL (Skip this branch)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>761</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>28</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>762</LINE>
+        <COLUMN>53</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this loop, (assume 'it!=(FileList.end())' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>796</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'fp' is an Input to 'fclose' (declared at c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\stdio.h:147)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+        <FILENAME>tabledata.h</FILENAME>
+        <LINE>796</LINE>
+        <COLUMN>7</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'fp' should not be NULL, because this is not consistent with the SAL annotation on 'fclose'</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>stringpooll.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'StringPoolL::Offsets' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>StringPoolL::{ctor}</FUNCTION>
+    <DECORATED>??0StringPoolL@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>172</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>stringpooll.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'StringPoolL::Buffer' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>StringPoolL::{ctor}</FUNCTION>
+    <DECORATED>??0StringPoolL@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>172</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>stringpooll.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'StringPoolL::Num' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>StringPoolL::{ctor}</FUNCTION>
+    <DECORATED>??0StringPoolL@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>172</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>stringpooll.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'StringPoolL::Top' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>StringPoolL::{ctor}</FUNCTION>
+    <DECORATED>??0StringPoolL@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>172</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>stringpooll.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'StringPoolL::GarbageSize' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>StringPoolL::{ctor}</FUNCTION>
+    <DECORATED>??0StringPoolL@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>172</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>stringpooll.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'StringPoolL::OldBuffer' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>StringPoolL::{ctor}</FUNCTION>
+    <DECORATED>??0StringPoolL@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>172</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>stringpooll.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'StringPoolL::DataSize' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>StringPoolL::{ctor}</FUNCTION>
+    <DECORATED>??0StringPoolL@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>172</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>stringpooll.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'StringPoolL::OffsetsSize' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>StringPoolL::{ctor}</FUNCTION>
+    <DECORATED>??0StringPoolL@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>172</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>stringpooll.h</FILENAME>
+      <LINE>172</LINE>
+      <COLUMN>3</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'StringPoolL::BufferSize' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>StringPoolL::{ctor}</FUNCTION>
+    <DECORATED>??0StringPoolL@@AAE@AAV0@@Z</DECORATED>
+    <FUNCLINE>172</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>skillbag.h</FILENAME>
+      <LINE>60</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSkillBag::m_sChangeNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSkillBag::{ctor}</FUNCTION>
+    <DECORATED>??0CSkillBag@@QAE@XZ</DECORATED>
+    <FUNCLINE>60</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>skillbag.h</FILENAME>
+      <LINE>60</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSkillBag::m_sSkillNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSkillBag::{ctor}</FUNCTION>
+    <DECORATED>??0CSkillBag@@QAE@XZ</DECORATED>
+    <FUNCLINE>60</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>skillbag.h</FILENAME>
+      <LINE>60</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSkillBag::m_SBag' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSkillBag::{ctor}</FUNCTION>
+    <DECORATED>??0CSkillBag@@QAE@XZ</DECORATED>
+    <FUNCLINE>60</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>skillbag.h</FILENAME>
+      <LINE>60</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSkillBag::m_szSkillIsChanged' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSkillBag::{ctor}</FUNCTION>
+    <DECORATED>??0CSkillBag@@QAE@XZ</DECORATED>
+    <FUNCLINE>60</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>skillbag.h</FILENAME>
+      <LINE>60</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSkillBag::m_sChangeSkill' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSkillBag::{ctor}</FUNCTION>
+    <DECORATED>??0CSkillBag@@QAE@XZ</DECORATED>
+    <FUNCLINE>60</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>skillbag.h</FILENAME>
+      <LINE>60</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CSkillBag::m_pSBag' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CSkillBag::{ctor}</FUNCTION>
+    <DECORATED>??0CSkillBag@@QAE@XZ</DECORATED>
+    <FUNCLINE>60</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::chDiaphaneity' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lASpd' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lCDis' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::szTitle' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lFlee' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lSRec' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lWeapon' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sEffectActionID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sSeaHeight' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lScript' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::szJob' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lMf' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lMSpd' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lCol' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lStr' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sWhoop' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sDirge' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lAgi' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lDex' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lHRec' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lSkill' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lCon' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lCrt' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lSta' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lLuk' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lLHandVal' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sActionID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::_nHPEffect' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sShadow' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lADis' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::szGuild' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::_IsFace' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::chTerritory' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::chControlAble' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lHit' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lDef' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lPDef' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lMxAtk' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lMnAtk' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::_HaveEffectFog' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::scaling' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lCExp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lSp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sSuitNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sFeffID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lMxSp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::chCtrlType' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::chModalType' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sEeffID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTScsm' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lHp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTSpri' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTSpd' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTADis' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTASpd' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTSRec' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lMxHp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTHRec' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lLv' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTCrt' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTMf' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTFlee' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::_IsCyclone' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sFootfall' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lMobexp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTHit' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::bLight' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTDef' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTAtk' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTMxSp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lGetEXP' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTMxHp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lNoise' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTLuk' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lVision' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTSta' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTCon' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTDex' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTAgi' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTStr' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::chCanTurn' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lScsm' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lAiNo' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lStasa' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lSail' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lMxSail' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lPrefix' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lStor' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::fAllShow' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lSpri' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lGd' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sSkinInfo' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lMaxShowItem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lAp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lFame' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lTaskItem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sModel' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lNExp' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::lItem' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sDieEff' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sSuitID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::szIconName' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::szName' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::chDieAction' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sDormancy' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::fLengh' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sBornEff' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sItemType' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::nDiedBehave' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::sRadii' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::nBirthBehave' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::fWidth' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\common\inc</FILEPATH>
+      <FILENAME>characterrecord.h</FILENAME>
+      <LINE>209</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'CChaRecord::fHeight' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>CChaRecord::{ctor}</FUNCTION>
+    <DECORATED>??0CChaRecord@@QAE@XZ</DECORATED>
+    <FUNCLINE>209</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>ntsvcobject.h</FILENAME>
+      <LINE>76</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'dbc::NTServiceSet::m_argv' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>dbc::NTServiceSet::{ctor}</FUNCTION>
+    <DECORATED>??0NTServiceSet@dbc@@QAE@XZ</DECORATED>
+    <FUNCLINE>76</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>148</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GameServer::mapcnt' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GameServer::{ctor}</FUNCTION>
+    <DECORATED>??0GameServer@@AAE@K@Z</DECORATED>
+    <FUNCLINE>148</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>148</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GameServer::port' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GameServer::{ctor}</FUNCTION>
+    <DECORATED>??0GameServer@@AAE@K@Z</DECORATED>
+    <FUNCLINE>148</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>156</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GameServer::mapcnt' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GameServer::{ctor}</FUNCTION>
+    <DECORATED>??0GameServer@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>156</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>156</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GameServer::next' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GameServer::{ctor}</FUNCTION>
+    <DECORATED>??0GameServer@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>156</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>156</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GameServer::port' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GameServer::{ctor}</FUNCTION>
+    <DECORATED>??0GameServer@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>156</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>156</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GameServer::m_datasock' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GameServer::{ctor}</FUNCTION>
+    <DECORATED>??0GameServer@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>156</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>231</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'GroupServer::port' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>GroupServer::{ctor}</FUNCTION>
+    <DECORATED>??0GroupServer@@QAE@XZ</DECORATED>
+    <FUNCLINE>231</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>304</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'ToMMS::MMS::port' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>ToMMS::MMS::{ctor}</FUNCTION>
+    <DECORATED>??0MMS@ToMMS@@QAE@XZ</DECORATED>
+    <FUNCLINE>304</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>304</LINE>
+      <COLUMN>2</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'ToMMS::MMS::key' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>ToMMS::MMS::{ctor}</FUNCTION>
+    <DECORATED>??0MMS@ToMMS@@QAE@XZ</DECORATED>
+    <FUNCLINE>304</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_chapstr' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_szSendKey' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_password' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_szRecvKey' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_actid' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_loginID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_pingtime' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::comm_key_len' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::comm_textkey' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::enc' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_lestoptick' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_estop' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::&lt;anonymous-tag&gt;::m_switch' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::&lt;anonymous-tag&gt;::m_cmdNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::&lt;anonymous-tag&gt;::m_lashTick' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>388</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::&lt;anonymous-tag&gt;::m_waringNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@K@Z</DECORATED>
+    <FUNCLINE>388</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_chapstr' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_szSendKey' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_password' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_szRecvKey' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_actid' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_loginID' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_dbid' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_worldid' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_pingtime' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::comm_key_len' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::comm_textkey' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_datasock' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::game' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::enc' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_lestoptick' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_estop' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::m_sGarnerWiner' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::&lt;anonymous-tag&gt;::m_status' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::&lt;anonymous-tag&gt;::m_switch' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::&lt;anonymous-tag&gt;::m_cmdNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::&lt;anonymous-tag&gt;::m_lashTick' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>399</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'Player::&lt;anonymous-tag&gt;::m_waringNum' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>Player::{ctor}</FUNCTION>
+    <DECORATED>??0Player@@AAE@ABU0@@Z</DECORATED>
+    <FUNCLINE>399</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\server\gate\inc</FILEPATH>
+      <FILENAME>gateserver.h</FILENAME>
+      <LINE>411</LINE>
+      <COLUMN>1</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>Variable 'TransmitCall::m_datasock' is uninitialized. Always initialize a member variable (type.6).</DESCRIPTION>
+    <FUNCTION>TransmitCall::{ctor}</FUNCTION>
+    <DECORATED>??0TransmitCall@@QAE@K@Z</DECORATED>
+    <FUNCLINE>411</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>prealloc.h</FILENAME>
+      <LINE>409</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory 'l_lockPtr'.</DESCRIPTION>
+    <FUNCTION>dbc::PreAllocHeapPtr&lt;dbc::dstrbuf&gt;::Init</FUNCTION>
+    <DECORATED>?Init@?$PreAllocHeapPtr@Vdstrbuf@dbc@@@dbc@@AAEXXZ</DECORATED>
+    <FUNCLINE>392</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>394</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>395</LINE>
+        <COLUMN>13</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>398</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume '!m_ptr')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>400</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>406</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>407</LINE>
+        <COLUMN>3</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>408</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>409</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is an Output from 'dbc::MutexArmor::unlock' (declared at c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc\dbccommon.h:216)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>409</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+      <FILENAME>prealloc.h</FILENAME>
+      <LINE>355</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory 'l_lockPtr'.</DESCRIPTION>
+    <FUNCTION>dbc::PreAllocHeapPtr&lt;dbc::dstrbuf&gt;::Init</FUNCTION>
+    <DECORATED>?Init@?$PreAllocHeapPtr@Vdstrbuf@dbc@@@dbc@@QAE_NQAK@Z</DECORATED>
+    <FUNCLINE>338</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>340</LINE>
+        <COLUMN>5</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>341</LINE>
+        <COLUMN>13</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>344</LINE>
+        <COLUMN>6</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Enter this branch, (assume '!m_ptr')</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>346</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>352</LINE>
+        <COLUMN>2</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>353</LINE>
+        <COLUMN>3</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>354</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>355</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is an Output from 'dbc::MutexArmor::unlock' (declared at c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc\dbccommon.h:216)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\jared\documents\dev\2.4_old - copy\shared\serversdk\inc</FILEPATH>
+        <FILENAME>prealloc.h</FILENAME>
+        <LINE>355</LINE>
+        <COLUMN>19</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'l_lockPtr' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
+  </DEFECT>
+</DEFECTS>
